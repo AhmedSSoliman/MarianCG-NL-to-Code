@@ -1,0 +1,2557 @@
+Natural Language: send a signal `signal.sigusr1` to the current process
+ref Code: os.kill(os.getpid(), signal.SIGUSR1)
+output Code: sys.exit(app.exec_())
+bleu_metric: 14.737486969787152
+----------
+Natural Language: decode a hex string '4a4b4c' to utf-8.
+ref Code: bytes.fromhex('4a4b4c').decode('utf-8')
+output Code: hex('4a4b4c'.decode('hex'))
+bleu_metric: 36.153401916714266
+----------
+Natural Language: check if all elements in list `mylist` are identical
+ref Code: all(x == myList[0] for x in myList)
+output Code: all(isinstance(x, int) for x in myList)
+bleu_metric: 44.690223229515766
+----------
+Natural Language: format number of spaces between strings `python`, `:` and `very good` to be `20`
+ref Code: print('%*s : %*s' % (20, 'Python', 20, 'Very Good'))
+output Code: """{0:.2f}""".format(20)
+bleu_metric: 8.260016799822214
+----------
+Natural Language: how to convert a string from cp-1251 to utf-8?
+ref Code: d.decode('cp1251').encode('utf8')
+output Code: cp-12 51.decode('utf8')
+bleu_metric: 44.3563689294446
+----------
+Natural Language: get rid of none values in dictionary `kwargs`
+ref Code: res = {k: v for k, v in list(kwargs.items()) if v is not None}
+output Code: d = {k: v for k, v in list(kwarg.items()) if v is not None}
+bleu_metric: 85.90888738245121
+----------
+Natural Language: get rid of none values in dictionary `kwargs`
+ref Code: res = dict((k, v) for k, v in kwargs.items() if v is not None)
+output Code: d = {k: v for k, v in list(kwarg.items()) if v is not None}
+bleu_metric: 46.1522715375489
+----------
+Natural Language: capture final output of a chain of system commands `ps -ef | grep something | wc -l`
+ref Code: subprocess.check_output('ps -ef | grep something | wc -l', shell=True)
+output Code: sys.stdout.write('ps -ef  grep something')
+bleu_metric: 24.441267114165406
+----------
+Natural Language: concatenate a list of strings `['a', 'b', 'c']`
+ref Code: """""".join(['a', 'b', 'c'])
+output Code: """""".join(['a', 'b', 'c'])
+bleu_metric: 100.0
+----------
+Natural Language: find intersection data between series `s1` and series `s2`
+ref Code: pd.Series(list(set(s1).intersection(set(s2))))
+output Code: s1.intersection(s2.intersection(s1.startswith(s2.startswith(s1.startswith(s1.ends())))))
+bleu_metric: 22.70847350238585
+----------
+Natural Language: sending http headers to `client`
+ref Code: client.send('HTTP/1.0 200 OK\r\n')
+output Code: client.write('http://www.google.com/')
+bleu_metric: 17.128675281329002
+----------
+Natural Language: format a datetime string `when` to extract date only
+ref Code: then = datetime.datetime.strptime(when, '%Y-%m-%d').date()
+output Code: datetime.datetime.now().strftime('%H:%M:%S')
+bleu_metric: 21.053090179482517
+----------
+Natural Language: split a multi-line string `inputstring` into separate strings
+ref Code: inputString.split('\n')
+output Code: print(inputstring.split(','))
+bleu_metric: 35.99306254353179
+----------
+Natural Language: split a multi-line string ` a \n b \r\n c ` by new line character `\n`
+ref Code: ' a \n b \r\n c '.split('\n')
+output Code: a.split('\n')
+bleu_metric: 30.44742573937732
+----------
+Natural Language: concatenate elements of list `b` by a colon ":"
+ref Code: """:""".join(str(x) for x in b)
+output Code: [(i * j) for i, j in zip(b, b)]
+bleu_metric: 11.435278352372569
+----------
+Natural Language: get the first object from a queryset in django model `entry`
+ref Code: Entry.objects.filter()[:1].get()
+output Code: Entry.objects.all().order_by('id')[0]
+bleu_metric: 26.632547529058055
+----------
+Natural Language: calculate sum over all rows of 2d numpy array
+ref Code: a.sum(axis=1)
+output Code: sum(np.sum(axis=1), axis=0)
+bleu_metric: 44.09774564143266
+----------
+Natural Language: enable warnings using action 'always'
+ref Code: warnings.simplefilter('always')
+output Code: warnings.warn('always')
+bleu_metric: 70.71067811865474
+----------
+Natural Language: concatenate items of list `l` with a space ' '
+ref Code: print(' '.join(map(str, l)))
+output Code: """""".join(l[i:i + '] for i in range(0, len(l), 2))
+bleu_metric: 19.121616355935114
+----------
+Natural Language: run script 'hello.py' with argument 'htmlfilename.htm' on terminal using python executable
+ref Code: subprocess.call(['python.exe', 'hello.py', 'htmlfilename.htm'])
+output Code: subprocess.call(['hello.py', 'htmlfilename.htm'], shell=True)
+bleu_metric: 67.21583559175114
+----------
+Natural Language: how can i parse a time string containing milliseconds in it with python?
+ref Code: time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')
+output Code: datetime.datetime.strptime('%Y-%m-%d %H:%M:%S', '%m-%d %H:%M:%S')
+bleu_metric: 35.75074067739111
+----------
+Natural Language: convert a string `my_string` with dot and comma into a float number `my_float`
+ref Code: my_float = float(my_string.replace(',', ''))
+output Code: struct.unpack('my_string', my_float)
+bleu_metric: 13.96120771087895
+----------
+Natural Language: convert a string `123,456.908` with dot and comma into a floating number
+ref Code: float('123,456.908'.replace(',', ''))
+output Code: """""".join(map(str, '123.456.908'))
+bleu_metric: 31.449494592022948
+----------
+Natural Language: set pythonpath in python script.
+ref Code: sys.path.append('/path/to/whatever')
+output Code: os.system('sys.argv[0]')
+bleu_metric: 19.846438615928747
+----------
+Natural Language: split string 'words, words, words.' using a regex '(\\w+)'
+ref Code: re.split('(\\W+)', 'Words, words, words.')
+output Code: re.split('(\\w+)', 'Words, words, words.')
+bleu_metric: 88.43865924896842
+----------
+Natural Language: open a file `output.txt` in append mode
+ref Code: file = open('Output.txt', 'a')
+output Code: f = open(output.txt, 'rb')
+bleu_metric: 26.848939080846705
+----------
+Natural Language: download a file "http://www.example.com/songs/mp3.mp3" over http and save to "mp3.mp3"
+ref Code: urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')
+output Code: urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3','mp3.mp3')
+bleu_metric: 100.0
+----------
+Natural Language: download a file `url` over http and save to `file_name`
+ref Code: u = urllib.request.urlopen(url)
+f = open(file_name, 'wb')
+meta = u.info()
+file_size = int(meta.getheaders('Content-Length')[0])
+print(('Downloading: %s Bytes: %s' % (file_name, file_size)))
+file_size_dl = 0
+block_sz = 8192
+while True:
+    buffer = u.read(block_sz)
+    if (not buffer):
+        break
+    file_size_dl += len(buffer)
+    f.write(buffer)
+    status = ('%10d  [%3.2f%%]' % (file_size_dl, ((file_size_dl * 100.0) / file_size)))
+    status = (status + (chr(8) * (len(status) + 1)))
+    print(status, end=' ')
+f.close()
+output Code: urllib.request.urlretrieve('http://www.example.com/', file_name)
+bleu_metric: 0.02611545441507164
+----------
+Natural Language: download a file 'http://www.example.com/' over http
+ref Code: response = urllib.request.urlopen('http://www.example.com/')
+html = response.read()
+output Code: urllib.request.urlretrieve('http://www.example.com/', 'http://www.example.com/')
+bleu_metric: 50.72890295600225
+----------
+Natural Language: download a file `url` over http
+ref Code: r = requests.get(url)
+output Code: urllib.request.urlretrieve('http://www.google.com/', url)
+bleu_metric: 11.408424519986967
+----------
+Natural Language: download a file `url` over http and save to "10mb"
+ref Code: response = requests.get(url, stream=True)
+with open('10MB', 'wb') as handle:
+    for data in tqdm(response.iter_content()):
+        handle.write(data)
+output Code: urllib.request.urlretrieve('http://www.google.com/', '10mb')
+bleu_metric: 6.276218231634697
+----------
+Natural Language: argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`
+ref Code: parser.add_argument('--version', action='version', version='%(prog)s 2.0')
+output Code: parser.add_argument('-version', '%(prog)s2.0', type='parser')
+bleu_metric: 47.08411436108405
+----------
+Natural Language: remove key 'c' from dictionary `d`
+ref Code: {i: d[i] for i in d if i != 'c'}
+output Code: dict((k, v) for k, v in d.items() if v!= 'C')
+bleu_metric: 11.739521786077454
+----------
+Natural Language: create new dataframe object by merging columns "key" of  dataframes `split_df` and `csv_df` and rename the columns from dataframes `split_df` and `csv_df` with suffix `_left` and `_right` respectively
+ref Code: pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))
+output Code: df.reset_index(['key','split_df'], columns=['split_df', 'csv_df'])
+bleu_metric: 24.54844915159563
+----------
+Natural Language: split a string `s` by space with `4` splits
+ref Code: s.split(' ', 4)
+output Code: s.split(4)
+bleu_metric: 45.043204423208614
+----------
+Natural Language: read keyboard-input
+ref Code: input('Enter your input:')
+output Code: time.sleep(1)
+bleu_metric: 17.11271705842678
+----------
+Natural Language: enable debug mode on flask application `app`
+ref Code: app.run(debug=True)
+output Code: app.run(debug=True)
+bleu_metric: 100.0
+----------
+Natural Language: python save list `mylist` to file object 'save.txt'
+ref Code: pickle.dump(mylist, open('save.txt', 'wb'))
+output Code: mylist.append('save.txt')
+bleu_metric: 27.374248660963534
+----------
+Natural Language: multiply a matrix `p` with a 3d tensor `t` in scipy
+ref Code: scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)
+output Code: np.dot(tf.constant([1, 2, 3], p))
+bleu_metric: 13.681280911968653
+----------
+Natural Language: create 3d array of zeroes of size `(3,3,3)`
+ref Code: numpy.zeros((3, 3, 3))
+output Code: np.zeros((3, 3, 3))
+bleu_metric: 91.93227152249185
+----------
+Natural Language: cut off the last word of a sentence `content`
+ref Code: """ """.join(content.split(' ')[:-1])
+output Code: """{:.2f}""".split('.')
+bleu_metric: 36.56110425012797
+----------
+Natural Language: convert scalar `x` to array
+ref Code: x = np.asarray(x).reshape(1, -1)[(0), :]
+output Code: x = np.zeros((10, 10))
+bleu_metric: 13.891837858012202
+----------
+Natural Language: sum all elements of nested list `l`
+ref Code: sum(sum(i) if isinstance(i, list) else i for i in L)
+output Code: sum(i for i in l)
+bleu_metric: 14.823156396438122
+----------
+Natural Language: convert hex string '470fc614' to a float number
+ref Code: struct.unpack('!f', '470FC614'.decode('hex'))[0]
+output Code: float('470fc614'.decode('hex'))
+bleu_metric: 33.61139419763921
+----------
+Natural Language: multiple each value by `2` for all keys in a dictionary `my_dict`
+ref Code: my_dict.update((x, y * 2) for x, y in list(my_dict.items()))
+output Code: {k: (v * 2) for k, v in my_dict.items()}
+bleu_metric: 27.723462805499782
+----------
+Natural Language: running bash script 'sleep.sh'
+ref Code: subprocess.call('sleep.sh', shell=True)
+output Code: os.system('sleep.sh')
+bleu_metric: 40.728895472895154
+----------
+Natural Language: join elements of list `l` with a comma `,`
+ref Code: """,""".join(l)
+output Code: print(list(itertools.chain.from_iterable(l)))
+bleu_metric: 18.20705281109213
+----------
+Natural Language: make a comma-separated string from a list `mylist`
+ref Code: myList = ','.join(map(str, myList))
+output Code: mylist = map(int, mylist.split(','))
+bleu_metric: 22.326472132503493
+----------
+Natural Language: reverse the list that contains 1 to 10
+ref Code: list(reversed(list(range(10))))
+output Code: reversed([1, 10])
+bleu_metric: 14.026062829965458
+----------
+Natural Language: remove substring 'bag,' from a string 'lamp, bag, mirror'
+ref Code: print('lamp, bag, mirror'.replace('bag,', ''))
+output Code: re.sub('([^a-zA-Z])([^a-zA-Z])', '', 'baz')
+bleu_metric: 14.19855531301717
+----------
+Natural Language: reverse the order of words, delimited by `.`, in string `s`
+ref Code: """.""".join(s.split('.')[::-1])
+output Code: re.sub('\\b(.*?)(\\b)', '\\1', s)
+bleu_metric: 8.939270118279458
+----------
+Natural Language: convert epoch time represented as milliseconds `s` to string using format '%y-%m-%d %h:%m:%s.%f'
+ref Code: datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')
+output Code: print('%Y-%m-%d %H:%M:%S.%f')
+bleu_metric: 66.91389641841208
+----------
+Natural Language: parse milliseconds epoch time '1236472051807' to format '%y-%m-%d %h:%m:%s'
+ref Code: time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))
+output Code: datetime.datetime.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')
+bleu_metric: 56.37002515009677
+----------
+Natural Language: get the date 7 days before the current date
+ref Code: (datetime.datetime.now() - datetime.timedelta(days=7)).date()
+output Code: datetime.datetime.now().strftime('%Y-%m-%d')
+bleu_metric: 32.733731123015694
+----------
+Natural Language: sum elements at index `column` of each list in list `data`
+ref Code: print(sum(row[column] for row in data))
+output Code: [sum([column[i] for i in data]) for i in range(len(column))]
+bleu_metric: 11.22444464861146
+----------
+Natural Language: sum columns of a list `array`
+ref Code: [sum(row[i] for row in array) for i in range(len(array[0]))]
+output Code: sum(dummy_list == array)
+bleu_metric: 2.28000854584573
+----------
+Natural Language: encode binary string 'your string' to base64 code
+ref Code: base64.b64encode(bytes('your string', 'utf-8'))
+output Code: base64.b64encode('your string')
+bleu_metric: 30.89261361741328
+----------
+Natural Language: combine list of dictionaries `dicts` with the same keys in each list to a single dictionary
+ref Code: dict((k, [d[k] for d in dicts]) for k in dicts[0])
+output Code: dict((k, v) for k, v in list(dicts.items()))
+bleu_metric: 25.539313722341443
+----------
+Natural Language: merge a nested dictionary `dicts` into a flat dictionary by concatenating nested values with the same key `k`
+ref Code: {k: [d[k] for d in dicts] for k in dicts[0]}
+output Code: dict((k, v) for k, v in list(dicts.items()))
+bleu_metric: 8.608775825594615
+----------
+Natural Language: how do i get the url parameter in a flask view
+ref Code: request.args['myParam']
+output Code: app.run()
+bleu_metric: 12.55107248036171
+----------
+Natural Language: identify duplicate values in list `mylist`
+ref Code: [k for k, v in list(Counter(mylist).items()) if v > 1]
+output Code: print(list(myList.duplicated()))
+bleu_metric: 9.54385764627206
+----------
+Natural Language: insert directory 'apps' into directory `__file__`
+ref Code: sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))
+output Code: sys.path.insert(0, 'apps')
+bleu_metric: 21.353383675629463
+----------
+Natural Language: modify sys.path for python module `subdir`
+ref Code: sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))
+output Code: sys.path.append('subdir')
+bleu_metric: 18.005581340069842
+----------
+Natural Language: insert a 'none' value into a sqlite3 table.
+ref Code: db.execute("INSERT INTO present VALUES('test2', ?, 10)", (None,))
+output Code: cursor.execute('SELECT * FROM table WHERE id = 'None')
+bleu_metric: 14.889377416355448
+----------
+Natural Language: flatten list `list_of_menuitems`
+ref Code: [image for menuitem in list_of_menuitems for image in menuitem]
+output Code: [item for item in list_of_menuitems for item in list_of_menuitems]
+bleu_metric: 25.400289715190976
+----------
+Natural Language: append elements of a set `b` to a list `a`
+ref Code: a.extend(b)
+output Code: a = [('b', 'a'), ('b', 'b'), ('a', 'c')]
+bleu_metric: 4.6744992312922165
+----------
+Natural Language: append elements of a set to a list in python
+ref Code: a.extend(list(b))
+output Code: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+bleu_metric: 4.491575568657404
+----------
+Natural Language: write the data of dataframe `df` into text file `np.txt`
+ref Code: np.savetxt('c:\\data\\np.txt', df.values, fmt='%d')
+output Code: df.to_csv('np.txt', index=False)
+bleu_metric: 16.167447988327453
+----------
+Natural Language: write content of dataframe `df` into text file 'c:\\data\\pandas.txt'
+ref Code: df.to_csv('c:\\data\\pandas.txt', header=None, index=None, sep=' ', mode='a')
+output Code: df.to_csv('c:\\data\\pandas.txt', index=False)
+bleu_metric: 43.10606588708646
+----------
+Natural Language: split a string `x` by last occurrence of character `-`
+ref Code: print(x.rpartition('-')[0])
+output Code: x.split('-')
+bleu_metric: 31.95164042784261
+----------
+Natural Language: get the last part of a string before the character '-'
+ref Code: print(x.rsplit('-', 1)[0])
+output Code: """""".rsplit('..')[-1]
+bleu_metric: 22.37467707748558
+----------
+Natural Language: upload file using ftp
+ref Code: ftp.storlines('STOR ' + filename, open(filename, 'r'))
+output Code: ftp.quit()
+bleu_metric: 3.710176016036221
+----------
+Natural Language: add one to the hidden web element with id 'xyz' with selenium python script
+ref Code: browser.execute_script("document.getElementById('XYZ').value+='1'")
+output Code: driver.execute_script('http://stackoverflow.com/')
+bleu_metric: 15.784827341233104
+----------
+Natural Language: create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]`
+ref Code: np.maximum([2, 3, 4], [1, 5, 2])
+output Code: np.maximum([2, 3, 4], [1, 5, 2])
+bleu_metric: 100.0
+----------
+Natural Language: print a list `l` and move first 3 elements to the end of the list
+ref Code: print(l[3:] + l[:3])
+output Code: print(' '.join([str(i) for i in l]))
+bleu_metric: 12.217114537124342
+----------
+Natural Language: loop over files in directory '.'
+ref Code: for fn in os.listdir('.'):
+    if os.path.isfile(fn):
+        pass
+output Code: list(os.path.join(directory['.'], filename))
+bleu_metric: 21.493094482989665
+----------
+Natural Language: loop over files in directory `source`
+ref Code: for (root, dirs, filenames) in os.walk(source):
+    for f in filenames:
+        pass
+output Code: print(open('source', 'rb').read())
+bleu_metric: 7.711056039860311
+----------
+Natural Language: create a random list of integers
+ref Code: [int(1000 * random.random()) for i in range(10000)]
+output Code: random.choice(mylist)
+bleu_metric: 3.9344046735033213
+----------
+Natural Language: using %f with strftime() in python to get microseconds
+ref Code: datetime.datetime.now().strftime('%H:%M:%S.%f')
+output Code: print([i for i in current_seconds if i.startswith('%f')])
+bleu_metric: 20.11713019157605
+----------
+Natural Language: google app engine execute gql query 'select * from schedule where station = $1' with parameter `foo.key()`
+ref Code: db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())
+output Code: os.environ['SELECT * FROM table WHERE Station = $1'] = 'foo.key()'
+bleu_metric: 37.998135830788236
+----------
+Natural Language: filter rows in pandas starting with alphabet 'f' using regular expression.
+ref Code: df.b.str.contains('^f')
+output Code: df['f'] = df['f'].str.replace('f', 'f')
+bleu_metric: 18.816393642137243
+----------
+Natural Language: print a 2 dimensional list `tab` as a table with delimiters
+ref Code: print('\n'.join('\t'.join(str(col) for col in row) for row in tab))
+output Code: print(tab.replace(' ', ',''))
+bleu_metric: 8.035155881790788
+----------
+Natural Language: pandas: delete rows in dataframe `df` based on multiple columns values
+ref Code: df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()
+output Code: df.drop([df['columns'].isin(df)], axis=1)
+bleu_metric: 12.863444305030129
+----------
+Natural Language: format the variables `self.goals` and `self.penalties` using string formatting
+ref Code: """({:d} goals, ${:d})""".format(self.goals, self.penalties)
+output Code: """""".join('self.goals','self.penalties')
+bleu_metric: 25.029487266905086
+----------
+Natural Language: format string "({} goals, ${})" with variables `goals` and `penalties`
+ref Code: """({} goals, ${})""".format(self.goals, self.penalties)
+output Code: ""({} goals, ${})""".format(lambda goals, cents)
+bleu_metric: 66.73699500122417
+----------
+Natural Language: format string "({0.goals} goals, ${0.penalties})"
+ref Code: """({0.goals} goals, ${0.penalties})""".format(self)
+output Code: '({0.goals} goals, ${0.penalties})'.format('{0.goals}')
+bleu_metric: 68.34195288458649
+----------
+Natural Language: convert list of lists `l` to list of integers
+ref Code: [int(''.join(str(d) for d in x)) for x in L]
+output Code: [map(int, l) for l in l]
+bleu_metric: 8.520157949222618
+----------
+Natural Language: combine elements of each list in list `l` into digits of a single integer
+ref Code: [''.join(str(d) for d in x) for x in L]
+output Code: map(int, zip(*[(1, 2), (3, 4), (5, 6)]))
+bleu_metric: 5.905575616757554
+----------
+Natural Language: convert a list of lists `l` to list of integers
+ref Code: L = [int(''.join([str(y) for y in x])) for x in L]
+output Code: [map(int, l) for l in l]
+bleu_metric: 6.2331917310928535
+----------
+Natural Language: write the elements of list `lines` concatenated by special character '\n' to file `myfile`
+ref Code: myfile.write('\n'.join(lines))
+output Code: myfile.write('\n'.join(lines))
+bleu_metric: 100.0
+----------
+Natural Language: removing an element from a list based on a predicate 'x' or 'n'
+ref Code: [x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]
+output Code: [x for x in l if x['n'] in v]
+bleu_metric: 13.06238481589545
+----------
+Natural Language: remove duplicate words from a string `text` using regex
+ref Code: text = re.sub('\\b(\\w+)( \\1\\b)+', '\\1', text)
+output Code: re.sub('(?<=\\w)(?=\\w)', '\\1', text)
+bleu_metric: 46.81168707488706
+----------
+Natural Language: count non zero values in each column in pandas data frame
+ref Code: df.astype(bool).sum(axis=1)
+output Code: df[~df.applymap(lambda x: x.isin(x.values), axis=1)]
+bleu_metric: 17.797644045771207
+----------
+Natural Language: search for string that matches regular expression pattern '(?<!distillr)\\\\acrotray\\.exe' in string 'c:\\somedir\\acrotray.exe'
+ref Code: re.search('(?<!Distillr)\\\\AcroTray\\.exe', 'C:\\SomeDir\\AcroTray.exe')
+output Code: re.search('(?<!distillr)\\acrotray\\.exe', 'c:\\somedir\\acrotray.exe')
+bleu_metric: 52.23571371352625
+----------
+Natural Language: split string 'qh qd jc kd js' into a list on white spaces
+ref Code: """QH QD JC KD JS""".split()
+output Code: ['QH qd', 'kd jd js']
+bleu_metric: 11.998609496359586
+----------
+Natural Language: search for occurrences of regex pattern '>.*<' in xml string `line`
+ref Code: print(re.search('>.*<', line).group(0))
+output Code: print(re.search('>.*<', line).text)
+bleu_metric: 74.62878748277065
+----------
+Natural Language: erase all the contents of a file `filename`
+ref Code: open(filename, 'w').close()
+output Code: open('filename', 'w').close()
+bleu_metric: 70.98108717509044
+----------
+Natural Language: convert a string into datetime using the format '%y-%m-%d %h:%m:%s.%f'
+ref Code: datetime.datetime.strptime(string_date, '%Y-%m-%d %H:%M:%S.%f')
+output Code: datetime.strptime('%Y-%m-%d %H:%M:%S.%f')
+bleu_metric: 81.09472663803265
+----------
+Natural Language: find the index of a list with the first element equal to '332' within the list of lists `thelist`
+ref Code: [index for index, item in enumerate(thelist) if item[0] == '332']
+output Code: [item for item in thelist if item[0] == '332']
+bleu_metric: 54.43826847859078
+----------
+Natural Language: lower a string `text` and remove non-alphanumeric characters aside from space
+ref Code: re.sub('[^\\sa-zA-Z0-9]', '', text).lower().strip()
+output Code: re.sub('[^0-9A-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Z]', '', text)
+bleu_metric: 25.979020944640624
+----------
+Natural Language: remove all non-alphanumeric characters except space from a string `text` and lower it
+ref Code: re.sub('(?!\\s)[\\W_]', '', text).lower().strip()
+output Code: re.sub('[^0-9A-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Z]', '', text)
+bleu_metric: 20.468381241489393
+----------
+Natural Language: subscript text 'h20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.
+ref Code: plt.plot(x, y, label='H\u2082O')
+output Code: plt.show()
+bleu_metric: 6.117046115680378
+----------
+Natural Language: subscript text 'h20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.
+ref Code: plt.plot(x, y, label='$H_2O$')
+output Code: plt.show()
+bleu_metric: 6.117046115680378
+----------
+Natural Language: loop over a list `mylist` if sublists length equals 3
+ref Code: [x for x in mylist if len(x) == 3]
+output Code: [len(myList) for subList, len(myList) == 3]
+bleu_metric: 32.33842870691161
+----------
+Natural Language: initialize a list `lst` of 100 objects object()
+ref Code: lst = [Object() for _ in range(100)]
+output Code: [x for x in lst if x[0] == 100]
+bleu_metric: 12.512236921161914
+----------
+Natural Language: create list `lst` containing 100 instances of object `object`
+ref Code: lst = [Object() for i in range(100)]
+output Code: lst = [[x for x in object for x in range(100)] for x in lst]
+bleu_metric: 31.751444361869968
+----------
+Natural Language: get the content of child tag with`href` attribute whose parent has css `someclass`
+ref Code: self.driver.find_element_by_css_selector('.someclass a').get_attribute('href')
+output Code: print(soup.find('someClass', 'href'))
+bleu_metric: 23.21387101278415
+----------
+Natural Language: joining data from dataframe `df1` with data from dataframe `df2` based on matching values of column 'date_time' in both dataframes
+ref Code: df1.merge(df2, on='Date_Time')
+output Code: pd.merge(df1, df2, how='Date_time', on=['Date_time'])
+bleu_metric: 18.70222963555319
+----------
+Natural Language: use `%s` operator to print variable values `str1` inside a string
+ref Code: 'first string is: %s, second one is: %s' % (str1, 'geo.tif')
+output Code: print(str1.lower())
+bleu_metric: 3.308426786106404
+----------
+Natural Language: split a string by a delimiter in python
+ref Code: [x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')]
+output Code: re.split('\\s*\\s*\\s*\\s*\\s*\\s*\\s*', a)
+bleu_metric: 9.930867787835721
+----------
+Natural Language: check if directory `directory ` exists and create it if necessary
+ref Code: if (not os.path.exists(directory)):
+    os.makedirs(directory)
+output Code: if os.path.isdir(directory)
+bleu_metric: 22.198393592766198
+----------
+Natural Language: check if a directory `path` exists and create it if necessary
+ref Code: try:
+    os.makedirs(path)
+except OSError:
+    if (not os.path.isdir(path)):
+        raise
+output Code: os.path.realpath(path)
+bleu_metric: 8.87965501059252
+----------
+Natural Language: check if a directory `path` exists and create it if necessary
+ref Code: distutils.dir_util.mkpath(path)
+output Code: os.path.realpath(path)
+bleu_metric: 42.728700639623405
+----------
+Natural Language: check if a directory `path` exists and create it if necessary
+ref Code: try:
+    os.makedirs(path)
+except OSError as exception:
+    if (exception.errno != errno.EEXIST):
+        raise
+output Code: os.path.realpath(path)
+bleu_metric: 4.910269751566815
+----------
+Natural Language: replace a separate word 'h3' by 'h1' in a string 'text'
+ref Code: re.sub('\\bH3\\b', 'H1', text)
+output Code: re.sub('(?<=\\w)(?=\\w)', 'H3', re.DOTALL)
+bleu_metric: 24.220403898000026
+----------
+Natural Language: substitute ascii letters in string 'aas30dsa20' with empty string ''
+ref Code: re.sub('\\D', '', 'aas30dsa20')
+output Code: """""".join('aas30dsa20')
+bleu_metric: 31.910644756075385
+----------
+Natural Language: get digits only from a string `aas30dsa20` using lambda function
+ref Code: """""".join([x for x in 'aas30dsa20' if x.isdigit()])
+output Code: """""".join([c for c in aas30dsa20 if c.isdigit()])
+bleu_metric: 62.67526444451589
+----------
+Natural Language: access a tag called "name" in beautifulsoup `soup`
+ref Code: print(soup.find('name').string)
+output Code: soup.findAll('name')
+bleu_metric: 41.821174310775156
+----------
+Natural Language: get a dictionary `records` of key-value pairs in pymongo cursor `cursor`
+ref Code: records = dict((record['_id'], record) for record in cursor)
+output Code: cursor.find_elements_by_css_selector(['records']).dict()
+bleu_metric: 14.073199831116506
+----------
+Natural Language: create new matrix object  by concatenating data from matrix a and matrix b
+ref Code: np.concatenate((A, B))
+output Code: numpy.dot(numpy.dot(a, b))
+bleu_metric: 19.5647514979229
+----------
+Natural Language: concat two matrices `a` and `b` in numpy
+ref Code: np.vstack((A, B))
+output Code: np.concat(a, b)
+bleu_metric: 20.34404485471534
+----------
+Natural Language: get the characters count in a file `filepath`
+ref Code: os.stat(filepath).st_size
+output Code: sum(1 for char in filepath if line.startswith('\n'))
+bleu_metric: 8.097785064266201
+----------
+Natural Language: count the occurrences of item "a" in list `l`
+ref Code: l.count('a')
+output Code: Counter({'a': [1, 2, 3], 'a': [1, 2, 3]})
+bleu_metric: 9.60587088155178
+----------
+Natural Language: count the occurrences of items in list `l`
+ref Code: Counter(l)
+output Code: sum(1 for i in l)
+bleu_metric: 27.776190340117914
+----------
+Natural Language: count the occurrences of items in list `l`
+ref Code: [[x, l.count(x)] for x in set(l)]
+output Code: sum(1 for i in l)
+bleu_metric: 6.051528258124341
+----------
+Natural Language: count the occurrences of items in list `l`
+ref Code: dict(((x, l.count(x)) for x in set(l)))
+output Code: sum(1 for i in l)
+bleu_metric: 5.362632001400939
+----------
+Natural Language: count the occurrences of item "b" in list `l`
+ref Code: l.count('b')
+output Code: Counter({'b': [1, 2, 3], 'b': [1, 2, 3]})
+bleu_metric: 9.60587088155178
+----------
+Natural Language: copy file `srcfile` to directory `dstdir`
+ref Code: shutil.copy(srcfile, dstdir)
+output Code: srcfile = os.path.join(dstdir)
+bleu_metric: 24.384183193426086
+----------
+Natural Language: find the key associated with the largest value in dictionary `x` whilst key is non-zero value
+ref Code: max(k for k, v in x.items() if v != 0)
+output Code: max(x, key=lambda x: x[1])
+bleu_metric: 10.970270231176839
+----------
+Natural Language: get the largest key whose not associated with value of 0 in dictionary `x`
+ref Code: (k for k, v in x.items() if v != 0)
+output Code: max(x, key=lambda x: x[1])
+bleu_metric: 9.58730456809568
+----------
+Natural Language: get the largest key in a dictionary `x` with non-zero value
+ref Code: max(k for k, v in x.items() if v != 0)
+output Code: max(x, key=operator.itemgetter(0))
+bleu_metric: 12.7452432766362
+----------
+Natural Language: put the curser at beginning of the file
+ref Code: file.seek(0)
+output Code: time.sleep(1)
+bleu_metric: 27.776190340117914
+----------
+Natural Language: combine values from column 'b' and column 'a' of dataframe `df`  into column 'c' of datafram `df`
+ref Code: df['c'] = np.where(df['a'].isnull, df['b'], df['a'])
+output Code: df['A'] = df['C'].apply(lambda x: x.tolist())
+bleu_metric: 14.993393374733472
+----------
+Natural Language: remove key 'ele' from dictionary `d`
+ref Code: del d['ele']
+output Code: dict((k, v) for k, v in d.items() if v!= 'ele')
+bleu_metric: 9.615094003919298
+----------
+Natural Language: update datetime field in `mymodel` to be the existing `timestamp` plus 100 years
+ref Code: MyModel.objects.update(timestamp=F('timestamp') + timedelta(days=36524.25))
+output Code: datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+bleu_metric: 8.736820732355158
+----------
+Natural Language: merge list `['it']` and list `['was']` and list `['annoying']` into one list
+ref Code: ['it'] + ['was'] + ['annoying']
+output Code: list(itertools.chain(['it', ['was'], ['annoying']]))
+bleu_metric: 40.214612768560634
+----------
+Natural Language: increment a value with leading zeroes in a number `x`
+ref Code: str(int(x) + 1).zfill(len(x))
+output Code: sum(x + 1) + sum(x) + sum(y)
+bleu_metric: 30.151602827651754
+----------
+Natural Language: check if a pandas dataframe `df`'s index is sorted
+ref Code: all(df.index[:-1] <= df.index[1:])
+output Code: df.index.sort()
+bleu_metric: 7.510537410248026
+----------
+Natural Language: convert tuple `t` to list
+ref Code: list(t)
+output Code: list(t)
+bleu_metric: 100.0
+----------
+Natural Language: convert list `t` to tuple
+ref Code: tuple(l)
+output Code: tuple(map(t, zip(*t)))
+bleu_metric: 14.62806365365753
+----------
+Natural Language: convert tuple `level1` to list
+ref Code: level1 = map(list, level1)
+output Code: list(level1)
+bleu_metric: 25.267624512808524
+----------
+Natural Language: send the output of pprint object `dataobject` to file `logfile`
+ref Code: pprint.pprint(dataobject, logFile)
+output Code: logfile.close()
+bleu_metric: 16.959011078459056
+----------
+Natural Language: get index of rows in column 'boolcol'
+ref Code: df.loc[df['BoolCol']]
+output Code: df['Boolcol'].index
+bleu_metric: 19.745471508497758
+----------
+Natural Language: create a list containing the indexes of rows where the value of column 'boolcol' in dataframe `df` are equal to true
+ref Code: df.iloc[np.flatnonzero(df['BoolCol'])]
+output Code: df['boolcol'] = np.where(df['boolcol'] == True)
+bleu_metric: 22.067731046885495
+----------
+Natural Language: get list of indexes of rows where column 'boolcol' values match true
+ref Code: df[df['BoolCol'] == True].index.tolist()
+output Code: [i for i, j in enumerate(boolcol_data) if j == True]
+bleu_metric: 19.696069937694595
+----------
+Natural Language: get index of rows in dataframe `df` which column 'boolcol' matches value true
+ref Code: df[df['BoolCol']].index.tolist()
+output Code: df.index.get_values('boolcol').reset_index()
+bleu_metric: 21.18586626167472
+----------
+Natural Language: change working directory to the directory `owd`
+ref Code: os.chdir(owd)
+output Code: os.chdir('owd')
+bleu_metric: 46.71379777282001
+----------
+Natural Language: insert data from a string `testfield` to sqlite db `c`
+ref Code: c.execute("INSERT INTO test VALUES (?, 'bar')", (testfield,))
+output Code: cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (testfield,))
+bleu_metric: 51.362687359130376
+----------
+Natural Language: decode string "\\x89\\n" into a normal string
+ref Code: """\\x89\\n""".decode('string_escape')
+output Code: """\\x89\\n""".decode('ascii', 'ignore')
+bleu_metric: 72.97349727547102
+----------
+Natural Language: convert a raw string `raw_string` into a normal string
+ref Code: raw_string.decode('string_escape')
+output Code: """""".join(map(str, raw_string))
+bleu_metric: 11.451997463067553
+----------
+Natural Language: convert a raw string `raw_byte_string` into a normal string
+ref Code: raw_byte_string.decode('unicode_escape')
+output Code: 'raw_byte_string'.encode('ascii')
+bleu_metric: 24.712442545253584
+----------
+Natural Language: split a string `s` with into all strings of repeated characters
+ref Code: [m.group(0) for m in re.finditer('(\\d)\\1*', s)]
+output Code: re.findall('[a-zA-Z]+', s)
+bleu_metric: 13.128146945476324
+----------
+Natural Language: scatter a plot with x, y position of `np.random.randn(100)` and face color equal to none
+ref Code: plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')
+output Code: plt.show()
+bleu_metric: 0.8278521686370256
+----------
+Natural Language: do a scatter plot with empty circles
+ref Code: plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')
+output Code: plt.show()
+bleu_metric: 0.42503347540650505
+----------
+Natural Language: remove a div with a id `main-content` using beautifulsoup
+ref Code: soup.find('div', id='main-content').decompose()
+output Code: soup.select('div[id="main-content"]')
+bleu_metric: 43.88449974970492
+----------
+Natural Language: filter rows containing key word `ball` in column `ids`
+ref Code: df[df['ids'].str.contains('ball')]
+output Code: [(d['ids'], df['ball']) for df in df['ids']]
+bleu_metric: 28.64900351806976
+----------
+Natural Language: convert index at level 0 into a column in dataframe `df`
+ref Code: df.reset_index(level=0, inplace=True)
+output Code: df['index'] = df['index'].index.tolist()
+bleu_metric: 9.936036078831874
+----------
+Natural Language: add indexes in a data frame `df` to a column `index1`
+ref Code: df['index1'] = df.index
+output Code: df['index1'].append(index1)
+bleu_metric: 48.63383168079943
+----------
+Natural Language: convert pandas index in a dataframe to columns
+ref Code: df.reset_index(level=['tick', 'obs'])
+output Code: df.apply(lambda x: x.tolist(), axis=1)
+bleu_metric: 12.673718536830808
+----------
+Natural Language: get reverse of list items from list 'b' using extended slicing
+ref Code: [x[::-1] for x in b]
+output Code: [x[::-1] for x in b]
+bleu_metric: 100.0
+----------
+Natural Language: join each element in array `a` with element at the same index in array `b` as a tuple
+ref Code: np.array([zip(x, y) for x, y in zip(a, b)])
+output Code: A[(np.hstack(a[:, (None)]), np.hstack(b[0]))]
+bleu_metric: 12.488771902469447
+----------
+Natural Language: zip two 2-d arrays `a` and `b`
+ref Code: np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)
+output Code: zip(a, b)
+bleu_metric: 0.8555930511283262
+----------
+Natural Language: convert list `list_of_ints` into a comma separated string
+ref Code: """,""".join([str(i) for i in list_of_ints])
+output Code: """, """.join([str(i) for i in list_of_ints])
+bleu_metric: 100.0
+----------
+Natural Language: send a post request with raw data `data` and basic authentication with `username` and `password`
+ref Code: requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))
+output Code: response = requests.post('data', headers={'username': 'password'})
+bleu_metric: 23.54690070070193
+----------
+Natural Language: find last occurrence of character '}' in string "abcd}def}"
+ref Code: 'abcd}def}'.rfind('}')
+output Code: """abcd}def}"".rsplit('}', inplace=True)
+bleu_metric: 41.49398881615811
+----------
+Natural Language: iterate ove list `[1, 2, 3]` using list comprehension
+ref Code: print([item for item in [1, 2, 3]])
+output Code: [(1, 2, 3]) for i in range(3)]
+bleu_metric: 36.03194965824358
+----------
+Natural Language: extract all the values with keys 'x' and 'y' from a list of dictionaries `d` to list of tuples
+ref Code: [(x['x'], x['y']) for x in d]
+output Code: [d['x'], d['y']]
+bleu_metric: 42.457486362022664
+----------
+Natural Language: get the filename without the extension from file 'hemanth.txt'
+ref Code: print(os.path.splitext(os.path.basename('hemanth.txt'))[0])
+output Code: os.path.splitext('hemanth.txt')
+bleu_metric: 32.458954867263316
+----------
+Natural Language: create a dictionary by adding each two adjacent elements in tuple `x` as key/value pair to it
+ref Code: dict(x[i:i + 2] for i in range(0, len(x), 2))
+output Code: dict(zip(x[1::2], x[1::2]))
+bleu_metric: 16.359312690927595
+----------
+Natural Language: create a list containing flattened list `[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]`
+ref Code: values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])
+output Code: [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]
+bleu_metric: 31.01316961864567
+----------
+Natural Language: select rows in a dataframe `df` column 'closing_price' between two values 99 and 101
+ref Code: df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]
+output Code: df.loc[df['close_rice'] == 99, 'close_rice']
+bleu_metric: 12.178744650706369
+----------
+Natural Language: replace all occurences of newlines `\n` with `<br>` in dataframe `df`
+ref Code: df.replace({'\n': '<br>'}, regex=True)
+output Code: df['cumsum'] = np.replace('\n', '<br>')
+bleu_metric: 38.39817133079349
+----------
+Natural Language: replace all occurrences of a string `\n` by string `<br>` in a pandas data frame `df`
+ref Code: df.replace({'\n': '<br>'}, regex=True)
+output Code: df.replace(lambda x: x.replace('<br>', ''))
+bleu_metric: 35.71029859832319
+----------
+Natural Language: create a list containing each two adjacent letters in string `word` as its elements
+ref Code: [(x + y) for x, y in zip(word, word[1:])]
+output Code: list(str(x) for x in word.split('='))
+bleu_metric: 12.74842081393185
+----------
+Natural Language: get a list of pairs from a string `word` using lambda function
+ref Code: list(map(lambda x, y: x + y, word[:-1], word[1:]))
+output Code: [x[i] for i in word.split('=') if i else x[i]]
+bleu_metric: 6.619402853318388
+----------
+Natural Language: extract a url from a string `mystring`
+ref Code: print(re.findall('(https?://[^\\s]+)', myString))
+output Code: urllib.replace('', '')
+bleu_metric: 4.857367954226877
+----------
+Natural Language: extract a url from a string `mystring`
+ref Code: print(re.search('(?P<url>https?://[^\\s]+)', myString).group('url'))
+output Code: urllib.replace('', '')
+bleu_metric: 1.824232595075664
+----------
+Natural Language: remove all special characters, punctuation and spaces from a string `mystring` using regex
+ref Code: re.sub('[^A-Za-z0-9]+', '', mystring)
+output Code: """ """.join(re.sub('[^\\w\\s]+', '', mystring))
+bleu_metric: 42.54802555453605
+----------
+Natural Language: create a datetimeindex containing 13 periods of the second friday of each month starting from date '2016-01-01'
+ref Code: pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)
+output Code: datetime.datetime.now().strftime('2012-01-01')
+bleu_metric: 21.771888984292122
+----------
+Natural Language: create multidimensional array `matrix` with 3 rows and 2 columns in python
+ref Code: matrix = [[a, b], [c, d], [e, f]]
+output Code: matrix = [[[1, 2, 3], [4, 5, 6], [7, 8, 9]]]
+bleu_metric: 22.798055018612587
+----------
+Natural Language: replace spaces with underscore
+ref Code: mystring.replace(' ', '_')
+output Code: """""".join(c for c in s if c.isdigit())
+bleu_metric: 10.143683212438006
+----------
+Natural Language: get an absolute file path of file 'mydir/myfile.txt'
+ref Code: os.path.abspath('mydir/myfile.txt')
+output Code: os.path.abspath('mydir/myfile.txt')
+bleu_metric: 100.0
+----------
+Natural Language: split string `my_string` on white spaces
+ref Code: """ """.join(my_string.split())
+output Code: my_string.split(' ')
+bleu_metric: 18.574174173997463
+----------
+Natural Language: get filename without extension from file `filename`
+ref Code: os.path.splitext(filename)[0]
+output Code: os.path.splitext(filename)[0]
+bleu_metric: 100.0
+----------
+Natural Language: get a list containing the sum of each element `i` in list `l` plus the previous elements
+ref Code: [sum(l[:i]) for i, _ in enumerate(l)]
+output Code: [sum(i) for i in L]
+bleu_metric: 21.01319718790181
+----------
+Natural Language: split a string `docs/src/scripts/temp` by `/` keeping `/` in the result
+ref Code: """Docs/src/Scripts/temp""".replace('/', '/\x00/').split('\x00')
+output Code: print(docs/src/scripts/temp.split('/'))
+bleu_metric: 15.536825391101006
+----------
+Natural Language: shuffle columns of an numpy array 'r'
+ref Code: np.random.shuffle(np.transpose(r))
+output Code: arr = np.random.shuffle(arr[:, (1)])
+bleu_metric: 35.870004213153
+----------
+Natural Language: copy all values in a column 'b' to a new column 'd' in a pandas data frame 'df'
+ref Code: df['D'] = df['B']
+output Code: df['d'].copy(df['d'], df['b'])
+bleu_metric: 16.973628531343277
+----------
+Natural Language: find a value within nested json 'data' where the key inside another key 'b' is unknown.
+ref Code: list(data['A']['B'].values())[0]['maindata'][0]['Info']
+output Code: data['data']['b'] = 'data'
+bleu_metric: 10.247338863300733
+----------
+Natural Language: check characters of string `string` are true predication of function `predicate`
+ref Code: all(predicate(x) for x in string)
+output Code: """""".join(re.search('[\\s]+', string))
+bleu_metric: 8.085298080223222
+----------
+Natural Language: determine number of files on a drive with python
+ref Code: os.statvfs('/').f_files - os.statvfs('/').f_ffree
+output Code: dt.loc[i for i in files if i.startswith('.txt')]
+bleu_metric: 10.813005337959174
+----------
+Natural Language: how to get a single result from a sqlite query in python?
+ref Code: cursor.fetchone()[0]
+output Code: cursor.execute('INSERT INTO table VALUES (%s, %s, %s, %s)', (var1, var2, var3))
+bleu_metric: 5.730192069189415
+----------
+Natural Language: convert string `user_input` into a list of integers `user_list`
+ref Code: user_list = [int(number) for number in user_input.split(',')]
+output Code: user_list = [int(x) for x in user_input]
+bleu_metric: 27.311837203830613
+----------
+Natural Language: get a list of integers by splitting  a string `user` with comma
+ref Code: [int(s) for s in user.split(',')]
+output Code: [int(x) for x in user.split(',')]
+bleu_metric: 72.65407815865123
+----------
+Natural Language: sorting a python list by two criteria
+ref Code: sorted(list, key=lambda x: (x[0], -x[1]))
+output Code: sorted(a, key=lambda x: x[1])
+bleu_metric: 39.12317159998539
+----------
+Natural Language: sort a list of objects `ut`, based on a function `cmpfun` in descending order
+ref Code: ut.sort(key=cmpfun, reverse=True)
+output Code: sorted(unsorted, key=lambda x: f(x)[1], reverse=True)
+bleu_metric: 28.489318277723964
+----------
+Natural Language: reverse list `ut` based on the `count` attribute of each object
+ref Code: ut.sort(key=lambda x: x.count, reverse=True)
+output Code: [x[::-1] for x in user.split('count')]
+bleu_metric: 8.066974340737671
+----------
+Natural Language: sort a list of objects `ut` in reverse order by their `count` property
+ref Code: ut.sort(key=lambda x: x.count, reverse=True)
+output Code: sorted(unsorted, key=lambda x: x.count(x.index(x.items())))
+bleu_metric: 33.479801024432774
+----------
+Natural Language: click a href button 'send' with selenium
+ref Code: driver.find_element_by_partial_link_text('Send').click()
+output Code: driver.find_element_by_href('send').click()
+bleu_metric: 60.600320738082445
+----------
+Natural Language: click a href button having text `send inmail` with selenium
+ref Code: driver.findElement(By.linkText('Send InMail')).click()
+output Code: driver.find_element_by_href('send inmail').click()
+bleu_metric: 28.61601726348299
+----------
+Natural Language: click a href button with text 'send inmail' with selenium
+ref Code: driver.find_element_by_link_text('Send InMail').click()
+output Code: driver.find_element_by_href('send inmail').click()
+bleu_metric: 52.21307185746091
+----------
+Natural Language: cast an int `i` to a string and concat to string 'me'
+ref Code: 'ME' + str(i)
+output Code: """""".join((i.split()) for i in i)
+bleu_metric: 13.308442527111023
+----------
+Natural Language: sorting data in dataframe pandas
+ref Code: df.sort_values(['System_num', 'Dis'])
+output Code: data.sort(key=lambda x: x.index.get_level_values(x.values), reverse=True)
+bleu_metric: 7.6047020452233385
+----------
+Natural Language: prepend the line '#test firstline\n' to the contents of file 'infile' and save as the file 'outfile'
+ref Code: open('outfile', 'w').write('#test firstline\n' + open('infile').read())
+output Code: open('#test firstline\n', 'input').read().write('outfile')
+bleu_metric: 57.45952839376153
+----------
+Natural Language: sort a list `l` by length of value in tuple
+ref Code: l.sort(key=lambda t: len(t[1]), reverse=True)
+output Code: sorted(l, key=lambda x: len(x))
+bleu_metric: 16.96533925792523
+----------
+Natural Language: split string `s` by words that ends with 'd'
+ref Code: re.findall('\\b(\\w+)d\\b', s)
+output Code: s.split('D')
+bleu_metric: 5.5446735585517954
+----------
+Natural Language: return `true` if string `foobarrrr` contains regex `ba[rzd]`
+ref Code: bool(re.search('ba[rzd]', 'foobarrrr'))
+output Code: re.findall('\\b\\b', 'ba[azd]')
+bleu_metric: 22.115966812339867
+----------
+Natural Language: removing duplicates in list `t`
+ref Code: list(set(t))
+output Code: list(set(t))
+bleu_metric: 100.0
+----------
+Natural Language: removing duplicates in list `source_list`
+ref Code: list(set(source_list))
+output Code: print(sorted(list(source_list.items()), key=lambda x: x[1]))
+bleu_metric: 12.219667481477892
+----------
+Natural Language: removing duplicates in list `abracadabra`
+ref Code: list(OrderedDict.fromkeys('abracadabra'))
+output Code: print(list(itertools.chain.from_iterable(abacadabra.items())))
+bleu_metric: 15.316824552082009
+----------
+Natural Language: convert array `a` into a list
+ref Code: numpy.array(a).reshape(-1).tolist()
+output Code: list(map(int, a.split(',')))
+bleu_metric: 12.846189726767717
+----------
+Natural Language: convert the first row of numpy matrix `a` to a list
+ref Code: numpy.array(a)[0].tolist()
+output Code: list(map(int, a.split(',')[0]))
+bleu_metric: 21.893219730044315
+----------
+Natural Language: in `soup`, get the content of the sibling of the `td`  tag with text content `address:`
+ref Code: print(soup.find(text='Address:').findNext('td').contents[0])
+output Code: print(soup.find('td', 'address:'))
+bleu_metric: 29.77440294068931
+----------
+Natural Language: convert elements of each tuple in list `l` into a string  separated by character `@`
+ref Code: """ """.join([('%d@%d' % t) for t in l])
+output Code: """""".join(l)
+bleu_metric: 24.073303385626694
+----------
+Natural Language: convert each tuple in list `l` to a string with '@' separating the tuples' elements
+ref Code: """ """.join([('%d@%d' % (t[0], t[1])) for t in l])
+output Code: """""".join(l)
+bleu_metric: 11.15483140510856
+----------
+Natural Language: get the html from the current web page of a selenium driver
+ref Code: driver.execute_script('return document.documentElement.outerHTML;')
+output Code: driver.get('http://stackoverflow.com')
+bleu_metric: 18.6459295510351
+----------
+Natural Language: get all matches with regex pattern `\\d+[xx]` in list of string `teststr`
+ref Code: [i for i in teststr if re.search('\\d+[xX]', i)]
+output Code: re.search('\\d+[xx]', teststr)
+bleu_metric: 38.12672739705494
+----------
+Natural Language: select values from column 'a' for which corresponding values in column 'b' will be greater than 50, and in column 'c' - equal 900 in dataframe `df`
+ref Code: df['A'][(df['B'] > 50) & (df['C'] == 900)]
+output Code: df.loc[df['A'] > 50], df['B'] = 900
+bleu_metric: 40.302524041212365
+----------
+Natural Language: sort dictionary `o` in ascending order based on its keys and items
+ref Code: sorted(o.items())
+output Code: sorted(list(o.items()), key=operator.itemgetter(1), reverse=True)
+bleu_metric: 29.452884374019472
+----------
+Natural Language: get sorted list of keys of dict `d`
+ref Code: sorted(d)
+output Code: sorted(d, key=d.get)
+bleu_metric: 25.21193618434983
+----------
+Natural Language: how to sort dictionaries by keys in python
+ref Code: sorted(d.items())
+output Code: sorted(list(d.items()), key=lambda key: key[key]['key'], reverse=True)
+bleu_metric: 23.650112439814173
+----------
+Natural Language: convert string "1" into integer
+ref Code: int('1')
+output Code: int('1', 16)
+bleu_metric: 58.143073696821936
+----------
+Natural Language: function to convert strings into integers
+ref Code: int()
+output Code: map(int, f(int, 16))
+bleu_metric: 15.537125692760354
+----------
+Natural Language: convert items in `t1` to integers
+ref Code: T2 = [map(int, x) for x in T1]
+output Code: map(int, t1.split(','))
+bleu_metric: 24.915540491572113
+----------
+Natural Language: call a shell script `./test.sh` using subprocess
+ref Code: subprocess.call(['./test.sh'])
+output Code: subprocess.call(['./test.sh', 'test.sh'], shell=True)
+bleu_metric: 53.57872551789357
+----------
+Natural Language: call a shell script `notepad` using subprocess
+ref Code: subprocess.call(['notepad'])
+output Code: subprocess.call('notepad', shell=True)
+bleu_metric: 39.073802494525
+----------
+Natural Language: combine lists `l1` and `l2`  by alternating their elements
+ref Code: [val for pair in zip(l1, l2) for val in pair]
+output Code: zip(*l1, l2)
+bleu_metric: 15.206849973654688
+----------
+Natural Language: encode string 'data to be encoded'
+ref Code: encoded = base64.b64encode('data to be encoded')
+output Code: data.encode('utf-8')
+bleu_metric: 20.625141357032835
+----------
+Natural Language: encode a string `data to be encoded` to `ascii` encoding
+ref Code: encoded = 'data to be encoded'.encode('ascii')
+output Code: data.encode('ascii', 'ignore')
+bleu_metric: 44.18119774774517
+----------
+Natural Language: parse tab-delimited csv file 'text.txt' into a list
+ref Code: lol = list(csv.reader(open('text.txt', 'rb'), delimiter='\t'))
+output Code: list(open('text.txt', 'r').read())
+bleu_metric: 37.62935860819858
+----------
+Natural Language: get attribute `my_str` of object `my_object`
+ref Code: getattr(my_object, my_str)
+output Code: getattr(my_str, my_object)
+bleu_metric: 34.5720784641941
+----------
+Natural Language: group a list of dicts `ld` into one dict by key
+ref Code: print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))
+output Code: dict((k, v) for k, v in list(d.items()))
+bleu_metric: 21.010344035821955
+----------
+Natural Language: how do i sum the first value in each tuple in a list of tuples in python?
+ref Code: sum([pair[0] for pair in list_of_pairs])
+output Code: sum(x[0] for x in tuple_list)
+bleu_metric: 32.21542689451684
+----------
+Natural Language: convert unicode string u"{'code1':1,'code2':1}" into dictionary
+ref Code: d = ast.literal_eval("{'code1':1,'code2':1}")
+output Code: dict(('{'code1':1, 'code2':1}'.encode('utf-8'))
+bleu_metric: 58.22643315629124
+----------
+Natural Language: find all words in a string `mystring` that start with the `$` sign
+ref Code: [word for word in mystring.split() if word.startswith('$')]
+output Code: [word for word in mystring if word.startswith('$')]
+bleu_metric: 72.63578693533734
+----------
+Natural Language: remove any url within string `text`
+ref Code: text = re.sub('^https?:\\/\\/.*[\\r\\n]*', '', text, flags=re.MULTILINE)
+output Code: re.sub('(?<=\\w)(?=\\w)', '', text)
+bleu_metric: 23.617310796319327
+----------
+Natural Language: replace all elements in array `a` that are not present in array `[1, 3, 4]` with zeros
+ref Code: np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)
+output Code: np.replace(a, np.nonzero(a), [1, 3, 4])
+bleu_metric: 33.550992261930325
+----------
+Natural Language: calculate mean across dimension in a 2d array `a`
+ref Code: np.mean(a, axis=1)
+output Code: np.mean(a, axis=0)
+bleu_metric: 76.91605673134586
+----------
+Natural Language: running r script '/pathto/myrscript.r' from python
+ref Code: subprocess.call(['/usr/bin/Rscript', '--vanilla', '/pathto/MyrScript.r'])
+output Code: subprocess.call(['/pathto/myscript.r', '/pathto/myscript.r'])
+bleu_metric: 47.285901226512564
+----------
+Natural Language: run r script '/usr/bin/rscript --vanilla /pathto/myrscript.r'
+ref Code: subprocess.call('/usr/bin/Rscript --vanilla /pathto/MyrScript.r', shell=True)
+output Code: os.system('/usr/bin/rscript --vanille /pathto/myscript.r')
+bleu_metric: 35.69703367459909
+----------
+Natural Language: add a header to a csv file
+ref Code: writer.writeheader()
+output Code: writer.writeheader()
+bleu_metric: 100.0
+----------
+Natural Language: replacing nan in the dataframe `df` with row average
+ref Code: df.fillna(df.mean(axis=1), axis=1)
+output Code: df.replace(np.isnan(a), axis=1)
+bleu_metric: 42.66333374870424
+----------
+Natural Language: convert unix timestamp '1347517370' to formatted string '%y-%m-%d %h:%m:%s'
+ref Code: time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
+output Code: datetime.datetime.strptime('13475173730', '%Y-%m-%d %H:%M:%S')
+bleu_metric: 63.781660962369656
+----------
+Natural Language: call a base class's class method `do` from derived class `derived`
+ref Code: super(Derived, cls).do(a)
+output Code: super(Do, self).__init__(*args, **kwargs)
+bleu_metric: 14.879641171245488
+----------
+Natural Language: selecting rows in numpy ndarray 'a', where the value in the first column is 0 and value in the second column is 1
+ref Code: a[np.where((a[:, (0)] == 0) * (a[:, (1)] == 1))]
+output Code: a[np.in1d(a[:, (1)], a[:, (1)])]
+bleu_metric: 43.46263775400843
+----------
+Natural Language: separate words delimited by one or more spaces into a list
+ref Code: re.split(' +', 'hello world sample text')
+output Code: list(re.findall('\\s+', s))
+bleu_metric: 20.10537345406003
+----------
+Natural Language: length of longest element in list `words`
+ref Code: len(max(words, key=len))
+output Code: words[:len(words) - len(words)]
+bleu_metric: 16.943571815930884
+----------
+Natural Language: get the value associated with unicode key 'from_user' of first dictionary in list `result`
+ref Code: result[0]['from_user']
+output Code: result['from_user']
+bleu_metric: 58.86416376147709
+----------
+Natural Language: retrieve each line from a file 'file.txt' as a list
+ref Code: [line.split() for line in open('File.txt')]
+output Code: [line.strip('file.txt') for line in open('file.txt')]
+bleu_metric: 54.11953360894813
+----------
+Natural Language: swap keys with values in a dictionary `a`
+ref Code: res = dict((v, k) for k, v in a.items())
+output Code: {k: a.get(k, v) for k, v in a.items()}
+bleu_metric: 48.522770211183925
+----------
+Natural Language: open a file `path/to/file_name.ext` in write mode
+ref Code: new_file = open('path/to/FILE_NAME.ext', 'w')
+output Code: f = open(path/to/file_name.ext)
+bleu_metric: 26.652341430843617
+----------
+Natural Language: how to count distinct values in a column of a pandas group by object?
+ref Code: df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()
+output Code: df.groupby(level=['a', 'b']).agg(lambda x: x.index.get_level_values())
+bleu_metric: 22.963869978965583
+----------
+Natural Language: check if any key in the dictionary `dict1` starts with the string `emp$$`
+ref Code: any(key.startswith('EMP$$') for key in dict1)
+output Code: any(key for key in dict1.startswith('emp$$'))
+bleu_metric: 53.265095058116096
+----------
+Natural Language: create list of values from dictionary `dict1` that have a key that starts with 'emp$$'
+ref Code: [value for key, value in list(dict1.items()) if key.startswith('EMP$$')]
+output Code: [d['emp$$'] for d in dict1 if 'emp$$' in d]
+bleu_metric: 11.67971859414439
+----------
+Natural Language: convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`
+ref Code: pd.DataFrame({'email': sf.index, 'list': sf.values})
+output Code: df['email'] = df['email'].apply(lambda x: x.tolist())
+bleu_metric: 12.286996020967837
+----------
+Natural Language: print elements of list `list` seperated by tabs `\t`
+ref Code: print('\t'.join(map(str, list)))
+output Code: print('\t'.join([str(i) for i in list]))
+bleu_metric: 48.522770211183925
+----------
+Natural Language: print unicode string '\xd0\xbf\xd1\x80\xd0\xb8' with utf-8
+ref Code: print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('raw_unicode_escape'))
+output Code: print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('utf-8'))
+bleu_metric: 82.66114125804572
+----------
+Natural Language: encode a latin character in string `sopet\xc3\xb3n` properly
+ref Code: 'Sopet\xc3\xb3n'.encode('latin-1').decode('utf-8')
+output Code: sopet\xc3\xb3n.encode('latin')
+bleu_metric: 21.252609690759098
+----------
+Natural Language: resized image `image` to width, height of `(x, y)` with filter of `antialias`
+ref Code: image = image.resize((x, y), Image.ANTIALIAS)
+output Code: image.image.set_major_formatter(x, y)
+bleu_metric: 30.607367875325103
+----------
+Natural Language: regex, find "n"s only in the middle of string `s`
+ref Code: re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)
+output Code: re.findall('\\d+', 'n', s)
+bleu_metric: 18.288878972354166
+----------
+Natural Language: display the float `1/3*100` as a percentage
+ref Code: print('{0:.0f}%'.format(1.0 / 3 * 100))
+output Code: print('%.2f' % (1,3*100))
+bleu_metric: 30.361690293033565
+----------
+Natural Language: sort a list of dictionary `mylist` by the key `title`
+ref Code: mylist.sort(key=lambda x: x['title'])
+output Code: mylist.sort(key=operator.itemgetter('title'))
+bleu_metric: 43.3579055011877
+----------
+Natural Language: sort a list `l` of dicts by dict value 'title'
+ref Code: l.sort(key=lambda x: x['title'])
+output Code: sorted(L, key=itemgetter('title'))
+bleu_metric: 18.47828030497187
+----------
+Natural Language: sort a list of dictionaries by the value of keys 'title', 'title_url', 'id' in ascending order.
+ref Code: l.sort(key=lambda x: (x['title'], x['title_url'], x['id']))
+output Code: sorted(list(data.items()), key=lambda x: x[1]['title'], reverse=True)
+bleu_metric: 33.29469858478609
+----------
+Natural Language: find 10 largest differences between each respective elements of list `l1` and list `l2`
+ref Code: heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))
+output Code: max(i, j) / j for i, j in zip(l1, l2)
+bleu_metric: 6.5684872741326945
+----------
+Natural Language: beautifulsoup find all 'span' elements in html string `soup` with class of 'stargryb sp'
+ref Code: soup.find_all('span', {'class': 'starGryB sp'})
+output Code: soup.findAll('span', class_='stargryb')
+bleu_metric: 25.049995525110475
+----------
+Natural Language: write records in dataframe `df` to table 'test' in schema 'a_schema'
+ref Code: df.to_sql('test', engine, schema='a_schema')
+output Code: df.to_pickle('test')
+bleu_metric: 23.118543024585154
+----------
+Natural Language: extract brackets from string `s`
+ref Code: brackets = re.sub('[^(){}[\\]]', '', s)
+output Code: re.findall('\\[(\\[\\]+)\\]+', s)
+bleu_metric: 31.823566221963034
+----------
+Natural Language: remove duplicate elements from list 'l'
+ref Code: list(dict((x[0], x) for x in L).values())
+output Code: [item for sublist in l for item in sublist]
+bleu_metric: 5.82510562100381
+----------
+Natural Language: read a file `file` without newlines
+ref Code: [line.rstrip('\n') for line in file]
+output Code: file = open(file, 'r').readlines()
+bleu_metric: 12.107470158860224
+----------
+Natural Language: get the position of item 1 in `testlist`
+ref Code: [i for (i, x) in enumerate(testlist) if (x == 1)]
+output Code: print(list(itertools.product([1, 2], repeat=3)))
+bleu_metric: 8.433698395773412
+----------
+Natural Language: get the position of item 1 in `testlist`
+ref Code: [i for (i, x) in enumerate(testlist) if (x == 1)]
+output Code: print(list(itertools.product([1, 2], repeat=3)))
+bleu_metric: 8.433698395773412
+----------
+Natural Language: get the position of item 1 in `testlist`
+ref Code: for i in [i for (i, x) in enumerate(testlist) if (x == 1)]:
+    pass
+output Code: print(list(itertools.product([1, 2], repeat=3)))
+bleu_metric: 7.166143002586768
+----------
+Natural Language: get the position of item 1 in `testlist`
+ref Code: for i in (i for (i, x) in enumerate(testlist) if (x == 1)):
+    pass
+output Code: print(list(itertools.product([1, 2], repeat=3)))
+bleu_metric: 8.142310462414642
+----------
+Natural Language: get the position of item 1 in `testlist`
+ref Code: gen = (i for (i, x) in enumerate(testlist) if (x == 1))
+for i in gen:
+    pass
+output Code: print(list(itertools.product([1, 2], repeat=3)))
+bleu_metric: 7.058388992771936
+----------
+Natural Language: get the position of item `element` in list `testlist`
+ref Code: print(testlist.index(element))
+output Code: [item for item in testlist if item[0] == 1]
+bleu_metric: 7.994607499472013
+----------
+Natural Language: get the position of item `element` in list `testlist`
+ref Code: try:
+    print(testlist.index(element))
+except ValueError:
+    pass
+output Code: [item for item in testlist if item[0] == 1]
+bleu_metric: 7.223943354597203
+----------
+Natural Language: find the first element of the tuple with the maximum second element in a list of tuples `lis`
+ref Code: max(lis, key=lambda item: item[1])[0]
+output Code: map(max(lis, key=lambda x: (x[1], x[1]), key=lambda x: x[1]))
+bleu_metric: 27.14872600627347
+----------
+Natural Language: get the item at index 0 from the tuple that has maximum value at index 1 in list `lis`
+ref Code: max(lis, key=itemgetter(1))[0]
+output Code: max(enumerate(a), key=lambda x: x[0])[0]
+bleu_metric: 30.702571862234084
+----------
+Natural Language: make a delay of 1 second
+ref Code: time.sleep(1)
+output Code: time.sleep(1)
+bleu_metric: 100.0
+----------
+Natural Language: convert list of tuples `l` to a string
+ref Code: """, """.join('(' + ', '.join(i) + ')' for i in L)
+output Code: """""".join(l)
+bleu_metric: 14.164334116374599
+----------
+Natural Language: django set default value of field `b` equal to '0000000'
+ref Code: b = models.CharField(max_length=7, default='0000000', editable=False)
+output Code: super(BaseModel, self).save(*args, **kwargs)
+bleu_metric: 8.868973791573607
+----------
+Natural Language: sort lis `list5` in ascending order based on the degrees value of its elements
+ref Code: sorted(list5, lambda x: (degree(x), x))
+output Code: sorted(list5, key=lambda x: int(x[1]))
+bleu_metric: 33.48865558065726
+----------
+Natural Language: how do i perform secondary sorting in python?
+ref Code: sorted(list5, key=lambda vertex: (degree(vertex), vertex))
+output Code: sys.stdout.flush()
+bleu_metric: 5.734190771186066
+----------
+Natural Language: convert a list  into a generator object
+ref Code: (n for n in [1, 2, 3, 5])
+output Code: list(itertools.product(*list))
+bleu_metric: 9.336422302412362
+----------
+Natural Language: remove elements from list `oldlist` that have an index number mentioned in list `removelist`
+ref Code: newlist = [v for i, v in enumerate(oldlist) if i not in removelist]
+output Code: [x for x in oldlist if x[0] =='removelist']
+bleu_metric: 10.864847598285632
+----------
+Natural Language: open a file `yourfile.txt` in write mode
+ref Code: f = open('yourfile.txt', 'w')
+output Code: f = open('yourfile.txt', 'w')
+bleu_metric: 100.0
+----------
+Natural Language: get attribute 'attr' from object `obj`
+ref Code: getattr(obj, 'attr')
+output Code: getattr(obj, 'attr')
+bleu_metric: 100.0
+----------
+Natural Language: convert tuple of tuples `(('aa',), ('bb',), ('cc',))` to tuple
+ref Code: from functools import reduce
+reduce(lambda a, b: a + b, (('aa',), ('bb',), ('cc',)))
+output Code: tuple(map(tuple, (('aa',), ('bb',), ('cc',))))
+bleu_metric: 62.62200753637781
+----------
+Natural Language: convert tuple of tuples `(('aa',), ('bb',), ('cc',))` to list in one line
+ref Code: map(lambda a: a[0], (('aa',), ('bb',), ('cc',)))
+output Code: list((('aa',), ('bb',), ('cc',)))
+bleu_metric: 68.40417582919956
+----------
+Natural Language: python pandas: how to replace a characters in a column of a dataframe?
+ref Code: df['range'].replace(',', '-', inplace=True)
+output Code: df.applymap(lambda x: x.replace('\t', ''))
+bleu_metric: 23.716753272538575
+----------
+Natural Language: unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`
+ref Code: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+output Code: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+bleu_metric: 93.90594412706362
+----------
+Natural Language: unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`
+ref Code: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+output Code: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+bleu_metric: 93.90594412706362
+----------
+Natural Language: unzip list `original`
+ref Code: result = ([a for (a, b) in original], [b for (a, b) in original])
+output Code: original = [x for x in zip(* Original)]
+bleu_metric: 4.862611186225069
+----------
+Natural Language: unzip list `original` and return a generator
+ref Code: result = ((a for (a, b) in original), (b for (a, b) in original))
+output Code: zip(* Original)
+bleu_metric: 0.7985269443272172
+----------
+Natural Language: unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]`
+ref Code: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+output Code: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+bleu_metric: 94.87791694817466
+----------
+Natural Language: unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]` and fill empty results with none
+ref Code: map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+output Code: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+bleu_metric: 91.86576221781797
+----------
+Natural Language: encode `decimal('3.9')` to a json string
+ref Code: json.dumps(Decimal('3.9'))
+output Code: json.dumps(string.encode('decimal('0.9)'))
+bleu_metric: 33.24684441805843
+----------
+Natural Language: add key "mynewkey" to dictionary `d` with value "mynewvalue"
+ref Code: d['mynewkey'] = 'mynewvalue'
+output Code: d = {'mynewkey':'mynewvalue'}
+bleu_metric: 30.576902884505113
+----------
+Natural Language: add key 'a' to dictionary `data` with value 1
+ref Code: data.update({'a': 1, })
+output Code: data.append('a')
+bleu_metric: 20.973855958121106
+----------
+Natural Language: add key 'a' to dictionary `data` with value 1
+ref Code: data.update(dict(a=1))
+output Code: data.append('a')
+bleu_metric: 18.204651199034362
+----------
+Natural Language: add key 'a' to dictionary `data` with value 1
+ref Code: data.update(a=1)
+output Code: data.append('a')
+bleu_metric: 25.406637407730738
+----------
+Natural Language: find maximal value in matrix `matrix`
+ref Code: max([max(i) for i in matrix])
+output Code: np.tile(np.tile(matrix))
+bleu_metric: 14.306067650066016
+----------
+Natural Language: round number `answer` to 2 precision after the decimal point
+ref Code: answer = str(round(answer, 2))
+output Code: round(answer, 2)
+bleu_metric: 44.235082442615145
+----------
+Natural Language: extract ip address from an html string
+ref Code: ip = re.findall('[0-9]+(?:\\.[0-9]+){3}', s)
+output Code: re.findall('\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$', s)
+bleu_metric: 21.560289845650406
+----------
+Natural Language: filter dataframe `df` by values in column `a` that appear more than once
+ref Code: df.groupby('A').filter(lambda x: len(x) > 1)
+output Code: df[df.index.map(lambda x: x * x, axis=1)]
+bleu_metric: 21.23654459906611
+----------
+Natural Language: append each line in file `myfile` into a list
+ref Code: [x for x in myfile.splitlines() if x != '']
+output Code: [['myfile','myfile'], ['myfile']]
+bleu_metric: 12.879862858915844
+----------
+Natural Language: get a list of integers `lst` from a file `filename.txt`
+ref Code: lst = map(int, open('filename.txt').readlines())
+output Code: [int(x) for x in open(filename.txt)]
+bleu_metric: 15.595428010476631
+----------
+Natural Language: add color bar with image `mappable` to plot `plt`
+ref Code: plt.colorbar(mappable=mappable, cax=ax3)
+output Code: plt.show()
+bleu_metric: 11.914378950211951
+----------
+Natural Language: count most frequent 100 words in column 'text' of dataframe `df`
+ref Code: Counter(' '.join(df['text']).split()).most_common(100)
+output Code: df.groupby('text').agg(lambda x: x.lower().strftime('%s'))
+bleu_metric: 15.100671655022255
+----------
+Natural Language: python split a string using regex
+ref Code: re.findall('(.+?):(.+?)\\b ?', text)
+output Code: re.split('(\\d+)', s)
+bleu_metric: 13.79038281208857
+----------
+Natural Language: generate all 2-element subsets of tuple `(1, 2, 3)`
+ref Code: list(itertools.combinations((1, 2, 3), 2))
+output Code: from functools import reduce reduce(lambda x, y: x * y, [1, 2, 3))
+bleu_metric: 28.880056375088657
+----------
+Natural Language: get a value of datetime.today() in the utc time zone
+ref Code: datetime.now(pytz.utc)
+output Code: today = datetime.utcnow().today()
+bleu_metric: 18.70361278311548
+----------
+Natural Language: get a new list `list2`by removing empty list from a list of lists `list1`
+ref Code: list2 = [x for x in list1 if x != []]
+output Code: list2 = [x for x in list1 if x is not None]
+bleu_metric: 65.18437572109326
+----------
+Natural Language: create `list2` to contain the lists from list `list1` excluding the empty lists from `list1`
+ref Code: list2 = [x for x in list1 if x]
+output Code: list2 = [i for i in list1 if i!= 0]
+bleu_metric: 25.336549464486463
+----------
+Natural Language: django response with json `data`
+ref Code: return HttpResponse(data, mimetype='application/json')
+output Code: return HttpResponse(json.dumps(data))
+bleu_metric: 28.869104408775886
+----------
+Natural Language: get all text that is not enclosed within square brackets in string `example_str`
+ref Code: re.findall('(.*?)\\[.*?\\]', example_str)
+output Code: re.findall('\\[^\\]\\]', example_str)
+bleu_metric: 50.59261899252768
+----------
+Natural Language: use a regex to get all text in a string `example_str` that is not surrounded by square brackets
+ref Code: re.findall('(.*?)(?:\\[.*?\\]|$)', example_str)
+output Code: re.findall('\\[(\\w+)\\]', example_str)
+bleu_metric: 33.243148436568895
+----------
+Natural Language: get whatever is between parentheses as a single match, and any char outside as an individual match in string '(zyx)bc'
+ref Code: re.findall('\\(.+?\\)|\\w', '(zyx)bc')
+output Code: re.search('(\\w+)', '(zyx)bc').group(1)
+bleu_metric: 42.89863347065759
+----------
+Natural Language: match regex '\\((.*?)\\)|(\\w)' with string '(zyx)bc'
+ref Code: re.findall('\\((.*?)\\)|(\\w)', '(zyx)bc')
+output Code: re.match('\\((.*?)\\)(\\w)', '(zyx)bc')
+bleu_metric: 84.43639091080809
+----------
+Natural Language: match multiple regex patterns with the alternation operator `|` in a string `(zyx)bc`
+ref Code: re.findall('\\(.*?\\)|\\w', '(zyx)bc')
+output Code: re.sub('(\\d+)','', '\\1 ', text)
+bleu_metric: 17.221227246426725
+----------
+Natural Language: formate each string cin list `elements` into pattern '%{0}%'
+ref Code: elements = ['%{0}%'.format(element) for element in elements]
+output Code: re.sub('[0-9]+', '', elems='%{0}%', '', elems=[elem])
+bleu_metric: 21.830457064642587
+----------
+Natural Language: open a background process 'background-process' with arguments 'arguments'
+ref Code: subprocess.Popen(['background-process', 'arguments'])
+output Code: subprocess.call(['background-process', 'arguments'])
+bleu_metric: 85.78928092681434
+----------
+Natural Language: get list of values from dictionary 'mydict' w.r.t. list of keys 'mykeys'
+ref Code: [mydict[x] for x in mykeys]
+output Code: [d['mykey'] for d in myDict]
+bleu_metric: 16.943571815930884
+----------
+Natural Language: convert list `[('name', 'joe'), ('age', 22)]` into a dictionary
+ref Code: dict([('Name', 'Joe'), ('Age', 22)])
+output Code: dict(zip(*[('name', 'joe'), ('Age', 22)]))
+bleu_metric: 56.89195351585976
+----------
+Natural Language: average each two columns of array `data`
+ref Code: data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)
+output Code: data.mean(axis=1)
+bleu_metric: 8.622162690211379
+----------
+Natural Language: double backslash escape all double quotes in string `s`
+ref Code: print(s.encode('unicode-escape').replace('"', '\\"'))
+output Code: print(s.replace('\\', ''))
+bleu_metric: 37.64902241423073
+----------
+Natural Language: split a string into a list of words and whitespace
+ref Code: re.split('(\\W+)', s)
+output Code: [word for word in words if word.strip()]
+bleu_metric: 9.67651286169287
+----------
+Natural Language: plotting stacked barplots on a panda data frame
+ref Code: df.plot(kind='barh', stacked=True)
+output Code: df.plot(kind='bar')
+bleu_metric: 47.7278208000844
+----------
+Natural Language: reverse the keys and values in a dictionary `mydictionary`
+ref Code: {i[1]: i[0] for i in list(myDictionary.items())}
+output Code: dict((v, k) for k, v in myDict.items())
+bleu_metric: 20.276524385668118
+----------
+Natural Language: finding the index of elements containing substring 'how' and 'what' in a list of strings 'mylist'.
+ref Code: [i for i, j in enumerate(myList) if 'how' in j.lower() or 'what' in j.lower()]
+output Code: [i for i, j in enumerate(myList) if j == 'how'!= 'whatever']
+bleu_metric: 44.960680438161
+----------
+Natural Language: check if object `obj` is a string
+ref Code: isinstance(obj, str)
+output Code: if (obj.isdigit()): pass
+bleu_metric: 17.827531042796256
+----------
+Natural Language: check if object `o` is a string
+ref Code: isinstance(o, str)
+output Code: if (o.isdigit()): pass
+bleu_metric: 17.827531042796256
+----------
+Natural Language: check if object `o` is a string
+ref Code: (type(o) is str)
+output Code: if (o.isdigit()): pass
+bleu_metric: 19.72940627795883
+----------
+Natural Language: check if object `o` is a string
+ref Code: isinstance(o, str)
+output Code: if (o.isdigit()): pass
+bleu_metric: 17.827531042796256
+----------
+Natural Language: check if `obj_to_test` is a string
+ref Code: isinstance(obj_to_test, str)
+output Code: if (obj_to_test): pass
+bleu_metric: 26.44358066258934
+----------
+Natural Language: append list `list1` to `list2`
+ref Code: list2.extend(list1)
+output Code: list2 = [[] for i in list1]
+bleu_metric: 13.54599427337814
+----------
+Natural Language: append list `mylog` to `list1`
+ref Code: list1.extend(mylog)
+output Code: list1.append(myLog)
+bleu_metric: 27.776190340117914
+----------
+Natural Language: append list `a` to `c`
+ref Code: c.extend(a)
+output Code: a = [[] for i in range(3)]
+bleu_metric: 11.114924776032007
+----------
+Natural Language: append items in list `mylog` to `list1`
+ref Code: for line in mylog:
+    list1.append(line)
+output Code: list1.append(myLog)
+bleu_metric: 31.13595106480181
+----------
+Natural Language: append a tuple of elements from list `a` with indexes '[0][0] [0][2]' to list `b`
+ref Code: b.append((a[0][0], a[0][2]))
+output Code: b = [(a + [0][0][0][2]) for a in a]
+bleu_metric: 48.44328956731527
+----------
+Natural Language: initialize `secret_key` in flask config with `your_secret_string `
+ref Code: app.config['SECRET_KEY'] = 'Your_secret_string'
+output Code: {'secret_key': 'your_secret_string'}
+bleu_metric: 12.498879161997976
+----------
+Natural Language: unpack a series of tuples in pandas into a dataframe with column names 'out-1' and 'out-2'
+ref Code: pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)
+output Code: pd.concat([df1, df2], axis=1)
+bleu_metric: 5.130188327095793
+----------
+Natural Language: find the index of an element 'msft' in a list `stocks_list`
+ref Code: [x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT']
+output Code: from functools import reduce reduce(lambda item: item['msft'], items['stocks_list'])
+bleu_metric: 8.849823820513725
+----------
+Natural Language: rotate the xtick labels of matplotlib plot `ax` by `45` degrees to make long labels readable
+ref Code: ax.set_xticklabels(labels, rotation=45)
+output Code: ax.set_xticklabels(ax.xticks(45))
+bleu_metric: 35.99306254353179
+----------
+Natural Language: remove symbols from a string `s`
+ref Code: re.sub('[^\\w]', ' ', s)
+output Code: re.sub('(?<=\\s)', '', s)
+bleu_metric: 55.48581090137994
+----------
+Natural Language: get the current directory of a script
+ref Code: os.path.basename(os.path.dirname(os.path.realpath(__file__)))
+output Code: os.path.dirname(os.path.realpath(__file__))
+bleu_metric: 63.37967287681905
+----------
+Natural Language: find octal characters matches from a string `str` using regex
+ref Code: print(re.findall("'\\\\[0-7]{1,3}'", str))
+output Code: re.findall('\\b0+(?:\\b)\\b', str)
+bleu_metric: 30.67849972188287
+----------
+Natural Language: split string `input` based on occurrences of regex pattern '[ ](?=[a-z]+\\b)'
+ref Code: re.split('[ ](?=[A-Z]+\\b)', input)
+output Code: re.split('[ ](?=[a-z]+\\b)', input)
+bleu_metric: 82.0720263233254
+----------
+Natural Language: split string `input` at every space followed by an upper-case letter
+ref Code: re.split('[ ](?=[A-Z])', input)
+output Code: input = re.compile('\\w+(\\w+)')
+bleu_metric: 13.598914378678051
+----------
+Natural Language: send multipart encoded file `files` to url `url` with headers `headers` and metadata `data`
+ref Code: r = requests.post(url, files=files, headers=headers, data=data)
+output Code: urllib.request.urlretrieve(url, headers={'files': headers})
+bleu_metric: 18.284152427565257
+----------
+Natural Language: write bytes `bytes_` to a file `filename` in python 3
+ref Code: open('filename', 'wb').write(bytes_)
+output Code: f.write('bytes_')
+bleu_metric: 17.57776717359421
+----------
+Natural Language: get a list from a list `lst` with values mapped into a dictionary `dct`
+ref Code: [dct[k] for k in lst]
+output Code: [(k, v) for k, v in d.items() if v!= d.items()]
+bleu_metric: 8.914609827874221
+----------
+Natural Language: find duplicate names in column 'name' of the dataframe `x`
+ref Code: x.set_index('name').index.get_duplicates()
+output Code: x.idx['name'].duplicated()
+bleu_metric: 25.2256439068409
+----------
+Natural Language: truncate float 1.923328437452 to 3 decimal places
+ref Code: round(1.923328437452, 3)
+output Code: return ''.join(re.findall('\\d+', '', '233284374522'))
+bleu_metric: 7.305891545072536
+----------
+Natural Language: sort list `li` in descending order based on the date value in second element of each list in list `li`
+ref Code: sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)
+output Code: sorted(li, key=lambda x: x[1])
+bleu_metric: 20.708963557460702
+----------
+Natural Language: place the radial ticks in plot `ax` at 135 degrees
+ref Code: ax.set_rlabel_position(135)
+output Code: ax.set_visible(True)
+bleu_metric: 32.17294420803808
+----------
+Natural Language: check if path `my_path` is an absolute path
+ref Code: os.path.isabs(my_path)
+output Code: print(os.path.abspath(__file__))
+bleu_metric: 34.38931217657843
+----------
+Natural Language: get number of keys in dictionary `yourdict`
+ref Code: len(list(yourdict.keys()))
+output Code: len(yourdict.keys())
+bleu_metric: 63.70964381207871
+----------
+Natural Language: count the number of keys in dictionary `yourdictfile`
+ref Code: len(set(open(yourdictfile).read().split()))
+output Code: sum(1 for x in list(yourdictfile.items()))
+bleu_metric: 27.778312483235844
+----------
+Natural Language: pandas dataframe get first row of each group by 'id'
+ref Code: df.groupby('id').first()
+output Code: df['id'] = df['id'].apply(lambda x: x[1])
+bleu_metric: 11.902001907030836
+----------
+Natural Language: split a list in first column  into multiple columns keeping other columns as well in pandas data frame
+ref Code: pd.concat([df[0].apply(pd.Series), df[1]], axis=1)
+output Code: pd.concat([df_a, df_b], axis=1, keys=['b', 'c'], axis=1)
+bleu_metric: 34.181239538942826
+----------
+Natural Language: extract attributes 'src="js/([^"]*\\bjquery\\b[^"]*)"' from string `data`
+ref Code: re.findall('src="js/([^"]*\\bjquery\\b[^"]*)"', data)
+output Code: ['src="js/([^"]*\\bjquery\\b[^"]*)']
+bleu_metric: 73.01668160757298
+----------
+Natural Language: sum integers contained in strings in list `['', '3.4', '', '', '1.0']`
+ref Code: sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if _f])
+output Code: sum(int(i) for i in [', '3.4', '', '', '1.0'])
+bleu_metric: 54.18176435528176
+----------
+Natural Language: call a subprocess with arguments `c:\\program files\\vmware\\vmware server\\vmware-cmd.bat` that may contain spaces
+ref Code: subprocess.Popen(['c:\\Program Files\\VMware\\VMware Server\\vmware-cmd.bat'])
+output Code: subprocess.call(['c:\\program files\\vmware\\vmware-cmd.bat'])
+bleu_metric: 57.50324929852595
+----------
+Natural Language: reverse a priority queue `q` in python without using classes
+ref Code: q.put((-n, n))
+output Code: cursor.execute('INSERT INTO table VALUES (%s, %s, %s, %s, %s, %s)', (query,))
+bleu_metric: 7.418182487612639
+----------
+Natural Language: make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`
+ref Code: df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])
+output Code: plt.show()
+bleu_metric: 0.030120959708599737
+----------
+Natural Language: find all matches of regex pattern '([a-fa-f\\d]{32})' in string `data`
+ref Code: re.findall('([a-fA-F\\d]{32})', data)
+output Code: re.findall('([a-fa-f\\d]{32})', data)
+bleu_metric: 80.59468738950976
+----------
+Natural Language: get the length of list `my_list`
+ref Code: len(my_list)
+output Code: len(my_list)
+bleu_metric: 100.0
+----------
+Natural Language: getting the length of array `l`
+ref Code: len(l)
+output Code: np.length(a)
+bleu_metric: 26.26909894424158
+----------
+Natural Language: getting the length of array `s`
+ref Code: len(s)
+output Code: len(s)
+bleu_metric: 100.0
+----------
+Natural Language: getting the length of `my_tuple`
+ref Code: len(my_tuple)
+output Code: len(my_tuple)
+bleu_metric: 100.0
+----------
+Natural Language: getting the length of `my_string`
+ref Code: len(my_string)
+output Code: len(my_string)
+bleu_metric: 100.0
+----------
+Natural Language: remove escape character from string "\\a"
+ref Code: """\\a""".decode('string_escape')
+output Code: """\\a""".replace('\\a', '')
+bleu_metric: 55.13251122859945
+----------
+Natural Language: replace each 'a' with 'b' and each 'b' with 'a' in the string 'obama' in a single pass.
+ref Code: """obama""".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')
+output Code: """""".join(re.sub('[a-zA-Z]', 'b'))
+bleu_metric: 22.966028352537666
+----------
+Natural Language: remove directory tree '/folder_name'
+ref Code: shutil.rmtree('/folder_name')
+output Code: result = os.path.join(dirpath, '/folder_name').remove('/folder_name')
+bleu_metric: 28.089241320678898
+----------
+Natural Language: create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`
+ref Code: data['weekday'] = data['my_dt'].apply(lambda x: x.weekday())
+output Code: data['weekday'] = df['my_dt'].apply(lambda x: x.astype(int))
+bleu_metric: 73.28616209964707
+----------
+Natural Language: reverse sort counter `x` by values
+ref Code: sorted(x, key=x.get, reverse=True)
+output Code: sorted(x, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 56.82854869630479
+----------
+Natural Language: reverse sort counter `x` by value
+ref Code: sorted(list(x.items()), key=lambda pair: pair[1], reverse=True)
+output Code: sorted(x, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 30.05001477028219
+----------
+Natural Language: append a numpy array 'b' to a numpy array 'a'
+ref Code: np.vstack((a, b))
+output Code: numpy.append(b, a)
+bleu_metric: 19.006951944487035
+----------
+Natural Language: numpy concatenate two arrays `a` and `b` along the first axis
+ref Code: print(concatenate((a, b), axis=0))
+output Code: np.concatenate(a, b)
+bleu_metric: 27.761957633050166
+----------
+Natural Language: numpy concatenate two arrays `a` and `b` along the second axis
+ref Code: print(concatenate((a, b), axis=1))
+output Code: np.concatenate(zip(a, b))
+bleu_metric: 36.846917615476585
+----------
+Natural Language: numpy concatenate two arrays `a` and `b` along the first axis
+ref Code: c = np.r_[(a[None, :], b[None, :])]
+output Code: np.concatenate(a, b)
+bleu_metric: 6.136189977889715
+----------
+Natural Language: numpy concatenate two arrays `a` and `b` along the first axis
+ref Code: np.array((a, b))
+output Code: np.concatenate(a, b)
+bleu_metric: 49.832529198346116
+----------
+Natural Language: fetch address information for host 'google.com' ion port 80
+ref Code: print(socket.getaddrinfo('google.com', 80))
+output Code: ion.replace('google.com', 80)
+bleu_metric: 57.7376608237371
+----------
+Natural Language: add a column 'day' with value 'sat' to dataframe `df`
+ref Code: df.xs('sat', level='day', drop_level=False)
+output Code: df['day'] ='sat'
+bleu_metric: 16.953660567746102
+----------
+Natural Language: return a 401 unauthorized in django
+ref Code: return HttpResponse('Unauthorized', status=401)
+output Code: MyModel.objects.filter(author__id='title')
+bleu_metric: 14.37791910008819
+----------
+Natural Language: flask set folder 'wherever' as the default template folder
+ref Code: Flask(__name__, template_folder='wherever')
+output Code: app.set_your_template('wherever')
+bleu_metric: 43.02241682304373
+----------
+Natural Language: how do i insert into t1 (select * from t2) in sqlalchemy?
+ref Code: session.execute('INSERT INTO t1 (SELECT * FROM t2)')
+output Code: session.commit()
+bleu_metric: 6.117046115680378
+----------
+Natural Language: sort a list of lists 'c2' such that third row comes first
+ref Code: c2.sort(key=lambda row: row[2])
+output Code: c2 = sorted(a, key=lambda x: x[1])
+bleu_metric: 21.77147328873498
+----------
+Natural Language: sorting a list of lists in python
+ref Code: c2.sort(key=lambda row: (row[2], row[1], row[0]))
+output Code: sorted(a, key=lambda x: x[1])
+bleu_metric: 12.383513794062155
+----------
+Natural Language: sorting a list of lists in python
+ref Code: c2.sort(key=lambda row: (row[2], row[1]))
+output Code: sorted(a, key=lambda x: x[1])
+bleu_metric: 22.08517793512327
+----------
+Natural Language: set font `arial` to display non-ascii characters in matplotlib
+ref Code: matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})
+output Code: plt.show()
+bleu_metric: 0.3669484097406089
+----------
+Natural Language: convert  datetime column 'date' of pandas dataframe 'df' to ordinal
+ref Code: df['date'].apply(lambda x: x.toordinal())
+output Code: df['Date'] = df['Date'].astype(float)
+bleu_metric: 19.835441454182888
+----------
+Natural Language: get html source of selenium webelement `element`
+ref Code: element.get_attribute('innerHTML')
+output Code: driver.find_element_by_xpath('element').get_text()
+bleu_metric: 19.104081613647537
+----------
+Natural Language: get the integer location of a key `bob` in a pandas data frame
+ref Code: df.index.get_loc('bob')
+output Code: df.loc[df['Bob'].str.split(',')]
+bleu_metric: 11.96655750514248
+----------
+Natural Language: open a 'gnome' terminal from python script and run  'sudo apt-get update' command.
+ref Code: os.system('gnome-terminal -e \'bash -c "sudo apt-get update; exec bash"\'')
+output Code: subprocess.call('gnome', shell=True)
+bleu_metric: 6.1441259586642945
+----------
+Natural Language: add an item with key 'third_key' and value 1 to an dictionary `my_dict`
+ref Code: my_dict.update({'third_key': 1})
+output Code: dict((v, k) for k, v in my_dict.items())
+bleu_metric: 11.154288433080788
+----------
+Natural Language: declare an array
+ref Code: my_list = []
+output Code: int(''.join(arr))
+bleu_metric: 11.390778025531027
+----------
+Natural Language: insert item `12` to a list `my_list`
+ref Code: my_list.append(12)
+output Code: my_list.insert(12)
+bleu_metric: 59.46035575013605
+----------
+Natural Language: add an entry 'wuggah' at the beginning of list `mylist`
+ref Code: myList.insert(0, 'wuggah')
+output Code: list(['wuggah', 'wuggah']) + list(['myList', 'wuggah'])
+bleu_metric: 16.451929399933107
+----------
+Natural Language: convert a hex-string representation to actual bytes
+ref Code: """\\xF3\\xBE\\x80\\x80""".replace('\\x', '').decode('hex')
+output Code: ast.literal_eval('hex')
+bleu_metric: 1.8871308583544442
+----------
+Natural Language: select the last column of dataframe `df`
+ref Code: df[df.columns[-1]]
+output Code: df.iloc[:, (df.iloc[:, (None)])]
+bleu_metric: 11.709061630923735
+----------
+Natural Language: get the first value from dataframe `df` where column 'letters' is equal to 'c'
+ref Code: df.loc[df['Letters'] == 'C', 'Letters'].values[0]
+output Code: df['letters'] = df['letters'].first()
+bleu_metric: 16.336273454338585
+----------
+Natural Language: converting two lists `[1, 2, 3]` and `[4, 5, 6]` into a matrix
+ref Code: np.column_stack(([1, 2, 3], [4, 5, 6]))
+output Code: matrix([1, 2, 3], [4, 5, 6])
+bleu_metric: 74.2596099787883
+----------
+Natural Language: get the type of `i`
+ref Code: type(i)
+output Code: type(i)
+bleu_metric: 100.0
+----------
+Natural Language: determine the type of variable `v`
+ref Code: type(v)
+output Code: type(v)
+bleu_metric: 100.0
+----------
+Natural Language: determine the type of variable `v`
+ref Code: type(v)
+output Code: type(v)
+bleu_metric: 100.0
+----------
+Natural Language: determine the type of variable `v`
+ref Code: type(v)
+output Code: type(v)
+bleu_metric: 100.0
+----------
+Natural Language: determine the type of variable `v`
+ref Code: type(v)
+output Code: type(v)
+bleu_metric: 100.0
+----------
+Natural Language: get the type of variable `variable_name`
+ref Code: print(type(variable_name))
+output Code: variable_name = list(range(3))
+bleu_metric: 26.985534666825096
+----------
+Natural Language: get the 5th item of a generator
+ref Code: next(itertools.islice(range(10), 5, 5 + 1))
+output Code: next(itertools.product(*args, **kwargs))
+bleu_metric: 24.798635777651246
+----------
+Natural Language: print a string `word` with string format
+ref Code: print('"{}"'.format(word))
+output Code: print(word.lower())
+bleu_metric: 18.768230936528084
+----------
+Natural Language: join a list of strings `list` using a space ' '
+ref Code: """ """.join(list)
+output Code: list.join((' '.join(map(str, list))))
+bleu_metric: 26.934666326316563
+----------
+Natural Language: create list `y` containing two empty lists
+ref Code: y = [[] for n in range(2)]
+output Code: y = []
+bleu_metric: 10.561658476875811
+----------
+Natural Language: read a file 'c:/name/mydocuments/numbers' into a list `data`
+ref Code: data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]
+output Code: data = ['c:/name/myDocuments/numbers'.read(), 'c:/name/myDocuments/numbers']
+bleu_metric: 26.069430553765898
+----------
+Natural Language: delete all occurrences of character 'i' in string 'it is icy'
+ref Code: """""".join([char for char in 'it is icy' if char != 'i'])
+output Code: re.sub('(\\w+)', '', 'It is icY')
+bleu_metric: 8.126930820874177
+----------
+Natural Language: delete all instances of a character 'i' in a string 'it is icy'
+ref Code: re.sub('i', '', 'it is icy')
+output Code: 'It is ic2'.replace('It is ic3', 'i')
+bleu_metric: 23.632009599741206
+----------
+Natural Language: delete all characters "i" in string "it is icy"
+ref Code: """it is icy""".replace('i', '')
+output Code: """It is is icy""".replace('I', 'I')
+bleu_metric: 58.91285089649849
+----------
+Natural Language: how to delete all instances of a character in a string in python?
+ref Code: """""".join([char for char in 'it is icy' if char != 'i'])
+output Code: print(re.sub('\\d+', '', text))
+bleu_metric: 7.101904875620056
+----------
+Natural Language: drop rows of pandas dataframe `df` having nan in column at index "1"
+ref Code: df.dropna(subset=[1])
+output Code: df.drop_duplicates(df.index.isnull().values)
+bleu_metric: 14.247788801610147
+----------
+Natural Language: get elements from list `mylist`, that have a field `n` value 30
+ref Code: [x for x in myList if x.n == 30]
+output Code: [c for c in myList if c.isdigit()]
+bleu_metric: 27.107117710614897
+----------
+Natural Language: converting list of strings `intstringlist` to list of integer `nums`
+ref Code: nums = [int(x) for x in intstringlist]
+output Code: [int(x) for x in stringlist]
+bleu_metric: 64.55064609748771
+----------
+Natural Language: convert list of string numbers into list of integers
+ref Code: map(int, eval(input('Enter the unfriendly numbers: ')))
+output Code: [int(x) for x in lst]
+bleu_metric: 7.290792403968443
+----------
+Natural Language: print "." without newline
+ref Code: sys.stdout.write('.')
+output Code: print('\n'.format('\n'))
+bleu_metric: 15.733304984782073
+----------
+Natural Language: round off the float that is the product of `2.52 * 100` and convert it to an int
+ref Code: int(round(2.51 * 100))
+output Code: int(round(2.52 * 100))
+bleu_metric: 76.11606003349893
+----------
+Natural Language: find all files in directory "/mydir" with extension ".txt"
+ref Code: os.chdir('/mydir')
+for file in glob.glob('*.txt'):
+    pass
+output Code: [x for x in os.listdir('/mydir') if x.endswith('.txt')]
+bleu_metric: 34.46073377034663
+----------
+Natural Language: find all files in directory "/mydir" with extension ".txt"
+ref Code: for file in os.listdir('/mydir'):
+    if file.endswith('.txt'):
+        pass
+output Code: [x for x in os.listdir('/mydir') if x.endswith('.txt')]
+bleu_metric: 61.35033222033444
+----------
+Natural Language: find all files in directory "/mydir" with extension ".txt"
+ref Code: for (root, dirs, files) in os.walk('/mydir'):
+    for file in files:
+        if file.endswith('.txt'):
+            pass
+output Code: [x for x in os.listdir('/mydir') if x.endswith('.txt')]
+bleu_metric: 36.30886198641225
+----------
+Natural Language: plot dataframe `df` without a legend
+ref Code: df.plot(legend=False)
+output Code: plt.show()
+bleu_metric: 20.034704329441453
+----------
+Natural Language: loop through the ip address range "192.168.x.x"
+ref Code: for i in range(256):
+    for j in range(256):
+        ip = ('192.168.%d.%d' % (i, j))
+        print(ip)
+output Code: ip_range = ['192.168.x.x']
+bleu_metric: 4.978664663894174
+----------
+Natural Language: loop through the ip address range "192.168.x.x"
+ref Code: for (i, j) in product(list(range(256)), list(range(256))):
+    pass
+output Code: ip_range = ['192.168.x.x']
+bleu_metric: 2.9369096026118453
+----------
+Natural Language: loop through the ip address range "192.168.x.x"
+ref Code: generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)
+output Code: ip_range = ['192.168.x.x']
+bleu_metric: 12.600457765236337
+----------
+Natural Language: sum the corresponding decimal values for binary values of each boolean element in list `x`
+ref Code: sum(1 << i for i, b in enumerate(x) if b)
+output Code: sum([int(i) for i in x])
+bleu_metric: 13.688919323665596
+----------
+Natural Language: write multiple strings `line1`, `line2` and `line3` in one line in a file `target`
+ref Code: target.write('%r\n%r\n%r\n' % (line1, line2, line3))
+output Code: f.write(line1.strip())
+bleu_metric: 7.286051931340315
+----------
+Natural Language: convert list of lists `data` into a flat list
+ref Code: [y for x in data for y in (x if isinstance(x, list) else [x])]
+output Code: print([item for sublist in data for item in data])
+bleu_metric: 10.175772539145328
+----------
+Natural Language: print new line character as `\n` in a string `foo\nbar`
+ref Code: print('foo\nbar'.encode('string_escape'))
+output Code: """foo\nbar""".encode('utf-8')
+bleu_metric: 43.204817137257464
+----------
+Natural Language: remove last comma character ',' in string `s`
+ref Code: """""".join(s.rsplit(',', 1))
+output Code: s = re.sub(',', '', s)
+bleu_metric: 25.049995525110475
+----------
+Natural Language: calculate the mean of each element in array `x` with the element previous to it
+ref Code: (x[1:] + x[:-1]) / 2
+output Code: np.mean(x)
+bleu_metric: 6.656592803413297
+----------
+Natural Language: get an array of the mean of each two consecutive values in numpy array `x`
+ref Code: x[:-1] + (x[1:] - x[:-1]) / 2
+output Code: np.mean(axis=1)
+bleu_metric: 3.54273093553331
+----------
+Natural Language: load data containing `utf-8` from file `new.txt` into numpy array `arr`
+ref Code: arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')
+output Code: arr = numpy.loadtxt(open('new.txt', 'r-8'))
+bleu_metric: 36.450300557666246
+----------
+Natural Language: reverse sort list of dicts `l` by value for key `time`
+ref Code: l = sorted(l, key=itemgetter('time'), reverse=True)
+output Code: sorted(l, key=lambda x: (x[1], x[1]), reverse=True)
+bleu_metric: 43.00000760562837
+----------
+Natural Language: sort a list of dictionary `l` based on key `time` in descending order
+ref Code: l = sorted(l, key=lambda a: a['time'], reverse=True)
+output Code: sorted(l, key=lambda t: (t[0], t[0]))
+bleu_metric: 34.89653768472749
+----------
+Natural Language: get rows of dataframe `df` that match regex '(hel|just)'
+ref Code: df.loc[df[0].str.contains('(Hel|Just)')]
+output Code: df[df.groupby('(heljust)').apply(lambda x: x.split(','))]
+bleu_metric: 17.379110740253058
+----------
+Natural Language: find the string in `your_string` between two special characters "[" and "]"
+ref Code: re.search('\\[(.*)\\]', your_string).group(1)
+output Code: """""".join(your_string.intersection(['], your_string))
+bleu_metric: 13.220034211863723
+----------
+Natural Language: how to create a list of date string in 'yyyymmdd' format with python pandas?
+ref Code: [d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]
+output Code: df['%Y-%m-%d'] = datetime.strptime('%Y-%m-%d', '%Y-%m-%d').strftime('%Y-%m-%d')
+bleu_metric: 20.159755343788582
+----------
+Natural Language: count number of times string 'brown' occurred in string 'the big brown fox is brown'
+ref Code: """The big brown fox is brown""".count('brown')
+output Code: """""".join(c for c in s.split(' ') if c.isdigit() else c.isdigit())
+bleu_metric: 19.631974133686438
+----------
+Natural Language: decode json string `request.body` to python dict
+ref Code: json.loads(request.body)
+output Code: data = json.loads(request.body)
+bleu_metric: 80.70557274927982
+----------
+Natural Language: download the file from url `url` and save it under file `file_name`
+ref Code: urllib.request.urlretrieve(url, file_name)
+output Code: urllib.request.urlretrieve('http://stackoverflow.com/file_name', file_name)
+bleu_metric: 37.48171177217685
+----------
+Natural Language: split string `text` by space
+ref Code: text.split()
+output Code: re.split('\\s+', text)
+bleu_metric: 20.333448190047886
+----------
+Natural Language: split string `text` by ","
+ref Code: text.split(',')
+output Code: re.split('(\\d+)', text)
+bleu_metric: 28.175950490399515
+----------
+Natural Language: split string `line` into a list by whitespace
+ref Code: line.split()
+output Code: [line.split() for line in line.split()]
+bleu_metric: 27.499775953224148
+----------
+Natural Language: replace dot characters  '.' associated with ascii letters in list `s` with space ' '
+ref Code: [re.sub('(?<!\\d)\\.(?!\\d)', ' ', i) for i in s]
+output Code: s = re.sub('.{3}\\s{3}\\s{3}','', text)
+bleu_metric: 24.209139641649045
+----------
+Natural Language: sort list `list_of_strings` based on second index of each string `s`
+ref Code: sorted(list_of_strings, key=lambda s: s.split(',')[1])
+output Code: sorted(list_of_strings, key=lambda x: x[1])
+bleu_metric: 43.05007396186973
+----------
+Natural Language: call multiple bash function 'vasp' and 'tee tee_output' using '|'
+ref Code: subprocess.check_call('vasp | tee tee_output', shell=True)
+output Code: subprocess.call(['vasp', 'tee_output'], shell=True)
+bleu_metric: 39.392473548207036
+----------
+Natural Language: eliminate all strings from list `lst`
+ref Code: [element for element in lst if isinstance(element, int)]
+output Code: [x for x in lst if x not in s]
+bleu_metric: 19.846438615928747
+----------
+Natural Language: get all the elements except strings from the list 'lst'.
+ref Code: [element for element in lst if not isinstance(element, str)]
+output Code: [s for s in lst if s.isdigit()]
+bleu_metric: 22.708565945257046
+----------
+Natural Language: sort a list of dictionaries `list_to_be_sorted` by the value of the dictionary key `name`
+ref Code: newlist = sorted(list_to_be_sorted, key=lambda k: k['name'])
+output Code: sorted(list_to_be_sorted, key=lambda x: x['name'])
+bleu_metric: 64.69161553933024
+----------
+Natural Language: sort a list of dictionaries `l` by values in key `name` in descending order
+ref Code: newlist = sorted(l, key=itemgetter('name'), reverse=True)
+output Code: sorted(L, key=lambda x: (name[x], x['name']))
+bleu_metric: 17.640520319198945
+----------
+Natural Language: how do i sort a list of dictionaries by values of the dictionary in python?
+ref Code: list_of_dicts.sort(key=operator.itemgetter('name'))
+output Code: mylist.sort(key=lambda d: d['name'], reverse=True)
+bleu_metric: 29.4467310498826
+----------
+Natural Language: how do i sort a list of dictionaries by values of the dictionary in python?
+ref Code: list_of_dicts.sort(key=operator.itemgetter('age'))
+output Code: mylist.sort(key=lambda d: d['name'], reverse=True)
+bleu_metric: 25.306188056493333
+----------
+Natural Language: how to sort a dataframe by the ocurrences in a column in python (pandas)
+ref Code: df.groupby('prots').sum().sort('scores', ascending=False)
+output Code: df.sort(['user', 'user'], ascending=[True, False], inplace=True)
+bleu_metric: 16.451929399933107
+----------
+Natural Language: join together with "," elements inside a list indexed with 'category' within a dictionary `trans`
+ref Code: """,""".join(trans['category'])
+output Code: [('Foo', 'Foo'), ('Foo', 'Foo'), ('Foo', 'Foo'), ('Foo', 'Foo')]
+bleu_metric: 7.367654273937431
+----------
+Natural Language: concatenate array of strings `['a', 'b', 'c', 'd']` into a string
+ref Code: """""".join(['A', 'B', 'C', 'D'])
+output Code: """""".join(['a', 'b', 'c', 'd'])
+bleu_metric: 61.82527625446008
+----------
+Natural Language: get json data from restful service 'url'
+ref Code: json.load(urllib.request.urlopen('url'))
+output Code: print(json.dumps(data))
+bleu_metric: 16.45458786057073
+----------
+Natural Language: remove all strings from a list a strings `sents` where the values starts with `@$\t` or `#`
+ref Code: [x for x in sents if not x.startswith('@$\t') and not x.startswith('#')]
+output Code: """""".join([c for c in list(sents.items()) if c.startswith('@$\t')])
+bleu_metric: 32.16143153434792
+----------
+Natural Language: django filter by hour
+ref Code: Entry.objects.filter(pub_date__contains='08:00')
+output Code: User.objects.filter(hour__regex='%H:%M:%S')
+bleu_metric: 31.64257177669852
+----------
+Natural Language: sort a list of dictionary `list` first by key `points` and then by `time`
+ref Code: list.sort(key=lambda item: (item['points'], item['time']))
+output Code: sorted(list, key=lambda x: (-int(x[1]), x[0]))
+bleu_metric: 21.47607499133801
+----------
+Natural Language: convert datetime object `(1970, 1, 1)` to seconds
+ref Code: (t - datetime.datetime(1970, 1, 1)).total_seconds()
+output Code: datetime.datetime.strptime(1970, 1, 1)
+bleu_metric: 38.5026520407636
+----------
+Natural Language: insert `_suff` before the file extension in `long.file.name.jpg` or replace `_a` with `suff` if it precedes the extension.
+ref Code: re.sub('(\\_a)?\\.([^\\.]*)$', '_suff.\\2', 'long.file.name.jpg')
+output Code: print(suff.insert(long.file.name.jpg))
+bleu_metric: 8.039499660505655
+----------
+Natural Language: reload a module `module`
+ref Code: import imp
+imp.reload(module)
+output Code: module = request.module('mymodule')
+bleu_metric: 17.827531042796256
+----------
+Natural Language: convert integer `number` into an unassigned integer
+ref Code: struct.unpack('H', struct.pack('h', number))
+output Code: int('0', '0', '0')
+bleu_metric: 13.179745263807208
+----------
+Natural Language: convert int values in list `numlist` to float
+ref Code: numlist = [float(x) for x in numlist]
+output Code: [float(x) for x in np.array(['f', 'f', 'f'])]
+bleu_metric: 28.197516484364986
+----------
+Natural Language: write dataframe `df`, excluding index, to a csv file
+ref Code: df.to_csv(filename, index=False)
+output Code: df.to_csv('test.csv', index=False)
+bleu_metric: 53.070741098514354
+----------
+Natural Language: convert a urllib unquoted string `unescaped` to a json data `json_data`
+ref Code: json_data = json.loads(unescaped)
+output Code: json_data = json.dumps(url)
+bleu_metric: 46.71379777282001
+----------
+Natural Language: create a list containing all ascii characters as its elements
+ref Code: [chr(i) for i in range(127)]
+output Code: list(''.join(chr(ord(c)) for c in string))
+bleu_metric: 11.13613656101029
+----------
+Natural Language: write `newfilebytes` to a binary file `newfile`
+ref Code: newFile.write(struct.pack('5B', *newFileBytes))
+output Code: newfile.write(newfileBytes)
+bleu_metric: 8.703367869382996
+----------
+Natural Language: python regex - check for a capital letter with a following lowercase in string `string`
+ref Code: re.sub('^[A-Z0-9]*(?![a-z])', '', string)
+output Code: re.findall('[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]')
+bleu_metric: 7.7521231171116085
+----------
+Natural Language: get the last key of dictionary `dict`
+ref Code: list(dict.keys())[-1]
+output Code: list(dict.items())
+bleu_metric: 34.69313394445662
+----------
+Natural Language: write line "hi there" to file `f`
+ref Code: print('hi there', file=f)
+output Code: f.write('hi there')
+bleu_metric: 43.78784374856904
+----------
+Natural Language: write line "hi there" to file `myfile`
+ref Code: f = open('myfile', 'w')
+f.write('hi there\n')
+f.close()
+output Code: myfile.write('hi there')
+bleu_metric: 10.269217587811276
+----------
+Natural Language: write line "hello" to file `somefile.txt`
+ref Code: with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')
+output Code: somefile.txt('hello')
+bleu_metric: 5.730363286658101
+----------
+Natural Language: convert unicode string `s` to ascii
+ref Code: s.encode('iso-8859-15')
+output Code: s.encode('ascii', 'ignore')
+bleu_metric: 44.534504264163466
+----------
+Natural Language: django get maximum value associated with field 'added' in model `authorizedemail`
+ref Code: AuthorizedEmail.objects.filter(group=group).order_by('-added')[0]
+output Code: MyModel.objects.filter(author__id=user).annotate(author__id='Authenticate')
+bleu_metric: 26.009623051597963
+----------
+Natural Language: find all numbers and dots from a string `text` using regex
+ref Code: re.findall('Test([0-9.]*[0-9]+)', text)
+output Code: re.findall('\\d+', text)
+bleu_metric: 24.73344228394784
+----------
+Natural Language: python regex  to find all numbers and dots from 'text'
+ref Code: re.findall('Test([\\d.]*\\d+)', text)
+output Code: re.findall('\\d+', s)
+bleu_metric: 27.703746325324747
+----------
+Natural Language: execute script 'script.ps1' using 'powershell.exe' shell
+ref Code: os.system('powershell.exe', 'script.ps1')
+output Code: subprocess.call(['r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r', 'r'])
+bleu_metric: 5.488673667067168
+----------
+Natural Language: sort a list of tuples `b` by third item in the tuple
+ref Code: b.sort(key=lambda x: x[1][2])
+output Code: sorted(b, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 13.052454516645346
+----------
+Natural Language: get a list of all keys in cassandra database `cf` with pycassa
+ref Code: list(cf.get_range().get_keys())
+output Code: ['c', 'c', 'c', 'd']
+bleu_metric: 6.439931429457923
+----------
+Natural Language: create a datetime with the current date & time
+ref Code: datetime.datetime.now()
+output Code: datetime.datetime.now().date()
+bleu_metric: 61.90429960963545
+----------
+Natural Language: get the index of an integer `1` from a list `lst` if the list also contains boolean items
+ref Code: next(i for i, x in enumerate(lst) if not isinstance(x, bool) and x == 1)
+output Code: [i for i, s in enumerate(lst) if i == bool(i)]
+bleu_metric: 33.37522249316762
+----------
+Natural Language: subtract 13 from every number in a list `a`
+ref Code: a[:] = [(x - 13) for x in a]
+output Code: [(1, 3), (1, 3), (1, 3), (1, 3)]
+bleu_metric: 7.779637090949692
+----------
+Natural Language: choose a random file from the directory contents of the c drive, `c:\\`
+ref Code: random.choice(os.listdir('C:\\'))
+output Code: random.choice(os.path.dirname(__file__))
+bleu_metric: 40.67002149402057
+----------
+Natural Language: get the highest element in absolute value in a numpy matrix `x`
+ref Code: max(x.min(), x.max(), key=abs)
+output Code: print(max(x, key=lambda x: x[1]))
+bleu_metric: 20.76525238829788
+----------
+Natural Language: get all urls within text `s`
+ref Code: re.findall('"(http.*?)"', s, re.MULTILINE | re.DOTALL)
+output Code: requests.get('http://www.google.com/', s)
+bleu_metric: 12.594708426530746
+----------
+Natural Language: match urls whose domain doesn't start with `t` from string `document` using regex
+ref Code: re.findall('http://[^t][^s"]+\\.html', document)
+output Code: re.search('^(.*?)(?!\\w+)', '\\1', line)
+bleu_metric: 10.448426281447123
+----------
+Natural Language: split a string `mystring` considering the spaces ' '
+ref Code: mystring.replace(' ', '! !').split('!')
+output Code: mystring.split(' ')
+bleu_metric: 15.586404917762792
+----------
+Natural Language: open file `path` with mode 'r'
+ref Code: open(path, 'r')
+output Code: os.system(path)
+bleu_metric: 23.099966849728553
+----------
+Natural Language: sum elements at the same index in list `data`
+ref Code: [[sum(item) for item in zip(*items)] for items in zip(*data)]
+output Code: sum(j ** i for i, j in enumerate(data))
+bleu_metric: 8.76338415642329
+----------
+Natural Language: add a new axis to array `a`
+ref Code: a[:, (np.newaxis)]
+output Code: a.update((a + a))
+bleu_metric: 14.991106946711685
+----------
