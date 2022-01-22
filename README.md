@@ -5,6 +5,10 @@ In this work we worked to improve the solving of the code generation problem and
 This is the model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG_NL-to-Code
 
+
+CoNaLa Dataset for Code Generation is available at
+https://huggingface.co/AhmedSSoliman/CoNaLa
+
 ```python
 # Model and Tokenizer
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -19,4 +23,4 @@ output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=T
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 ```
 
-This model is available in spaces at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code
+This model is available in spaces using gridio at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code
