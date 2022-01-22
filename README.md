@@ -9,6 +9,9 @@ https://huggingface.co/AhmedSSoliman/MarianCG_NL-to-Code
 CoNaLa Dataset for Code Generation is available at
 https://huggingface.co/AhmedSSoliman/CoNaLa
 
+
+This model is available in spaces using gridio at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code
+
 ```python
 # Model and Tokenizer
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -23,4 +26,3 @@ output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=T
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 ```
 
-This model is available in spaces using gridio at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code
