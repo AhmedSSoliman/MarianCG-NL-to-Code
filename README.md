@@ -7,9 +7,11 @@ https://huggingface.co/AhmedSSoliman/MarianCG_NL-to-Code
 
 ```python
 # Model and Tokenizer
-model_name = "AhmedSSoliman/MarianCG_NL-to-Code"
-model = MarianMTModel.from_pretrained(model_name)
-tokenizer = MarianTokenizer.from_pretrained(model_name)
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+# model_name = "AhmedSSoliman/MarianCG_NL-to-Code"
+model = AutoModelForSeq2SeqLM.from_pretrained("AhmedSSoliman/MarianCG_NL-to-Code")
+tokenizer = AutoTokenizer.from_pretrained("AhmedSSoliman/MarianCG_NL-to-Code")
 
 # Input (Natural Language) and Output (Python Code)
 NL_input = "create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]"
