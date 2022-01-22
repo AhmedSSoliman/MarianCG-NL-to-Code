@@ -19,4 +19,4 @@ output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=T
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 ```
 
-This model is available in spaces at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code/settings
+This model is available in spaces at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG_NL-to-Code
