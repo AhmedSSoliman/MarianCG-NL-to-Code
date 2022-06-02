@@ -16,7 +16,7 @@ This model is available in spaces using gridio at: https://huggingface.co/spaces
 # Model and Tokenizer
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-# model_name = "AhmedSSoliman/MarianCG_NL-to-Code"
+# model_name = "AhmedSSoliman/MarianCG-NL-to-Code"
 model = AutoModelForSeq2SeqLM.from_pretrained("AhmedSSoliman/MarianCG-NL-to-Code")
 tokenizer = AutoTokenizer.from_pretrained("AhmedSSoliman/MarianCG-NL-to-Code")
 
