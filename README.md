@@ -7,7 +7,7 @@ https://huggingface.co/AhmedSSoliman/MarianCG-NL-to-Code
 
 
 CoNaLa Dataset for Code Generation is available at
-https://huggingface.co/AhmedSSoliman/CoNaLa
+https://huggingface.co/datasets/AhmedSSoliman/CoNaLa
 
 
 This model is available in spaces using gridio at: https://huggingface.co/spaces/AhmedSSoliman/MarianCG-NL-to-Code
