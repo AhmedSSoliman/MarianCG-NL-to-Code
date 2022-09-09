@@ -1,0 +1,2557 @@
+NL: send a signal `signal.sigusr1` to the current process
+ref: os.kill(os.getpid(), signal.SIGUSR1)
+Output: sys.exit(app.exec_())
+bleu_metric: 14.737486969787152
+----------
+NL: decode a hex string '4a4b4c' to utf-8.
+ref: bytes.fromhex('4a4b4c').decode('utf-8')
+Output: hex(int('4a4b4c', 16))
+bleu_metric: 21.481488891327768
+----------
+NL: check if all elements in list `mylist` are identical
+ref: all(x == myList[0] for x in myList)
+Output: all(isinstance(x, int) for x in myList)
+bleu_metric: 44.690223229515766
+----------
+NL: format number of spaces between strings `python`, `:` and `very good` to be `20`
+ref: print('%*s : %*s' % (20, 'Python', 20, 'Very Good'))
+Output: """{0:.2f}""".format(20)
+bleu_metric: 8.260016799822214
+----------
+NL: how to convert a string from cp-1251 to utf-8?
+ref: d.decode('cp1251').encode('utf8')
+Output: cp-12 51.decode('utf8')
+bleu_metric: 44.3563689294446
+----------
+NL: get rid of none values in dictionary `kwargs`
+ref: res = {k: v for k, v in list(kwargs.items()) if v is not None}
+Output: d = {k: d.get('value') for k, v in list(kwargs.values())}
+bleu_metric: 45.79927441960449
+----------
+NL: get rid of none values in dictionary `kwargs`
+ref: res = dict((k, v) for k, v in kwargs.items() if v is not None)
+Output: d = {k: d.get('value') for k, v in list(kwargs.values())}
+bleu_metric: 26.282637229067245
+----------
+NL: capture final output of a chain of system commands `ps -ef | grep something | wc -l`
+ref: subprocess.check_output('ps -ef | grep something | wc -l', shell=True)
+Output: os.system('ps -ef  grep something  wc -l')
+bleu_metric: 34.436431797435276
+----------
+NL: concatenate a list of strings `['a', 'b', 'c']`
+ref: """""".join(['a', 'b', 'c'])
+Output: """""".join(['a', 'b', 'c'])
+bleu_metric: 100.0
+----------
+NL: find intersection data between series `s1` and series `s2`
+ref: pd.Series(list(set(s1).intersection(set(s2))))
+Output: ((x1, s2) & (x2, s2)).intersection(x1, s2)
+bleu_metric: 24.192619393259786
+----------
+NL: sending http headers to `client`
+ref: client.send('HTTP/1.0 200 OK\r\n')
+Output: client.writeheader()
+bleu_metric: 4.3830550701087665
+----------
+NL: format a datetime string `when` to extract date only
+ref: then = datetime.datetime.strptime(when, '%Y-%m-%d').date()
+Output: datetime.datetime.now().strftime('%Y-%m-%d')
+bleu_metric: 55.86628346673964
+----------
+NL: split a multi-line string `inputstring` into separate strings
+ref: inputString.split('\n')
+Output: print(inputstring.split(','))
+bleu_metric: 35.99306254353179
+----------
+NL: split a multi-line string ` a \n b \r\n c ` by new line character `\n`
+ref: ' a \n b \r\n c '.split('\n')
+Output: re.split('\n', '\n')
+bleu_metric: 43.63053772491309
+----------
+NL: concatenate elements of list `b` by a colon ":"
+ref: """:""".join(str(x) for x in b)
+Output: ((':' * i) for i, j in zip(b, b))
+bleu_metric: 16.460051806455592
+----------
+NL: get the first object from a queryset in django model `entry`
+ref: Entry.objects.filter()[:1].get()
+Output: Entry.objects.all().order_by('-id')[0]
+bleu_metric: 25.18750835198491
+----------
+NL: calculate sum over all rows of 2d numpy array
+ref: a.sum(axis=1)
+Output: sum(np.sum(axis=1))
+bleu_metric: 59.56403592718088
+----------
+NL: enable warnings using action 'always'
+ref: warnings.simplefilter('always')
+Output: warnings.warn('always')
+bleu_metric: 70.71067811865474
+----------
+NL: concatenate items of list `l` with a space ' '
+ref: print(' '.join(map(str, l)))
+Output: print(' '.join(str(x) for x in L))
+bleu_metric: 47.90714250659131
+----------
+NL: run script 'hello.py' with argument 'htmlfilename.htm' on terminal using python executable
+ref: subprocess.call(['python.exe', 'hello.py', 'htmlfilename.htm'])
+Output: subprocess.call(['hello.py', 'htmlfilename.htm', shell=True)
+bleu_metric: 63.72810711139124
+----------
+NL: how can i parse a time string containing milliseconds in it with python?
+ref: time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')
+Output: datetime.strptime('%Y-%m-%d %H:%M', '%m-%d %H:%M')
+bleu_metric: 27.064267525151376
+----------
+NL: convert a string `my_string` with dot and comma into a float number `my_float`
+ref: my_float = float(my_string.replace(',', ''))
+Output: float(my_string)
+bleu_metric: 5.481859843343829
+----------
+NL: convert a string `123,456.908` with dot and comma into a floating number
+ref: float('123,456.908'.replace(',', ''))
+Output: print('{0:,}'.format(123,0456.908))
+bleu_metric: 18.282283729318358
+----------
+NL: set pythonpath in python script.
+ref: sys.path.append('/path/to/whatever')
+Output: os.system('script.py')
+bleu_metric: 17.196271792139214
+----------
+NL: split string 'words, words, words.' using a regex '(\\w+)'
+ref: re.split('(\\W+)', 'Words, words, words.')
+Output: re.split('(\\w+)', 'Words, words, words.')
+bleu_metric: 88.43865924896842
+----------
+NL: open a file `output.txt` in append mode
+ref: file = open('Output.txt', 'a')
+Output: with open(output.txt, 'rb') as f: f = open('output.txt', 'rb')
+bleu_metric: 27.275020387241312
+----------
+NL: download a file "http://www.example.com/songs/mp3.mp3" over http and save to "mp3.mp3"
+ref: urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')
+Output: urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3','mp3.mp3')
+bleu_metric: 100.0
+----------
+NL: download a file `url` over http and save to `file_name`
+ref: u = urllib.request.urlopen(url)
+f = open(file_name, 'wb')
+meta = u.info()
+file_size = int(meta.getheaders('Content-Length')[0])
+print(('Downloading: %s Bytes: %s' % (file_name, file_size)))
+file_size_dl = 0
+block_sz = 8192
+while True:
+    buffer = u.read(block_sz)
+    if (not buffer):
+        break
+    file_size_dl += len(buffer)
+    f.write(buffer)
+    status = ('%10d  [%3.2f%%]' % (file_size_dl, ((file_size_dl * 100.0) / file_size)))
+    status = (status + (chr(8) * (len(status) + 1)))
+    print(status, end=' ')
+f.close()
+Output: urllib.request.urlretrieve('http://stackoverflow.com', file_name)
+bleu_metric: 0.008757221385463717
+----------
+NL: download a file 'http://www.example.com/' over http
+ref: response = urllib.request.urlopen('http://www.example.com/')
+html = response.read()
+Output: urllib.request.urlretrieve('http://www.example.com/', 'http://www.example.com/')
+bleu_metric: 50.72890295600225
+----------
+NL: download a file `url` over http
+ref: r = requests.get(url)
+Output: urllib.request.urlretrieve('http://www.google.com/', filename)
+bleu_metric: 8.282282660969601
+----------
+NL: download a file `url` over http and save to "10mb"
+ref: response = requests.get(url, stream=True)
+with open('10MB', 'wb') as handle:
+    for data in tqdm(response.iter_content()):
+        handle.write(data)
+Output: urllib.request.urlretrieve('http://www.example.com/', '10mb')
+bleu_metric: 6.276218231634697
+----------
+NL: argparse add argument with flag '--version' and version action of '%(prog)s 2.0' to parser `parser`
+ref: parser.add_argument('--version', action='version', version='%(prog)s 2.0')
+Output: parser.add_argument('-deversion', '%(prog)s2.0', type=parser)
+bleu_metric: 37.89021033476202
+----------
+NL: remove key 'c' from dictionary `d`
+ref: {i: d[i] for i in d if i != 'c'}
+Output: dict((k, v) for k, v in d.items() if v!= 'C')
+bleu_metric: 11.739521786077454
+----------
+NL: create new dataframe object by merging columns "key" of  dataframes `split_df` and `csv_df` and rename the columns from dataframes `split_df` and `csv_df` with suffix `_left` and `_right` respectively
+ref: pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))
+Output: df.groupby(['key','split_df'], as_index=True)['left'].rename(columns={'key':'split_df'}, df.columns=['foo', 'foo'])
+bleu_metric: 13.809135250249621
+----------
+NL: split a string `s` by space with `4` splits
+ref: s.split(' ', 4)
+Output: s.split(4)
+bleu_metric: 45.043204423208614
+----------
+NL: read keyboard-input
+ref: input('Enter your input:')
+Output: time.sleep(1)
+bleu_metric: 17.11271705842678
+----------
+NL: enable debug mode on flask application `app`
+ref: app.run(debug=True)
+Output: app.run(debug=True)
+bleu_metric: 100.0
+----------
+NL: python save list `mylist` to file object 'save.txt'
+ref: pickle.dump(mylist, open('save.txt', 'wb'))
+Output: file.write('save.txt')
+bleu_metric: 26.72969705681411
+----------
+NL: multiply a matrix `p` with a 3d tensor `t` in scipy
+ref: scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)
+Output: np.dot(tuple(p, t))
+bleu_metric: 6.428448853420655
+----------
+NL: create 3d array of zeroes of size `(3,3,3)`
+ref: numpy.zeros((3, 3, 3))
+Output: np.zeros((3, 3, 3))
+bleu_metric: 91.93227152249185
+----------
+NL: cut off the last word of a sentence `content`
+ref: """ """.join(content.split(' ')[:-1])
+Output: """{:.2f}""".format(content.split('/'))
+bleu_metric: 45.30799450827704
+----------
+NL: convert scalar `x` to array
+ref: x = np.asarray(x).reshape(1, -1)[(0), :]
+Output: x = np.zeros((10, 10)).ravel()
+bleu_metric: 18.218055296794574
+----------
+NL: sum all elements of nested list `l`
+ref: sum(sum(i) if isinstance(i, list) else i for i in L)
+Output: sum(i for i in l)
+bleu_metric: 14.823156396438122
+----------
+NL: convert hex string '470fc614' to a float number
+ref: struct.unpack('!f', '470FC614'.decode('hex'))[0]
+Output: float('470fc614'.decode('hex'))
+bleu_metric: 33.61139419763921
+----------
+NL: multiple each value by `2` for all keys in a dictionary `my_dict`
+ref: my_dict.update((x, y * 2) for x, y in list(my_dict.items()))
+Output: {k: (v * 2) for k, v in my_dict.items()}
+bleu_metric: 27.723462805499782
+----------
+NL: running bash script 'sleep.sh'
+ref: subprocess.call('sleep.sh', shell=True)
+Output: os.system('sleep.sh')
+bleu_metric: 40.728895472895154
+----------
+NL: join elements of list `l` with a comma `,`
+ref: """,""".join(l)
+Output: print(','.join([(i * j) for i, j in zip(L, L)]))
+bleu_metric: 16.637856417794126
+----------
+NL: make a comma-separated string from a list `mylist`
+ref: myList = ','.join(map(str, myList))
+Output: mylist = map(int, mylist.split(','))
+bleu_metric: 22.326472132503493
+----------
+NL: reverse the list that contains 1 to 10
+ref: list(reversed(list(range(10))))
+Output: reversed([1, 10])
+bleu_metric: 14.026062829965458
+----------
+NL: remove substring 'bag,' from a string 'lamp, bag, mirror'
+ref: print('lamp, bag, mirror'.replace('bag,', ''))
+Output: re.sub('([a-zA-Z][a-zA-Z])', 'baz,', 'abcd')
+bleu_metric: 14.765612530106665
+----------
+NL: reverse the order of words, delimited by `.`, in string `s`
+ref: """.""".join(s.split('.')[::-1])
+Output: re.sub('\\b(.+)', '\\1', s)
+bleu_metric: 9.520013936697014
+----------
+NL: convert epoch time represented as milliseconds `s` to string using format '%y-%m-%d %h:%m:%s.%f'
+ref: datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')
+Output: print('%Y-%m-%d %H:%M:%S.%f')
+bleu_metric: 66.91389641841208
+----------
+NL: parse milliseconds epoch time '1236472051807' to format '%y-%m-%d %h:%m:%s'
+ref: time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))
+Output: datetime.datetime.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')
+bleu_metric: 56.37002515009677
+----------
+NL: get the date 7 days before the current date
+ref: (datetime.datetime.now() - datetime.timedelta(days=7)).date()
+Output: datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+bleu_metric: 26.110611002423035
+----------
+NL: sum elements at index `column` of each list in list `data`
+ref: print(sum(row[column] for row in data))
+Output: [sum(x) for x in data]
+bleu_metric: 15.924924144387933
+----------
+NL: sum columns of a list `array`
+ref: [sum(row[i] for row in array) for i in range(len(array[0]))]
+Output: df.sum(axis=1)
+bleu_metric: 2.5559270817950153
+----------
+NL: encode binary string 'your string' to base64 code
+ref: base64.b64encode(bytes('your string', 'utf-8'))
+Output: base64.b64encode('your string')
+bleu_metric: 30.89261361741328
+----------
+NL: combine list of dictionaries `dicts` with the same keys in each list to a single dictionary
+ref: dict((k, [d[k] for d in dicts]) for k in dicts[0])
+Output: dict((k, v) for d, v in list(dicts.items()) if k in d)
+bleu_metric: 25.30835070130704
+----------
+NL: merge a nested dictionary `dicts` into a flat dictionary by concatenating nested values with the same key `k`
+ref: {k: [d[k] for d in dicts] for k in dicts[0]}
+Output: dict((k, v) for k, v in list(dicts.items()))
+bleu_metric: 8.608775825594615
+----------
+NL: how do i get the url parameter in a flask view
+ref: request.args['myParam']
+Output: request.GET.get('http://stackoverflow.com', {'param1': 'http://stackoverflow.com'})
+bleu_metric: 5.730192069189415
+----------
+NL: identify duplicate values in list `mylist`
+ref: [k for k, v in list(Counter(mylist).items()) if v > 1]
+Output: set(myList).cumsum()
+bleu_metric: 5.063278377615417
+----------
+NL: insert directory 'apps' into directory `__file__`
+ref: sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))
+Output: sys.path.insert('apps', '__file__')
+bleu_metric: 21.209030505928673
+----------
+NL: modify sys.path for python module `subdir`
+ref: sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))
+Output: subdir.set_trace()
+bleu_metric: 1.0439863090897494
+----------
+NL: insert a 'none' value into a sqlite3 table.
+ref: db.execute("INSERT INTO present VALUES('test2', ?, 10)", (None,))
+Output: cursor.execute('SELECT * FROM table WHERE id = 'None')
+bleu_metric: 14.889377416355448
+----------
+NL: flatten list `list_of_menuitems`
+ref: [image for menuitem in list_of_menuitems for image in menuitem]
+Output: [item for item in list_of_menuitems for item in list_of_menuitems]
+bleu_metric: 25.400289715190976
+----------
+NL: append elements of a set `b` to a list `a`
+ref: a.extend(b)
+Output: [(a + b) for a, b in zip(b, a[1:])]
+bleu_metric: 8.77491027594595
+----------
+NL: append elements of a set to a list in python
+ref: a.extend(list(b))
+Output: [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+bleu_metric: 1.441595561481878
+----------
+NL: write the data of dataframe `df` into text file `np.txt`
+ref: np.savetxt('c:\\data\\np.txt', df.values, fmt='%d')
+Output: df.to_csv('np.txt', index=False)
+bleu_metric: 16.167447988327453
+----------
+NL: write content of dataframe `df` into text file 'c:\\data\\pandas.txt'
+ref: df.to_csv('c:\\data\\pandas.txt', header=None, index=None, sep=' ', mode='a')
+Output: df.to_csv('c:\\data\\pandas.txt', index=False)
+bleu_metric: 43.10606588708646
+----------
+NL: split a string `x` by last occurrence of character `-`
+ref: print(x.rpartition('-')[0])
+Output: x.split('-')
+bleu_metric: 31.95164042784261
+----------
+NL: get the last part of a string before the character '-'
+ref: print(x.rsplit('-', 1)[0])
+Output: """""".rsplit('..', 1)[-1]
+bleu_metric: 32.92010361291119
+----------
+NL: upload file using ftp
+ref: ftp.storlines('STOR ' + filename, open(filename, 'r'))
+Output: ftp.quit()
+bleu_metric: 3.710176016036221
+----------
+NL: add one to the hidden web element with id 'xyz' with selenium python script
+ref: browser.execute_script("document.getElementById('XYZ').value+='1'")
+Output: driver.execute_script('http://stackoverflow.com')
+bleu_metric: 15.146687286842301
+----------
+NL: create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]`
+ref: np.maximum([2, 3, 4], [1, 5, 2])
+Output: np.maximum([2, 3, 4], [1, 5, 2])
+bleu_metric: 100.0
+----------
+NL: print a list `l` and move first 3 elements to the end of the list
+ref: print(l[3:] + l[:3])
+Output: print(l[:3] + l[1:])
+bleu_metric: 66.94854206779993
+----------
+NL: loop over files in directory '.'
+ref: for fn in os.listdir('.'):
+    if os.path.isfile(fn):
+        pass
+Output: list(glob.glob('.'))
+bleu_metric: 16.840921209171718
+----------
+NL: loop over files in directory `source`
+ref: for (root, dirs, filenames) in os.walk(source):
+    for f in filenames:
+        pass
+Output: list(os.path.join(source))
+bleu_metric: 10.739983258001304
+----------
+NL: create a random list of integers
+ref: [int(1000 * random.random()) for i in range(10000)]
+Output: [random.choice(list(range(0, 10)), 10) for _ in range(10)]
+bleu_metric: 17.21916742076807
+----------
+NL: using %f with strftime() in python to get microseconds
+ref: datetime.datetime.now().strftime('%H:%M:%S.%f')
+Output: [i for i in current_seconds if i.startswith('%f')]
+bleu_metric: 18.00317301004333
+----------
+NL: google app engine execute gql query 'select * from schedule where station = $1' with parameter `foo.key()`
+ref: db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())
+Output: os.environ['SELECT * FROM table WHERE Station = $1', 'foo.key()']
+bleu_metric: 42.46183605185108
+----------
+NL: filter rows in pandas starting with alphabet 'f' using regular expression.
+ref: df.b.str.contains('^f')
+Output: df[(df['f'] == 'f') & (df['f'] == 'f')]
+bleu_metric: 8.635800047213174
+----------
+NL: print a 2 dimensional list `tab` as a table with delimiters
+ref: print('\n'.join('\t'.join(str(col) for col in row) for row in tab))
+Output: print(tab.table(['this is a player', 'this is a player', 'this is player']))
+bleu_metric: 10.1343436039168
+----------
+NL: pandas: delete rows in dataframe `df` based on multiple columns values
+ref: df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()
+Output: df.drop([df.columns.isin(['one', 'two'])], axis=1)
+bleu_metric: 13.141318614533622
+----------
+NL: format the variables `self.goals` and `self.penalties` using string formatting
+ref: """({:d} goals, ${:d})""".format(self.goals, self.penalties)
+Output: """""".join(['self.goals','self.penalties'])
+bleu_metric: 25.687566995897814
+----------
+NL: format string "({} goals, ${})" with variables `goals` and `penalties`
+ref: """({} goals, ${})""".format(self.goals, self.penalties)
+Output: ""({} goals, ${})""".format('{} goals,${}', 'penalties')
+bleu_metric: 58.17701227041283
+----------
+NL: format string "({0.goals} goals, ${0.penalties})"
+ref: """({0.goals} goals, ${0.penalties})""".format(self)
+Output: '({0.goals} goals, ${0.penalties})'.format('{0.goals}')
+bleu_metric: 68.34195288458649
+----------
+NL: convert list of lists `l` to list of integers
+ref: [int(''.join(str(d) for d in x)) for x in L]
+Output: [map(int, l) for l in l]
+bleu_metric: 8.520157949222618
+----------
+NL: combine elements of each list in list `l` into digits of a single integer
+ref: [''.join(str(d) for d in x) for x in L]
+Output: int(str(x) for x in L)
+bleu_metric: 26.307478828137253
+----------
+NL: convert a list of lists `l` to list of integers
+ref: L = [int(''.join([str(y) for y in x])) for x in L]
+Output: [map(int, x) for x in L]
+bleu_metric: 19.374017157980692
+----------
+NL: write the elements of list `lines` concatenated by special character '\n' to file `myfile`
+ref: myfile.write('\n'.join(lines))
+Output: myfile.write('\n')
+bleu_metric: 51.6288658561904
+----------
+NL: removing an element from a list based on a predicate 'x' or 'n'
+ref: [x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]
+Output: [x for x in l if x['n'] in v]
+bleu_metric: 13.06238481589545
+----------
+NL: remove duplicate words from a string `text` using regex
+ref: text = re.sub('\\b(\\w+)( \\1\\b)+', '\\1', text)
+Output: re.sub('(?<=[a-z])(?=[a-zA-Z])(?=[a-zA-Z][a-zA-Z][a-zA-Z]))', '\\1', text)
+bleu_metric: 22.527314558962047
+----------
+NL: count non zero values in each column in pandas data frame
+ref: df.astype(bool).sum(axis=1)
+Output: df[~df.applymap(lambda x: sum(x) > 0).any(axis=1)]
+bleu_metric: 23.33090341053722
+----------
+NL: search for string that matches regular expression pattern '(?<!distillr)\\\\acrotray\\.exe' in string 'c:\\somedir\\acrotray.exe'
+ref: re.search('(?<!Distillr)\\\\AcroTray\\.exe', 'C:\\SomeDir\\AcroTray.exe')
+Output: re.search('(?<!distillr)\\\acrotray\\.exe', 'c:\\somedir\\acrotray.exe')
+bleu_metric: 55.12153831173154
+----------
+NL: split string 'qh qd jc kd js' into a list on white spaces
+ref: """QH QD JC KD JS""".split()
+Output: ['QH qd jc kd js', 'two', 'greats', 'two', 'greats']
+bleu_metric: 7.987276352377326
+----------
+NL: search for occurrences of regex pattern '>.*<' in xml string `line`
+ref: print(re.search('>.*<', line).group(0))
+Output: print(re.search('>.*<', line).text)
+bleu_metric: 74.62878748277065
+----------
+NL: erase all the contents of a file `filename`
+ref: open(filename, 'w').close()
+Output: open('filename', 'w').close()
+bleu_metric: 70.98108717509044
+----------
+NL: convert a string into datetime using the format '%y-%m-%d %h:%m:%s.%f'
+ref: datetime.datetime.strptime(string_date, '%Y-%m-%d %H:%M:%S.%f')
+Output: datetime.strptime('%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M:%S.%f')
+bleu_metric: 53.878056449977954
+----------
+NL: find the index of a list with the first element equal to '332' within the list of lists `thelist`
+ref: [index for index, item in enumerate(thelist) if item[0] == '332']
+Output: [item for item in thelist if item[0] == '332']
+bleu_metric: 54.43826847859078
+----------
+NL: lower a string `text` and remove non-alphanumeric characters aside from space
+ref: re.sub('[^\\sa-zA-Z0-9]', '', text).lower().strip()
+Output: re.sub('[^0-9a-zA-Z]+', '', text)
+bleu_metric: 42.32964405407573
+----------
+NL: remove all non-alphanumeric characters except space from a string `text` and lower it
+ref: re.sub('(?!\\s)[\\W_]', '', text).lower().strip()
+Output: re.sub('[^0-9a-zA-Z]+', '', text)
+bleu_metric: 31.11523617245988
+----------
+NL: subscript text 'h20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.
+ref: plt.plot(x, y, label='H\u2082O')
+Output: plt.show()
+bleu_metric: 6.117046115680378
+----------
+NL: subscript text 'h20' with '2' as subscripted in matplotlib labels for arrays 'x' and 'y'.
+ref: plt.plot(x, y, label='$H_2O$')
+Output: plt.show()
+bleu_metric: 6.117046115680378
+----------
+NL: loop over a list `mylist` if sublists length equals 3
+ref: [x for x in mylist if len(x) == 3]
+Output: [len(myList) for subList, len(myList) == 3]
+bleu_metric: 32.33842870691161
+----------
+NL: initialize a list `lst` of 100 objects object()
+ref: lst = [Object() for _ in range(100)]
+Output: [x for x in lst for x in range(100)]
+bleu_metric: 44.844165354587766
+----------
+NL: create list `lst` containing 100 instances of object `object`
+ref: lst = [Object() for i in range(100)]
+Output: lst = [(x * 100) for x in lst]
+bleu_metric: 23.457756568566886
+----------
+NL: get the content of child tag with`href` attribute whose parent has css `someclass`
+ref: self.driver.find_element_by_css_selector('.someclass a').get_attribute('href')
+Output: print(soup.find('someclass', 'href'))
+bleu_metric: 23.430998331263943
+----------
+NL: joining data from dataframe `df1` with data from dataframe `df2` based on matching values of column 'date_time' in both dataframes
+ref: df1.merge(df2, on='Date_Time')
+Output: df1.merge(df2, how='Date_time', on=['Date_time'])
+bleu_metric: 36.51171690745112
+----------
+NL: use `%s` operator to print variable values `str1` inside a string
+ref: 'first string is: %s, second one is: %s' % (str1, 'geo.tif')
+Output: print(str1.lower())
+bleu_metric: 3.308426786106404
+----------
+NL: split a string by a delimiter in python
+ref: [x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')]
+Output: re.split('\\s*\\s*\\s*\\s*\\s*', a)
+bleu_metric: 11.051204914822122
+----------
+NL: check if directory `directory ` exists and create it if necessary
+ref: if (not os.path.exists(directory)):
+    os.makedirs(directory)
+Output: os.path.exists(directory)
+bleu_metric: 29.457482831010733
+----------
+NL: check if a directory `path` exists and create it if necessary
+ref: try:
+    os.makedirs(path)
+except OSError:
+    if (not os.path.isdir(path)):
+        raise
+Output: os.path.exists(path)
+bleu_metric: 8.87965501059252
+----------
+NL: check if a directory `path` exists and create it if necessary
+ref: distutils.dir_util.mkpath(path)
+Output: os.path.exists(path)
+bleu_metric: 42.728700639623405
+----------
+NL: check if a directory `path` exists and create it if necessary
+ref: try:
+    os.makedirs(path)
+except OSError as exception:
+    if (exception.errno != errno.EEXIST):
+        raise
+Output: os.path.exists(path)
+bleu_metric: 4.910269751566815
+----------
+NL: replace a separate word 'h3' by 'h1' in a string 'text'
+ref: re.sub('\\bH3\\b', 'H1', text)
+Output: re.sub('(?<=\\h3\\h1\\w)', 'H3', text)
+bleu_metric: 36.28406621378863
+----------
+NL: substitute ascii letters in string 'aas30dsa20' with empty string ''
+ref: re.sub('\\D', '', 'aas30dsa20')
+Output: """""".join('aas30dsa20')
+bleu_metric: 31.910644756075385
+----------
+NL: get digits only from a string `aas30dsa20` using lambda function
+ref: """""".join([x for x in 'aas30dsa20' if x.isdigit()])
+Output: """""".join([i for i in aas30dsa20 if i.isdigit()])
+bleu_metric: 62.67526444451589
+----------
+NL: access a tag called "name" in beautifulsoup `soup`
+ref: print(soup.find('name').string)
+Output: soup.findAll('name', attrs={'name': 'Soup'})
+bleu_metric: 22.656720908801994
+----------
+NL: get a dictionary `records` of key-value pairs in pymongo cursor `cursor`
+ref: records = dict((record['_id'], record) for record in cursor)
+Output: cursor.find_element_by_css_selector(['records']).dict()
+bleu_metric: 14.073199831116506
+----------
+NL: create new matrix object  by concatenating data from matrix a and matrix b
+ref: np.concatenate((A, B))
+Output: numpy.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+bleu_metric: 6.106432774355542
+----------
+NL: concat two matrices `a` and `b` in numpy
+ref: np.vstack((A, B))
+Output: np.concat([a, b])
+bleu_metric: 20.504572236241867
+----------
+NL: get the characters count in a file `filepath`
+ref: os.stat(filepath).st_size
+Output: len(filepath)
+bleu_metric: 27.886916486768797
+----------
+NL: count the occurrences of item "a" in list `l`
+ref: l.count('a')
+Output: Counter({'a': 1, 'b': 2, 'c': 3, 'd': 1})
+bleu_metric: 9.60587088155178
+----------
+NL: count the occurrences of items in list `l`
+ref: Counter(l)
+Output: sum(1 for i in l)
+bleu_metric: 27.776190340117914
+----------
+NL: count the occurrences of items in list `l`
+ref: [[x, l.count(x)] for x in set(l)]
+Output: sum(1 for i in l)
+bleu_metric: 6.051528258124341
+----------
+NL: count the occurrences of items in list `l`
+ref: dict(((x, l.count(x)) for x in set(l)))
+Output: sum(1 for i in l)
+bleu_metric: 5.362632001400939
+----------
+NL: count the occurrences of item "b" in list `l`
+ref: l.count('b')
+Output: Counter({'b': [1, 2, 3], 'b': [1, 2, 3]})
+bleu_metric: 9.60587088155178
+----------
+NL: copy file `srcfile` to directory `dstdir`
+ref: shutil.copy(srcfile, dstdir)
+Output: copyfile(srcfile, dstdir)
+bleu_metric: 63.1914561891573
+----------
+NL: find the key associated with the largest value in dictionary `x` whilst key is non-zero value
+ref: max(k for k, v in x.items() if v != 0)
+Output: max(x, key=n)[x] == np.nan[x]
+bleu_metric: 10.580331550093845
+----------
+NL: get the largest key whose not associated with value of 0 in dictionary `x`
+ref: (k for k, v in x.items() if v != 0)
+Output: max(x, key=lambda x: x[1])
+bleu_metric: 9.58730456809568
+----------
+NL: get the largest key in a dictionary `x` with non-zero value
+ref: max(k for k, v in x.items() if v != 0)
+Output: max(x, key=np.arange(3))
+bleu_metric: 11.60556545074862
+----------
+NL: put the curser at beginning of the file
+ref: file.seek(0)
+Output: time.sleep(1)
+bleu_metric: 27.776190340117914
+----------
+NL: combine values from column 'b' and column 'a' of dataframe `df`  into column 'c' of datafram `df`
+ref: df['c'] = np.where(df['a'].isnull, df['b'], df['a'])
+Output: df['C'].fillna(df['B'], inplace=True)
+bleu_metric: 17.26313494880129
+----------
+NL: remove key 'ele' from dictionary `d`
+ref: del d['ele']
+Output: d = dict((k, v) for k, v in d.items() if v!= 'ele')
+bleu_metric: 8.914609827874221
+----------
+NL: update datetime field in `mymodel` to be the existing `timestamp` plus 100 years
+ref: MyModel.objects.update(timestamp=F('timestamp') + timedelta(days=36524.25))
+Output: time.strftime('%Y-%m-%d %H:%M:%S')
+bleu_metric: 9.01618593289117
+----------
+NL: merge list `['it']` and list `['was']` and list `['annoying']` into one list
+ref: ['it'] + ['was'] + ['annoying']
+Output: list(itertools.chain(['it', ['was', '], ['annoying']]))
+bleu_metric: 34.589895849033105
+----------
+NL: increment a value with leading zeroes in a number `x`
+ref: str(int(x) + 1).zfill(len(x))
+Output: sum(x + 1) + sum(x)
+bleu_metric: 20.85817220152381
+----------
+NL: check if a pandas dataframe `df`'s index is sorted
+ref: all(df.index[:-1] <= df.index[1:])
+Output: df.sort_index()
+bleu_metric: 3.1405961937021267
+----------
+NL: convert tuple `t` to list
+ref: list(t)
+Output: list(t)
+bleu_metric: 100.0
+----------
+NL: convert list `t` to tuple
+ref: tuple(l)
+Output: tuple(map(t))
+bleu_metric: 26.53856085536222
+----------
+NL: convert tuple `level1` to list
+ref: level1 = map(list, level1)
+Output: list(level1)
+bleu_metric: 25.267624512808524
+----------
+NL: send the output of pprint object `dataobject` to file `logfile`
+ref: pprint.pprint(dataobject, logFile)
+Output: print(pprint(dataobject, logfile.read()))
+bleu_metric: 29.256127307315065
+----------
+NL: get index of rows in column 'boolcol'
+ref: df.loc[df['BoolCol']]
+Output: df.index = df.index
+bleu_metric: 11.147892272337161
+----------
+NL: create a list containing the indexes of rows where the value of column 'boolcol' in dataframe `df` are equal to true
+ref: df.iloc[np.flatnonzero(df['BoolCol'])]
+Output: df.to_numeric(index=df.columns, index=df.index)
+bleu_metric: 11.455131904021634
+----------
+NL: get list of indexes of rows where column 'boolcol' values match true
+ref: df[df['BoolCol'] == True].index.tolist()
+Output: [i for i, j in enumerate(['boolcol', 'true', 'boolcol']) if j == 1]
+bleu_metric: 8.635800047213174
+----------
+NL: get index of rows in dataframe `df` which column 'boolcol' matches value true
+ref: df[df['BoolCol']].index.tolist()
+Output: df.index = df.loc[(df.columns['boolcol'] == True)]
+bleu_metric: 12.384901282810546
+----------
+NL: change working directory to the directory `owd`
+ref: os.chdir(owd)
+Output: os.chdir('owd')
+bleu_metric: 46.71379777282001
+----------
+NL: insert data from a string `testfield` to sqlite db `c`
+ref: c.execute("INSERT INTO test VALUES (?, 'bar')", (testfield,))
+Output: cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (testfield,))
+bleu_metric: 51.362687359130376
+----------
+NL: decode string "\\x89\\n" into a normal string
+ref: """\\x89\\n""".decode('string_escape')
+Output: """\\x89\\n""".decode('ascii', 'ignore')
+bleu_metric: 72.97349727547102
+----------
+NL: convert a raw string `raw_string` into a normal string
+ref: raw_string.decode('string_escape')
+Output: """a string""".decode('raw_string')
+bleu_metric: 27.694132751313415
+----------
+NL: convert a raw string `raw_byte_string` into a normal string
+ref: raw_byte_string.decode('unicode_escape')
+Output: """""".join(map(str, raw_byte_string))
+bleu_metric: 11.451997463067553
+----------
+NL: split a string `s` with into all strings of repeated characters
+ref: [m.group(0) for m in re.finditer('(\\d)\\1*', s)]
+Output: re.findall('\\[([a-z]+)\\]+', s)
+bleu_metric: 19.28445928056185
+----------
+NL: scatter a plot with x, y position of `np.random.randn(100)` and face color equal to none
+ref: plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')
+Output: plt.show()
+bleu_metric: 0.8278521686370256
+----------
+NL: do a scatter plot with empty circles
+ref: plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')
+Output: plt.show()
+bleu_metric: 0.42503347540650505
+----------
+NL: remove a div with a id `main-content` using beautifulsoup
+ref: soup.find('div', id='main-content').decompose()
+Output: soup.select('div[id$=']')
+bleu_metric: 16.6931720783564
+----------
+NL: filter rows containing key word `ball` in column `ids`
+ref: df[df['ids'].str.contains('ball')]
+Output: [(d['ids'], df['ball']) for df in df['ids']]
+bleu_metric: 28.64900351806976
+----------
+NL: convert index at level 0 into a column in dataframe `df`
+ref: df.reset_index(level=0, inplace=True)
+Output: df['level1'] = df['level1'].index.tolist()
+bleu_metric: 9.936036078831874
+----------
+NL: add indexes in a data frame `df` to a column `index1`
+ref: df['index1'] = df.index
+Output: df[index1].append(index1)
+bleu_metric: 19.72940627795883
+----------
+NL: convert pandas index in a dataframe to columns
+ref: df.reset_index(level=['tick', 'obs'])
+Output: df = pd.DataFrame(df.index.values, columns=['value', 'value'], columns=['value', 'value'])
+bleu_metric: 15.89478029085619
+----------
+NL: get reverse of list items from list 'b' using extended slicing
+ref: [x[::-1] for x in b]
+Output: [x[i:i + 3] for i in range(0, len(x), 2)]
+bleu_metric: 17.895706401541528
+----------
+NL: join each element in array `a` with element at the same index in array `b` as a tuple
+ref: np.array([zip(x, y) for x, y in zip(a, b)])
+Output: a[(np.arange(a[i, j]))]
+bleu_metric: 10.56040980615222
+----------
+NL: zip two 2-d arrays `a` and `b`
+ref: np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)
+Output: zip(a, b, zip(a, b))
+bleu_metric: 6.091723053208434
+----------
+NL: convert list `list_of_ints` into a comma separated string
+ref: """,""".join([str(i) for i in list_of_ints])
+Output: """,""".join('[:, (2)]'.format(i) for i in list_of_ints)
+bleu_metric: 55.30329491770615
+----------
+NL: send a post request with raw data `data` and basic authentication with `username` and `password`
+ref: requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))
+Output: response = requests.post('data', 'username', 'password')
+bleu_metric: 19.496626806250333
+----------
+NL: find last occurrence of character '}' in string "abcd}def}"
+ref: 'abcd}def}'.rfind('}')
+Output: """abcd}def}"".rsplit('\\', 1)
+bleu_metric: 35.53719249894122
+----------
+NL: iterate ove list `[1, 2, 3]` using list comprehension
+ref: print([item for item in [1, 2, 3]])
+Output: [(1, 2, 3]) for i in range(3)]
+bleu_metric: 36.03194965824358
+----------
+NL: extract all the values with keys 'x' and 'y' from a list of dictionaries `d` to list of tuples
+ref: [(x['x'], x['y']) for x in d]
+Output: results = [item['x'] for item in d]
+bleu_metric: 28.114232857824213
+----------
+NL: get the filename without the extension from file 'hemanth.txt'
+ref: print(os.path.splitext(os.path.basename('hemanth.txt'))[0])
+Output: os.path.splitext('Hemanth.txt')
+bleu_metric: 24.853937893058912
+----------
+NL: create a dictionary by adding each two adjacent elements in tuple `x` as key/value pair to it
+ref: dict(x[i:i + 2] for i in range(0, len(x), 2))
+Output: dict(zip(x[1::2], x[1::2]))
+bleu_metric: 16.359312690927595
+----------
+NL: create a list containing flattened list `[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]`
+ref: values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])
+Output: [['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]
+bleu_metric: 31.01316961864567
+----------
+NL: select rows in a dataframe `df` column 'closing_price' between two values 99 and 101
+ref: df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]
+Output: df.loc[df['class_rice'] == 99, 'class_rice']
+bleu_metric: 12.178744650706369
+----------
+NL: replace all occurences of newlines `\n` with `<br>` in dataframe `df`
+ref: df.replace({'\n': '<br>'}, regex=True)
+Output: df['cumsum'] = df['cumsum'].str.replace('\n', '<br>')
+bleu_metric: 29.271572980584494
+----------
+NL: replace all occurrences of a string `\n` by string `<br>` in a pandas data frame `df`
+ref: df.replace({'\n': '<br>'}, regex=True)
+Output: df.replace('<br>', '').replace('\n', '')
+bleu_metric: 38.83375900135818
+----------
+NL: create a list containing each two adjacent letters in string `word` as its elements
+ref: [(x + y) for x, y in zip(word, word[1:])]
+Output: [''.join(word[i:i + 2] for i in range(len(word) - len(word))) for word in re.findall('\\2', word)]
+bleu_metric: 8.675107600029897
+----------
+NL: get a list of pairs from a string `word` using lambda function
+ref: list(map(lambda x, y: x + y, word[:-1], word[1:]))
+Output: [x[i] for x in words if i[i] == 2]
+bleu_metric: 5.790763854085683
+----------
+NL: extract a url from a string `mystring`
+ref: print(re.findall('(https?://[^\\s]+)', myString))
+Output: urllib.replace('', '')
+bleu_metric: 4.857367954226877
+----------
+NL: extract a url from a string `mystring`
+ref: print(re.search('(?P<url>https?://[^\\s]+)', myString).group('url'))
+Output: urllib.replace('', '')
+bleu_metric: 1.824232595075664
+----------
+NL: remove all special characters, punctuation and spaces from a string `mystring` using regex
+ref: re.sub('[^A-Za-z0-9]+', '', mystring)
+Output: """ """.join(re.sub('[^\\w\\s]+', '', mystring))
+bleu_metric: 42.54802555453605
+----------
+NL: create a datetimeindex containing 13 periods of the second friday of each month starting from date '2016-01-01'
+ref: pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)
+Output: datetime.datetime.now().strftime('2013-01-01')
+bleu_metric: 21.771888984292122
+----------
+NL: create multidimensional array `matrix` with 3 rows and 2 columns in python
+ref: matrix = [[a, b], [c, d], [e, f]]
+Output: matrix = [[[[1, 2], [3, 4], [3, 4]], [[4, 6], [7, 8], [7, 9]]]]
+bleu_metric: 14.774994295869472
+----------
+NL: replace spaces with underscore
+ref: mystring.replace(' ', '_')
+Output: """""".join(c for c in range(10) if c.isdigit())
+bleu_metric: 8.947853200770762
+----------
+NL: get an absolute file path of file 'mydir/myfile.txt'
+ref: os.path.abspath('mydir/myfile.txt')
+Output: os.path.abspath('mydir/myfile.txt')
+bleu_metric: 100.0
+----------
+NL: split string `my_string` on white spaces
+ref: """ """.join(my_string.split())
+Output: re.split('\\s+', my_string)
+bleu_metric: 17.47567854723579
+----------
+NL: get filename without extension from file `filename`
+ref: os.path.splitext(filename)[0]
+Output: os.path.splitext(os.path.ext(filename))
+bleu_metric: 42.81818531951608
+----------
+NL: get a list containing the sum of each element `i` in list `l` plus the previous elements
+ref: [sum(l[:i]) for i, _ in enumerate(l)]
+Output: [sum(i) for i in l]
+bleu_metric: 21.437920819052874
+----------
+NL: split a string `docs/src/scripts/temp` by `/` keeping `/` in the result
+ref: """Docs/src/Scripts/temp""".replace('/', '/\x00/').split('\x00')
+Output: re.split('(\\d+)', '/', docs/src/scripts/temp)
+bleu_metric: 24.36551336092481
+----------
+NL: shuffle columns of an numpy array 'r'
+ref: np.random.shuffle(np.transpose(r))
+Output: r = np.random.random((1, 3))
+bleu_metric: 33.15796151992083
+----------
+NL: copy all values in a column 'b' to a new column 'd' in a pandas data frame 'df'
+ref: df['D'] = df['B']
+Output: df['d'].copy(['b', 'd'], inplace=True)
+bleu_metric: 14.757581190431864
+----------
+NL: find a value within nested json 'data' where the key inside another key 'b' is unknown.
+ref: list(data['A']['B'].values())[0]['maindata'][0]['Info']
+Output: data['data']['data']['b'] = 'data'
+bleu_metric: 16.856658721391064
+----------
+NL: check characters of string `string` are true predication of function `predicate`
+ref: all(predicate(x) for x in string)
+Output: """""".join(re.search('[\\s]+', string))
+bleu_metric: 8.085298080223222
+----------
+NL: determine number of files on a drive with python
+ref: os.statvfs('/').f_files - os.statvfs('/').f_ffree
+Output: dt.loc[i for i in files if i.startswith('.txt')]
+bleu_metric: 10.813005337959174
+----------
+NL: how to get a single result from a sqlite query in python?
+ref: cursor.fetchone()[0]
+Output: cursor.execute('SELECT * FROM table WHERE equals WHERE email LIKE'sql')
+bleu_metric: 10.079037376973918
+----------
+NL: convert string `user_input` into a list of integers `user_list`
+ref: user_list = [int(number) for number in user_input.split(',')]
+Output: list(map(int, user_input))
+bleu_metric: 6.754370042592729
+----------
+NL: get a list of integers by splitting  a string `user` with comma
+ref: [int(s) for s in user.split(',')]
+Output: [int(x) for x in user.split(',')]
+bleu_metric: 72.65407815865123
+----------
+NL: sorting a python list by two criteria
+ref: sorted(list, key=lambda x: (x[0], -x[1]))
+Output: sorted(a, key=lambda x: x[1])
+bleu_metric: 39.12317159998539
+----------
+NL: sort a list of objects `ut`, based on a function `cmpfun` in descending order
+ref: ut.sort(key=cmpfun, reverse=True)
+Output: sorted(unsorted_list, key=lambda x: f(x)[1], reverse=True)
+bleu_metric: 28.489318277723964
+----------
+NL: reverse list `ut` based on the `count` attribute of each object
+ref: ut.sort(key=lambda x: x.count, reverse=True)
+Output: [x[::-1] for x in range(10)]
+bleu_metric: 9.313775329024091
+----------
+NL: sort a list of objects `ut` in reverse order by their `count` property
+ref: ut.sort(key=lambda x: x.count, reverse=True)
+Output: sorted(unsorted, key=lambda x: x.count(x.index))
+bleu_metric: 46.18795171227213
+----------
+NL: click a href button 'send' with selenium
+ref: driver.find_element_by_partial_link_text('Send').click()
+Output: driver.find_element_by_href('end').click()
+bleu_metric: 60.600320738082445
+----------
+NL: click a href button having text `send inmail` with selenium
+ref: driver.findElement(By.linkText('Send InMail')).click()
+Output: driver.find_element_by_href('send inmail').click()
+bleu_metric: 28.61601726348299
+----------
+NL: click a href button with text 'send inmail' with selenium
+ref: driver.find_element_by_link_text('Send InMail').click()
+Output: driver.find_element_by_href('send inmail').click()
+bleu_metric: 52.21307185746091
+----------
+NL: cast an int `i` to a string and concat to string 'me'
+ref: 'ME' + str(i)
+Output: """""".join(map(str, i))
+bleu_metric: 14.02577516008147
+----------
+NL: sorting data in dataframe pandas
+ref: df.sort_values(['System_num', 'Dis'])
+Output: data.sort(key=lambda x: x.index.get(x.values), reverse=True)
+bleu_metric: 7.6047020452233385
+----------
+NL: prepend the line '#test firstline\n' to the contents of file 'infile' and save as the file 'outfile'
+ref: open('outfile', 'w').write('#test firstline\n' + open('infile').read())
+Output: '#test firstline\n'.format('infile', 'outfile')
+bleu_metric: 31.163479794334055
+----------
+NL: sort a list `l` by length of value in tuple
+ref: l.sort(key=lambda t: len(t[1]), reverse=True)
+Output: sorted(l, key=lambda t: (-len(t)), reverse=True)
+bleu_metric: 52.69003930556608
+----------
+NL: split string `s` by words that ends with 'd'
+ref: re.findall('\\b(\\w+)d\\b', s)
+Output: s.split('D')
+bleu_metric: 5.5446735585517954
+----------
+NL: return `true` if string `foobarrrr` contains regex `ba[rzd]`
+ref: bool(re.search('ba[rzd]', 'foobarrrr'))
+Output: re.findall('\\b\\b', 'ba[azd]')
+bleu_metric: 22.115966812339867
+----------
+NL: removing duplicates in list `t`
+ref: list(set(t))
+Output: list(set(t))
+bleu_metric: 100.0
+----------
+NL: removing duplicates in list `source_list`
+ref: list(set(source_list))
+Output: print(sorted(itertools.chain.from_iterable(source_list)))
+bleu_metric: 28.295596283263507
+----------
+NL: removing duplicates in list `abracadabra`
+ref: list(OrderedDict.fromkeys('abracadabra'))
+Output: list(itertools.chain.from_iterable(itertools.chain.from_iterable(a)))
+bleu_metric: 15.316824552082009
+----------
+NL: convert array `a` into a list
+ref: numpy.array(a).reshape(-1).tolist()
+Output: list(map(int, a.split(',')))
+bleu_metric: 12.846189726767717
+----------
+NL: convert the first row of numpy matrix `a` to a list
+ref: numpy.array(a)[0].tolist()
+Output: list(map(int, a.split(',')))
+bleu_metric: 12.149176141753365
+----------
+NL: in `soup`, get the content of the sibling of the `td`  tag with text content `address:`
+ref: print(soup.find(text='Address:').findNext('td').contents[0])
+Output: print(soup.find('td', {'foo': 'foo'}))
+bleu_metric: 31.412411397455102
+----------
+NL: convert elements of each tuple in list `l` into a string  separated by character `@`
+ref: """ """.join([('%d@%d' % t) for t in l])
+Output: """""".join(l)
+bleu_metric: 24.073303385626694
+----------
+NL: convert each tuple in list `l` to a string with '@' separating the tuples' elements
+ref: """ """.join([('%d@%d' % (t[0], t[1])) for t in l])
+Output: """""".join(l)
+bleu_metric: 11.15483140510856
+----------
+NL: get the html from the current web page of a selenium driver
+ref: driver.execute_script('return document.documentElement.outerHTML;')
+Output: driver.get('http://stackoverflow.com')
+bleu_metric: 18.6459295510351
+----------
+NL: get all matches with regex pattern `\\d+[xx]` in list of string `teststr`
+ref: [i for i in teststr if re.search('\\d+[xX]', i)]
+Output: re.search('\\d+[xx]', teststr)
+bleu_metric: 38.12672739705494
+----------
+NL: select values from column 'a' for which corresponding values in column 'b' will be greater than 50, and in column 'c' - equal 900 in dataframe `df`
+ref: df['A'][(df['B'] > 50) & (df['C'] == 900)]
+Output: df['A'].loc[:, (['B'] == 50)]
+bleu_metric: 38.74349376329317
+----------
+NL: sort dictionary `o` in ascending order based on its keys and items
+ref: sorted(o.items())
+Output: sorted(list(o.items()), key=operator.itemgetter(1), reverse=True)
+bleu_metric: 29.452884374019472
+----------
+NL: get sorted list of keys of dict `d`
+ref: sorted(d)
+Output: sorted(d, key=d.get)
+bleu_metric: 25.21193618434983
+----------
+NL: how to sort dictionaries by keys in python
+ref: sorted(d.items())
+Output: sorted(list(a.items()), key=lambda key_value: key_value['name'], reverse=True)
+bleu_metric: 19.083461959629204
+----------
+NL: convert string "1" into integer
+ref: int('1')
+Output: int('1', 16)
+bleu_metric: 58.143073696821936
+----------
+NL: function to convert strings into integers
+ref: int()
+Output: map(int, [(int, x) for x in s.split()])
+bleu_metric: 9.614272376566879
+----------
+NL: convert items in `t1` to integers
+ref: T2 = [map(int, x) for x in T1]
+Output: int(t1)
+bleu_metric: 4.64598616370231
+----------
+NL: call a shell script `./test.sh` using subprocess
+ref: subprocess.call(['./test.sh'])
+Output: subprocess.call(['./test.sh', '/path/to/script.sh'])
+bleu_metric: 56.74773954614979
+----------
+NL: call a shell script `notepad` using subprocess
+ref: subprocess.call(['notepad'])
+Output: subprocess.call('notepad', shell=True)
+bleu_metric: 39.073802494525
+----------
+NL: combine lists `l1` and `l2`  by alternating their elements
+ref: [val for pair in zip(l1, l2) for val in pair]
+Output: zip(*l1, l2)
+bleu_metric: 15.206849973654688
+----------
+NL: encode string 'data to be encoded'
+ref: encoded = base64.b64encode('data to be encoded')
+Output: 'data to be urllib.parse.quote('[A-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Z]')')
+bleu_metric: 9.448049464697213
+----------
+NL: encode a string `data to be encoded` to `ascii` encoding
+ref: encoded = 'data to be encoded'.encode('ascii')
+Output: data.encode('ascii', 'ignore')
+bleu_metric: 44.18119774774517
+----------
+NL: parse tab-delimited csv file 'text.txt' into a list
+ref: lol = list(csv.reader(open('text.txt', 'rb'), delimiter='\t'))
+Output: list(open('text.txt', 'r').read())
+bleu_metric: 37.62935860819858
+----------
+NL: get attribute `my_str` of object `my_object`
+ref: getattr(my_object, my_str)
+Output: getattr(my_str, my_object)
+bleu_metric: 34.5720784641941
+----------
+NL: group a list of dicts `ld` into one dict by key
+ref: print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))
+Output: {k: v for k, v in list(ld.items()) for k, v in list(d.items())}
+bleu_metric: 20.379765144415735
+----------
+NL: how do i sum the first value in each tuple in a list of tuples in python?
+ref: sum([pair[0] for pair in list_of_pairs])
+Output: sum(x[0] for x in G)
+bleu_metric: 32.21542689451684
+----------
+NL: convert unicode string u"{'code1':1,'code2':1}" into dictionary
+ref: d = ast.literal_eval("{'code1':1,'code2':1}")
+Output: dict((k, v) for k, v in list('{'code1':1,'code2':1}'.items()))
+bleu_metric: 46.06931516628009
+----------
+NL: find all words in a string `mystring` that start with the `$` sign
+ref: [word for word in mystring.split() if word.startswith('$')]
+Output: [word for word in mystring if word[0] == '$']
+bleu_metric: 40.31242541264351
+----------
+NL: remove any url within string `text`
+ref: text = re.sub('^https?:\\/\\/.*[\\r\\n]*', '', text, flags=re.MULTILINE)
+Output: re.sub('(?<=[a-zA-Z])(?=[A-Z])', '', text)
+bleu_metric: 23.762773802243338
+----------
+NL: replace all elements in array `a` that are not present in array `[1, 3, 4]` with zeros
+ref: np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)
+Output: np.nonzero(np.any(a!= [1, 3, 4], axis=1))
+bleu_metric: 29.325101529274182
+----------
+NL: calculate mean across dimension in a 2d array `a`
+ref: np.mean(a, axis=1)
+Output: np.mean(a, axis=0)
+bleu_metric: 76.91605673134586
+----------
+NL: running r script '/pathto/myrscript.r' from python
+ref: subprocess.call(['/usr/bin/Rscript', '--vanilla', '/pathto/MyrScript.r'])
+Output: subprocess.call(['/pathto/myscript.r', '/pathto/myscript.r'])
+bleu_metric: 47.285901226512564
+----------
+NL: run r script '/usr/bin/rscript --vanilla /pathto/myrscript.r'
+ref: subprocess.call('/usr/bin/Rscript --vanilla /pathto/MyrScript.r', shell=True)
+Output: os.system('/usr/bin/rscript --vanille /pathto/mystring.r')
+bleu_metric: 35.69703367459909
+----------
+NL: add a header to a csv file
+ref: writer.writeheader()
+Output: writer.writeheader()
+bleu_metric: 100.0
+----------
+NL: replacing nan in the dataframe `df` with row average
+ref: df.fillna(df.mean(axis=1), axis=1)
+Output: df.replace(np.isnan(a), axis=1)
+bleu_metric: 42.66333374870424
+----------
+NL: convert unix timestamp '1347517370' to formatted string '%y-%m-%d %h:%m:%s'
+ref: time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))
+Output: datetime.strptime('1347517370', '%Y-%m-%d %H:%M:%S')
+bleu_metric: 63.559023303341654
+----------
+NL: call a base class's class method `do` from derived class `derived`
+ref: super(Derived, cls).do(a)
+Output: super(Doseries, self).__init__(*args, **kwargs)
+bleu_metric: 14.879641171245488
+----------
+NL: selecting rows in numpy ndarray 'a', where the value in the first column is 0 and value in the second column is 1
+ref: a[np.where((a[:, (0)] == 0) * (a[:, (1)] == 1))]
+Output: a[np.in1d(a[:, (1)], a[:, (1)])]
+bleu_metric: 43.46263775400843
+----------
+NL: separate words delimited by one or more spaces into a list
+ref: re.split(' +', 'hello world sample text')
+Output: list(re.findall('\\s+', s))
+bleu_metric: 20.10537345406003
+----------
+NL: length of longest element in list `words`
+ref: len(max(words, key=len))
+Output: words[:len(word) - len(words)]
+bleu_metric: 16.943571815930884
+----------
+NL: get the value associated with unicode key 'from_user' of first dictionary in list `result`
+ref: result[0]['from_user']
+Output: result[x.encode('from_user')]
+bleu_metric: 26.130226596777135
+----------
+NL: retrieve each line from a file 'file.txt' as a list
+ref: [line.split() for line in open('File.txt')]
+Output: [line.strip('file.txt') for line in open('file.txt')]
+bleu_metric: 54.11953360894813
+----------
+NL: swap keys with values in a dictionary `a`
+ref: res = dict((v, k) for k, v in a.items())
+Output: dict((k, v) for k, v in a.items())
+bleu_metric: 70.14922197807995
+----------
+NL: open a file `path/to/file_name.ext` in write mode
+ref: new_file = open('path/to/FILE_NAME.ext', 'w')
+Output: f = open(path/to/file_name.ext, 'w')
+bleu_metric: 50.5549481727107
+----------
+NL: how to count distinct values in a column of a pandas group by object?
+ref: df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()
+Output: df.stack().sum()
+bleu_metric: 6.251257531779925
+----------
+NL: check if any key in the dictionary `dict1` starts with the string `emp$$`
+ref: any(key.startswith('EMP$$') for key in dict1)
+Output: any(key for key in dict1.startswith('emp$$'))
+bleu_metric: 53.265095058116096
+----------
+NL: create list of values from dictionary `dict1` that have a key that starts with 'emp$$'
+ref: [value for key, value in list(dict1.items()) if key.startswith('EMP$$')]
+Output: [v for k, v in list(dict1.items()) if v.startswith('emp$$')]
+bleu_metric: 60.04561075980747
+----------
+NL: convert a pandas series `sf` into a pandas dataframe `df` with columns `email` and `list`
+ref: pd.DataFrame({'email': sf.index, 'list': sf.values})
+Output: df[['email', 'list']] = pd.to_pickle(df['email'])
+bleu_metric: 21.944097437422137
+----------
+NL: print elements of list `list` seperated by tabs `\t`
+ref: print('\t'.join(map(str, list)))
+Output: print('\t'.join(str(i) for i in list))
+bleu_metric: 57.28668995816387
+----------
+NL: print unicode string '\xd0\xbf\xd1\x80\xd0\xb8' with utf-8
+ref: print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('raw_unicode_escape'))
+Output: print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('UTF8'))
+bleu_metric: 89.42255541978508
+----------
+NL: encode a latin character in string `sopet\xc3\xb3n` properly
+ref: 'Sopet\xc3\xb3n'.encode('latin-1').decode('utf-8')
+Output: """""".join([str(ord(c)) for c in sopet\xc3\xb3n])
+bleu_metric: 18.41281488014272
+----------
+NL: resized image `image` to width, height of `(x, y)` with filter of `antialias`
+ref: image = image.resize((x, y), Image.ANTIALIAS)
+Output: image.image.set_major_formatter(x, y)
+bleu_metric: 30.607367875325103
+----------
+NL: regex, find "n"s only in the middle of string `s`
+ref: re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)
+Output: re.findall('\\d+', 'n', s)
+bleu_metric: 18.288878972354166
+----------
+NL: display the float `1/3*100` as a percentage
+ref: print('{0:.0f}%'.format(1.0 / 3 * 100))
+Output: """{0:.2f}""".format(1/3*100)
+bleu_metric: 49.10175478525162
+----------
+NL: sort a list of dictionary `mylist` by the key `title`
+ref: mylist.sort(key=lambda x: x['title'])
+Output: mylist.sort(key=operator.itemgetter('title'))
+bleu_metric: 43.3579055011877
+----------
+NL: sort a list `l` of dicts by dict value 'title'
+ref: l.sort(key=lambda x: x['title'])
+Output: sorted(L, key=operator.itemgetter('title'))
+bleu_metric: 19.21584757725793
+----------
+NL: sort a list of dictionaries by the value of keys 'title', 'title_url', 'id' in ascending order.
+ref: l.sort(key=lambda x: (x['title'], x['title_url'], x['id']))
+Output: sorted(data, key=lambda x: x['title', 'title', 'Title_Url'], reverse=True)
+bleu_metric: 30.65153185087319
+----------
+NL: find 10 largest differences between each respective elements of list `l1` and list `l2`
+ref: heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))
+Output: max(tuple(i) for i, tuple(i) in zip(*l1, l2))
+bleu_metric: 9.155479442942415
+----------
+NL: beautifulsoup find all 'span' elements in html string `soup` with class of 'stargryb sp'
+ref: soup.find_all('span', {'class': 'starGryB sp'})
+Output: soup.findAll('span', class_='stargryb')
+bleu_metric: 25.049995525110475
+----------
+NL: write records in dataframe `df` to table 'test' in schema 'a_schema'
+ref: df.to_sql('test', engine, schema='a_schema')
+Output: df.to_csv('test', df.to_datetime('a_schema'))
+bleu_metric: 42.794691107478805
+----------
+NL: extract brackets from string `s`
+ref: brackets = re.sub('[^(){}[\\]]', '', s)
+Output: re.findall('\\[(\\[]+)\\]+', s)
+bleu_metric: 27.519143936218416
+----------
+NL: remove duplicate elements from list 'l'
+ref: list(dict((x[0], x) for x in L).values())
+Output: [item for sublist in l for item in sublist]
+bleu_metric: 5.82510562100381
+----------
+NL: read a file `file` without newlines
+ref: [line.rstrip('\n') for line in file]
+Output: file = open(file, 'r').readlines()
+bleu_metric: 12.107470158860224
+----------
+NL: get the position of item 1 in `testlist`
+ref: [i for (i, x) in enumerate(testlist) if (x == 1)]
+Output: print([i for i in testlist if i.isdigit()])
+bleu_metric: 13.884841715497318
+----------
+NL: get the position of item 1 in `testlist`
+ref: [i for (i, x) in enumerate(testlist) if (x == 1)]
+Output: print([i for i in testlist if i.isdigit()])
+bleu_metric: 13.884841715497318
+----------
+NL: get the position of item 1 in `testlist`
+ref: for i in [i for (i, x) in enumerate(testlist) if (x == 1)]:
+    pass
+Output: print([i for i in testlist if i.isdigit()])
+bleu_metric: 14.25431526999185
+----------
+NL: get the position of item 1 in `testlist`
+ref: for i in (i for (i, x) in enumerate(testlist) if (x == 1)):
+    pass
+Output: print([i for i in testlist if i.isdigit()])
+bleu_metric: 11.198607753215402
+----------
+NL: get the position of item 1 in `testlist`
+ref: gen = (i for (i, x) in enumerate(testlist) if (x == 1))
+for i in gen:
+    pass
+Output: print([i for i in testlist if i.isdigit()])
+bleu_metric: 9.38693542925903
+----------
+NL: get the position of item `element` in list `testlist`
+ref: print(testlist.index(element))
+Output: [item for item in testlist if item[0] == 1]
+bleu_metric: 7.994607499472013
+----------
+NL: get the position of item `element` in list `testlist`
+ref: try:
+    print(testlist.index(element))
+except ValueError:
+    pass
+Output: [item for item in testlist if item[0] == 1]
+bleu_metric: 7.223943354597203
+----------
+NL: find the first element of the tuple with the maximum second element in a list of tuples `lis`
+ref: max(lis, key=lambda item: item[1])[0]
+Output: max(alist, key=lambda x: x[1][2])
+bleu_metric: 31.872714733206724
+----------
+NL: get the item at index 0 from the tuple that has maximum value at index 1 in list `lis`
+ref: max(lis, key=itemgetter(1))[0]
+Output: max(x, key=lambda x: x[0])[0]
+bleu_metric: 34.51395513935865
+----------
+NL: make a delay of 1 second
+ref: time.sleep(1)
+Output: time.sleep(1)
+bleu_metric: 100.0
+----------
+NL: convert list of tuples `l` to a string
+ref: """, """.join('(' + ', '.join(i) + ')' for i in L)
+Output: """""".join(map(str, L))
+bleu_metric: 22.382912241881993
+----------
+NL: django set default value of field `b` equal to '0000000'
+ref: b = models.CharField(max_length=7, default='0000000', editable=False)
+Output: super(B, self).save(*args, **kwargs)
+bleu_metric: 8.756189878973519
+----------
+NL: sort lis `list5` in ascending order based on the degrees value of its elements
+ref: sorted(list5, lambda x: (degree(x), x))
+Output: sorted(list5), key=lambda x: int(x[1])
+bleu_metric: 24.065223308491277
+----------
+NL: how do i perform secondary sorting in python?
+ref: sorted(list5, key=lambda vertex: (degree(vertex), vertex))
+Output: table.sort(key=lambda t: t.minute)
+bleu_metric: 14.709701104369305
+----------
+NL: convert a list  into a generator object
+ref: (n for n in [1, 2, 3, 5])
+Output: next((i for i in range(10)) for i in range(10))
+bleu_metric: 9.092617426809149
+----------
+NL: remove elements from list `oldlist` that have an index number mentioned in list `removelist`
+ref: newlist = [v for i, v in enumerate(oldlist) if i not in removelist]
+Output: [x for x in oldlist if not isinstance('removelist')]
+bleu_metric: 11.270143366181852
+----------
+NL: open a file `yourfile.txt` in write mode
+ref: f = open('yourfile.txt', 'w')
+Output: f = open('yourfile.txt', 'w')
+bleu_metric: 100.0
+----------
+NL: get attribute 'attr' from object `obj`
+ref: getattr(obj, 'attr')
+Output: getattr(obj, 'attr')
+bleu_metric: 100.0
+----------
+NL: convert tuple of tuples `(('aa',), ('bb',), ('cc',))` to tuple
+ref: from functools import reduce
+reduce(lambda a, b: a + b, (('aa',), ('bb',), ('cc',)))
+Output: tuple(map(tuple, ['aa',), ('bb',), ('cc',)))
+bleu_metric: 55.067371858752914
+----------
+NL: convert tuple of tuples `(('aa',), ('bb',), ('cc',))` to list in one line
+ref: map(lambda a: a[0], (('aa',), ('bb',), ('cc',)))
+Output: list((('aa',), ('bb',), ('cc',)))
+bleu_metric: 68.40417582919956
+----------
+NL: python pandas: how to replace a characters in a column of a dataframe?
+ref: df['range'].replace(',', '-', inplace=True)
+Output: df = pd.DataFrame.replace('a', 'b')
+bleu_metric: 23.81629535028512
+----------
+NL: unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`
+ref: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+Output: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+bleu_metric: 93.90594412706362
+----------
+NL: unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`
+ref: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+Output: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+bleu_metric: 93.90594412706362
+----------
+NL: unzip list `original`
+ref: result = ([a for (a, b) in original], [b for (a, b) in original])
+Output: Original = [x for x in zip(*Original)]
+bleu_metric: 4.736201512792776
+----------
+NL: unzip list `original` and return a generator
+ref: result = ((a for (a, b) in original), (b for (a, b) in original))
+Output: original = [(x + y) for x in zip(* Original)]
+bleu_metric: 5.8422015459092345
+----------
+NL: unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]`
+ref: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+Output: zip([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+bleu_metric: 94.87791694817466
+----------
+NL: unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]` and fill empty results with none
+ref: map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+Output: zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+bleu_metric: 91.86576221781797
+----------
+NL: encode `decimal('3.9')` to a json string
+ref: json.dumps(Decimal('3.9'))
+Output: json.dumps(default('3.8'))
+bleu_metric: 57.73502691896258
+----------
+NL: add key "mynewkey" to dictionary `d` with value "mynewvalue"
+ref: d['mynewkey'] = 'mynewvalue'
+Output: d = {'mynewkey':'mynewvalue'}
+bleu_metric: 30.576902884505113
+----------
+NL: add key 'a' to dictionary `data` with value 1
+ref: data.update({'a': 1, })
+Output: {k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+bleu_metric: 6.132910803680853
+----------
+NL: add key 'a' to dictionary `data` with value 1
+ref: data.update(dict(a=1))
+Output: {k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+bleu_metric: 5.800148931346088
+----------
+NL: add key 'a' to dictionary `data` with value 1
+ref: data.update(a=1)
+Output: {k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+bleu_metric: 5.3976467790265215
+----------
+NL: find maximal value in matrix `matrix`
+ref: max([max(i) for i in matrix])
+Output: np.maximum.accumulate((np.tile(matrix)))
+bleu_metric: 12.512236921161914
+----------
+NL: round number `answer` to 2 precision after the decimal point
+ref: answer = str(round(answer, 2))
+Output: round(answer, 2)
+bleu_metric: 44.235082442615145
+----------
+NL: extract ip address from an html string
+ref: ip = re.findall('[0-9]+(?:\\.[0-9]+){3}', s)
+Output: re.findall('\\d+\\.\\d+\\.\\d+\\.\\.\\d+$', s)
+bleu_metric: 23.802122446426825
+----------
+NL: filter dataframe `df` by values in column `a` that appear more than once
+ref: df.groupby('A').filter(lambda x: len(x) > 1)
+Output: df[(df['a'] > 1)]
+bleu_metric: 11.37874045177031
+----------
+NL: append each line in file `myfile` into a list
+ref: [x for x in myfile.splitlines() if x != '']
+Output: [['myfile','myfile'], ['myfile','myfile']]
+bleu_metric: 10.583814787289993
+----------
+NL: get a list of integers `lst` from a file `filename.txt`
+ref: lst = map(int, open('filename.txt').readlines())
+Output: [int(x) for x in os.listdir(filename.txt)]
+bleu_metric: 14.643743858488062
+----------
+NL: add color bar with image `mappable` to plot `plt`
+ref: plt.colorbar(mappable=mappable, cax=ax3)
+Output: plt.show()
+bleu_metric: 11.914378950211951
+----------
+NL: count most frequent 100 words in column 'text' of dataframe `df`
+ref: Counter(' '.join(df['text']).split()).most_common(100)
+Output: df.groupby('text').agg(lambda x: x.lower().strftime('%s'))
+bleu_metric: 15.100671655022255
+----------
+NL: python split a string using regex
+ref: re.findall('(.+?):(.+?)\\b ?', text)
+Output: re.split('(\\d+)', s)
+bleu_metric: 13.79038281208857
+----------
+NL: generate all 2-element subsets of tuple `(1, 2, 3)`
+ref: list(itertools.combinations((1, 2, 3), 2))
+Output: from functools import reduce reduce(lambda x, y: x * y, [1, 2, 3))
+bleu_metric: 28.880056375088657
+----------
+NL: get a value of datetime.today() in the utc time zone
+ref: datetime.now(pytz.utc)
+Output: today = datetime.utcnow().date()
+bleu_metric: 18.70361278311548
+----------
+NL: get a new list `list2`by removing empty list from a list of lists `list1`
+ref: list2 = [x for x in list1 if x != []]
+Output: list2 = [x for x in list1 if x is not None]
+bleu_metric: 65.18437572109326
+----------
+NL: create `list2` to contain the lists from list `list1` excluding the empty lists from `list1`
+ref: list2 = [x for x in list1 if x]
+Output: list2 = [i for i in list1 if i!= 0]
+bleu_metric: 25.336549464486463
+----------
+NL: django response with json `data`
+ref: return HttpResponse(data, mimetype='application/json')
+Output: return HttpResponse(data)
+bleu_metric: 24.402917387311998
+----------
+NL: get all text that is not enclosed within square brackets in string `example_str`
+ref: re.findall('(.*?)\\[.*?\\]', example_str)
+Output: re.findall('\\[(\\w+)\\]', example_str)
+bleu_metric: 54.69501615144397
+----------
+NL: use a regex to get all text in a string `example_str` that is not surrounded by square brackets
+ref: re.findall('(.*?)(?:\\[.*?\\]|$)', example_str)
+Output: re.findall('\\[(\\w+)\\]', s)
+bleu_metric: 25.015501040909392
+----------
+NL: get whatever is between parentheses as a single match, and any char outside as an individual match in string '(zyx)bc'
+ref: re.findall('\\(.+?\\)|\\w', '(zyx)bc')
+Output: re.search('(zyx)bc', '', re.UNICODE)
+bleu_metric: 27.185434760736516
+----------
+NL: match regex '\\((.*?)\\)|(\\w)' with string '(zyx)bc'
+ref: re.findall('\\((.*?)\\)|(\\w)', '(zyx)bc')
+Output: re.match('\\((.*?)\\)(\\w)', '(zyx)bc')
+bleu_metric: 84.43639091080809
+----------
+NL: match multiple regex patterns with the alternation operator `|` in a string `(zyx)bc`
+ref: re.findall('\\(.*?\\)|\\w', '(zyx)bc')
+Output: re.findall('\\d,\\d,\\d,\\d,\\d,\\d', '(zyx)bc')
+bleu_metric: 42.8462689716825
+----------
+NL: formate each string cin list `elements` into pattern '%{0}%'
+ref: elements = ['%{0}%'.format(element) for element in elements]
+Output: re.sub('\\b\\b', '%{0}%', a)
+bleu_metric: 30.183854130936943
+----------
+NL: open a background process 'background-process' with arguments 'arguments'
+ref: subprocess.Popen(['background-process', 'arguments'])
+Output: subprocess.call(['background-process', 'arguments'])
+bleu_metric: 85.78928092681434
+----------
+NL: get list of values from dictionary 'mydict' w.r.t. list of keys 'mykeys'
+ref: [mydict[x] for x in mykeys]
+Output: [d for d in myDict if'mykeys' in d]
+bleu_metric: 14.31712315455507
+----------
+NL: convert list `[('name', 'joe'), ('age', 22)]` into a dictionary
+ref: dict([('Name', 'Joe'), ('Age', 22)])
+Output: dict(zip(*[('name', 'joe'), ('Age', 22)]))
+bleu_metric: 56.89195351585976
+----------
+NL: average each two columns of array `data`
+ref: data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)
+Output: data[:, ([0, 1, 2])].mean(axis=1)
+bleu_metric: 28.844294390603288
+----------
+NL: double backslash escape all double quotes in string `s`
+ref: print(s.encode('unicode-escape').replace('"', '\\"'))
+Output: print(s.replace('\\', ''))
+bleu_metric: 37.64902241423073
+----------
+NL: split a string into a list of words and whitespace
+ref: re.split('(\\W+)', s)
+Output: [word for word in words if word[:-1] == 'This is a string']
+bleu_metric: 6.024757292375468
+----------
+NL: plotting stacked barplots on a panda data frame
+ref: df.plot(kind='barh', stacked=True)
+Output: df.plot(kind='bar')
+bleu_metric: 47.7278208000844
+----------
+NL: reverse the keys and values in a dictionary `mydictionary`
+ref: {i[1]: i[0] for i in list(myDictionary.items())}
+Output: dict((v, k) for k, v in myDict.items())
+bleu_metric: 20.276524385668118
+----------
+NL: finding the index of elements containing substring 'how' and 'what' in a list of strings 'mylist'.
+ref: [i for i, j in enumerate(myList) if 'how' in j.lower() or 'what' in j.lower()]
+Output: [i for i, j in enumerate(myList) if j == 'how'!= 'whatever']
+bleu_metric: 44.960680438161
+----------
+NL: check if object `obj` is a string
+ref: isinstance(obj, str)
+Output: if (obj in ('abj')): pass
+bleu_metric: 14.694106251955755
+----------
+NL: check if object `o` is a string
+ref: isinstance(o, str)
+Output: if (o.isdigit()): pass
+bleu_metric: 17.827531042796256
+----------
+NL: check if object `o` is a string
+ref: (type(o) is str)
+Output: if (o.isdigit()): pass
+bleu_metric: 19.72940627795883
+----------
+NL: check if object `o` is a string
+ref: isinstance(o, str)
+Output: if (o.isdigit()): pass
+bleu_metric: 17.827531042796256
+----------
+NL: check if `obj_to_test` is a string
+ref: isinstance(obj_to_test, str)
+Output: if (obj_to_test): pass
+bleu_metric: 26.44358066258934
+----------
+NL: append list `list1` to `list2`
+ref: list2.extend(list1)
+Output: list2 = [[] for i in list1]
+bleu_metric: 13.54599427337814
+----------
+NL: append list `mylog` to `list1`
+ref: list1.extend(mylog)
+Output: list1.append(myLog)
+bleu_metric: 27.776190340117914
+----------
+NL: append list `a` to `c`
+ref: c.extend(a)
+Output: a.extend((0, [1, 2, 3]), (C))
+bleu_metric: 13.364127603112491
+----------
+NL: append items in list `mylog` to `list1`
+ref: for line in mylog:
+    list1.append(line)
+Output: myLog.append(['list1'])
+bleu_metric: 23.901088824528134
+----------
+NL: append a tuple of elements from list `a` with indexes '[0][0] [0][2]' to list `b`
+ref: b.append((a[0][0], a[0][2]))
+Output: b = [(a[0], [0], [2]) for a, b in zip(a, [0], [0]])]
+bleu_metric: 29.19481114753033
+----------
+NL: initialize `secret_key` in flask config with `your_secret_string `
+ref: app.config['SECRET_KEY'] = 'Your_secret_string'
+Output: app.config['your_secret_string'] ='secret_key'
+bleu_metric: 57.31224484094262
+----------
+NL: unpack a series of tuples in pandas into a dataframe with column names 'out-1' and 'out-2'
+ref: pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)
+Output: pd.concat([df1, df2], axis=1, keys=['out-1', 'out-2'], axis=1)
+bleu_metric: 47.36648808574823
+----------
+NL: find the index of an element 'msft' in a list `stocks_list`
+ref: [x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT']
+Output: [x for x in stocks_list if x[1] =='msft']
+bleu_metric: 37.25284228388723
+----------
+NL: rotate the xtick labels of matplotlib plot `ax` by `45` degrees to make long labels readable
+ref: ax.set_xticklabels(labels, rotation=45)
+Output: ax.set_xticklabels(ax.xtick_labels(45))
+bleu_metric: 35.99306254353179
+----------
+NL: remove symbols from a string `s`
+ref: re.sub('[^\\w]', ' ', s)
+Output: re.sub('[^\\s]+', '', s)
+bleu_metric: 77.21947901921794
+----------
+NL: get the current directory of a script
+ref: os.path.basename(os.path.dirname(os.path.realpath(__file__)))
+Output: os.path.dirname(os.path.realpath(__file__))
+bleu_metric: 63.37967287681905
+----------
+NL: find octal characters matches from a string `str` using regex
+ref: print(re.findall("'\\\\[0-7]{1,3}'", str))
+Output: re.findall('\\b0+(?!\\b)\\b', str)
+bleu_metric: 30.67849972188287
+----------
+NL: split string `input` based on occurrences of regex pattern '[ ](?=[a-z]+\\b)'
+ref: re.split('[ ](?=[A-Z]+\\b)', input)
+Output: re.split('[ ](?=[a-z]+\\b)', input)
+bleu_metric: 82.0720263233254
+----------
+NL: split string `input` at every space followed by an upper-case letter
+ref: re.split('[ ](?=[A-Z])', input)
+Output: input = re.compile('\\w+(\\w+)').split('\\1')
+bleu_metric: 16.974144643195828
+----------
+NL: send multipart encoded file `files` to url `url` with headers `headers` and metadata `data`
+ref: r = requests.post(url, files=files, headers=headers, data=data)
+Output: urllib.request.urlretrieve(url, header='header', data=data)
+bleu_metric: 33.76985176628967
+----------
+NL: write bytes `bytes_` to a file `filename` in python 3
+ref: open('filename', 'wb').write(bytes_)
+Output: f = open('filename', 'rb')
+bleu_metric: 47.07669643510688
+----------
+NL: get a list from a list `lst` with values mapped into a dictionary `dct`
+ref: [dct[k] for k in lst]
+Output: [x for x in lst if x not in d]
+bleu_metric: 17.678748653651848
+----------
+NL: find duplicate names in column 'name' of the dataframe `x`
+ref: x.set_index('name').index.get_duplicates()
+Output: [(x['name']) for x in list(sorted(x.items()))]
+bleu_metric: 12.71235700108297
+----------
+NL: truncate float 1.923328437452 to 3 decimal places
+ref: round(1.923328437452, 3)
+Output: return '{0:.2f}'.format('23328437452', 3)
+bleu_metric: 19.496249079519764
+----------
+NL: sort list `li` in descending order based on the date value in second element of each list in list `li`
+ref: sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)
+Output: sorted(li, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 25.16890232716972
+----------
+NL: place the radial ticks in plot `ax` at 135 degrees
+ref: ax.set_rlabel_position(135)
+Output: ax.set_visible((5))
+bleu_metric: 24.446151121745054
+----------
+NL: check if path `my_path` is an absolute path
+ref: os.path.isabs(my_path)
+Output: print(os.path.abspath(__file__))
+bleu_metric: 34.38931217657843
+----------
+NL: get number of keys in dictionary `yourdict`
+ref: len(list(yourdict.keys()))
+Output: len(yourdict)
+bleu_metric: 12.530399297423294
+----------
+NL: count the number of keys in dictionary `yourdictfile`
+ref: len(set(open(yourdictfile).read().split()))
+Output: sum(1 for x in list(yourdictfile.keys()))
+bleu_metric: 27.778312483235844
+----------
+NL: pandas dataframe get first row of each group by 'id'
+ref: df.groupby('id').first()
+Output: df['id'] = df['id'].apply(lambda x: x.strftime('%s'))
+bleu_metric: 11.751163762525296
+----------
+NL: split a list in first column  into multiple columns keeping other columns as well in pandas data frame
+ref: pd.concat([df[0].apply(pd.Series), df[1]], axis=1)
+Output: df['c'] = df['b'].str.split(',')
+bleu_metric: 10.356604765842615
+----------
+NL: extract attributes 'src="js/([^"]*\\bjquery\\b[^"]*)"' from string `data`
+ref: re.findall('src="js/([^"]*\\bjquery\\b[^"]*)"', data)
+Output: ['src="js/([^"]*\\bjquery\\b[^"]*)', '', data)]
+bleu_metric: 80.94220211349227
+----------
+NL: sum integers contained in strings in list `['', '3.4', '', '', '1.0']`
+ref: sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if _f])
+Output: sum(map(int, [', '3.4', '', '', '1.0']))
+bleu_metric: 47.93678021829711
+----------
+NL: call a subprocess with arguments `c:\\program files\\vmware\\vmware server\\vmware-cmd.bat` that may contain spaces
+ref: subprocess.Popen(['c:\\Program Files\\VMware\\VMware Server\\vmware-cmd.bat'])
+Output: subprocess.call(['c:\\program_files\\vmware\\vmware', '/vmware-cmd.bat'])
+bleu_metric: 54.637496918375064
+----------
+NL: reverse a priority queue `q` in python without using classes
+ref: q.put((-n, n))
+Output: cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))
+bleu_metric: 8.928953574702554
+----------
+NL: make a barplot of data in column `group` of dataframe `df` colour-coded according to list `color`
+ref: df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])
+Output: plt.show()
+bleu_metric: 0.030120959708599737
+----------
+NL: find all matches of regex pattern '([a-fa-f\\d]{32})' in string `data`
+ref: re.findall('([a-fA-F\\d]{32})', data)
+Output: re.findall('([a-fa-f\\d]{32})', data)
+bleu_metric: 80.59468738950976
+----------
+NL: get the length of list `my_list`
+ref: len(my_list)
+Output: len(my_list)
+bleu_metric: 100.0
+----------
+NL: getting the length of array `l`
+ref: len(l)
+Output: len(a)
+bleu_metric: 45.180100180492246
+----------
+NL: getting the length of array `s`
+ref: len(s)
+Output: len(s)
+bleu_metric: 100.0
+----------
+NL: getting the length of `my_tuple`
+ref: len(my_tuple)
+Output: len(my_tuple)
+bleu_metric: 100.0
+----------
+NL: getting the length of `my_string`
+ref: len(my_string)
+Output: len(my_string)
+bleu_metric: 100.0
+----------
+NL: remove escape character from string "\\a"
+ref: """\\a""".decode('string_escape')
+Output: """\\a""".replace('\\a', '')
+bleu_metric: 55.13251122859945
+----------
+NL: replace each 'a' with 'b' and each 'b' with 'a' in the string 'obama' in a single pass.
+ref: """obama""".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')
+Output: """""".join(re.sub('[a-zA-Z]', 'b'))
+bleu_metric: 22.966028352537666
+----------
+NL: remove directory tree '/folder_name'
+ref: shutil.rmtree('/folder_name')
+Output: result = os.path.join(os.path.dirname('/folder_name'), '/folder_name').remove('/folder_name')
+bleu_metric: 19.693038554176052
+----------
+NL: create a new column `weekday` in pandas data frame `data` based on the values in column `my_dt`
+ref: data['weekday'] = data['my_dt'].apply(lambda x: x.weekday())
+Output: data['weekday'] = df['my_dt'].apply(lambda x: x.astype(int))
+bleu_metric: 73.28616209964707
+----------
+NL: reverse sort counter `x` by values
+ref: sorted(x, key=x.get, reverse=True)
+Output: sorted(x, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 56.82854869630479
+----------
+NL: reverse sort counter `x` by value
+ref: sorted(list(x.items()), key=lambda pair: pair[1], reverse=True)
+Output: sorted(x, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 30.05001477028219
+----------
+NL: append a numpy array 'b' to a numpy array 'a'
+ref: np.vstack((a, b))
+Output: numpy.append(a, b)
+bleu_metric: 46.55733382959378
+----------
+NL: numpy concatenate two arrays `a` and `b` along the first axis
+ref: print(concatenate((a, b), axis=0))
+Output: np.concatenate((a, b, axis=0))
+bleu_metric: 69.67487436689126
+----------
+NL: numpy concatenate two arrays `a` and `b` along the second axis
+ref: print(concatenate((a, b), axis=1))
+Output: np.concatenate((a, b), axis=0)
+bleu_metric: 65.18437572109326
+----------
+NL: numpy concatenate two arrays `a` and `b` along the first axis
+ref: c = np.r_[(a[None, :], b[None, :])]
+Output: np.concatenate((a, b, axis=0))
+bleu_metric: 10.451263273592321
+----------
+NL: numpy concatenate two arrays `a` and `b` along the first axis
+ref: np.array((a, b))
+Output: np.concatenate((a, b, axis=0))
+bleu_metric: 41.69392927528885
+----------
+NL: fetch address information for host 'google.com' ion port 80
+ref: print(socket.getaddrinfo('google.com', 80))
+Output: platform.bind(('google.com', 80))
+bleu_metric: 70.21294423899278
+----------
+NL: add a column 'day' with value 'sat' to dataframe `df`
+ref: df.xs('sat', level='day', drop_level=False)
+Output: df['day'] ='sat'
+bleu_metric: 16.953660567746102
+----------
+NL: return a 401 unauthorized in django
+ref: return HttpResponse('Unauthorized', status=401)
+Output: MyModel.objects.filter(author__id='title').filter(author__id='title')
+bleu_metric: 8.607692533178168
+----------
+NL: flask set folder 'wherever' as the default template folder
+ref: Flask(__name__, template_folder='wherever')
+Output: app.run(os.path.abspath('wherever'))
+bleu_metric: 24.623953025272613
+----------
+NL: how do i insert into t1 (select * from t2) in sqlalchemy?
+ref: session.execute('INSERT INTO t1 (SELECT * FROM t2)')
+Output: session.commit()
+bleu_metric: 6.117046115680378
+----------
+NL: sort a list of lists 'c2' such that third row comes first
+ref: c2.sort(key=lambda row: row[2])
+Output: sorted(a, key=lambda x: x[1])
+bleu_metric: 24.207623565172998
+----------
+NL: sorting a list of lists in python
+ref: c2.sort(key=lambda row: (row[2], row[1], row[0]))
+Output: sorted(a, key=lambda x: x[1])
+bleu_metric: 12.383513794062155
+----------
+NL: sorting a list of lists in python
+ref: c2.sort(key=lambda row: (row[2], row[1]))
+Output: sorted(a, key=lambda x: x[1])
+bleu_metric: 22.08517793512327
+----------
+NL: set font `arial` to display non-ascii characters in matplotlib
+ref: matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})
+Output: plt.show()
+bleu_metric: 0.3669484097406089
+----------
+NL: convert  datetime column 'date' of pandas dataframe 'df' to ordinal
+ref: df['date'].apply(lambda x: x.toordinal())
+Output: df['Date'] = df['Date'].dt.strftime('%d%m%Y')
+bleu_metric: 13.651897290525362
+----------
+NL: get html source of selenium webelement `element`
+ref: element.get_attribute('innerHTML')
+Output: driver.find_element_by_xpath('element').get_text()
+bleu_metric: 19.104081613647537
+----------
+NL: get the integer location of a key `bob` in a pandas data frame
+ref: df.index.get_loc('bob')
+Output: df.loc[df['Bob'].str.split(',')[1]]
+bleu_metric: 10.435185733665413
+----------
+NL: open a 'gnome' terminal from python script and run  'sudo apt-get update' command.
+ref: os.system('gnome-terminal -e \'bash -c "sudo apt-get update; exec bash"\'')
+Output: subprocess.call('gnome', shell=True)
+bleu_metric: 6.1441259586642945
+----------
+NL: add an item with key 'third_key' and value 1 to an dictionary `my_dict`
+ref: my_dict.update({'third_key': 1})
+Output: my_dict.update({'first_key': 1})
+bleu_metric: 78.25422900366436
+----------
+NL: declare an array
+ref: my_list = []
+Output: intarray = []
+bleu_metric: 75.98356856515926
+----------
+NL: insert item `12` to a list `my_list`
+ref: my_list.append(12)
+Output: my_list.insert(12)
+bleu_metric: 59.46035575013605
+----------
+NL: add an entry 'wuggah' at the beginning of list `mylist`
+ref: myList.insert(0, 'wuggah')
+Output: list([('wuggah', myList[1:]) for myList in myList])
+bleu_metric: 13.471766853689124
+----------
+NL: convert a hex-string representation to actual bytes
+ref: """\\xF3\\xBE\\x80\\x80""".replace('\\x', '').decode('hex')
+Output: ast.decode('hex')
+bleu_metric: 2.5140832507863675
+----------
+NL: select the last column of dataframe `df`
+ref: df[df.columns[-1]]
+Output: df.iloc[:, (~df.columns.index.values)]
+bleu_metric: 16.19557012853241
+----------
+NL: get the first value from dataframe `df` where column 'letters' is equal to 'c'
+ref: df.loc[df['Letters'] == 'C', 'Letters'].values[0]
+Output: df[df['letters'] == 'C']
+bleu_metric: 32.03134374685515
+----------
+NL: converting two lists `[1, 2, 3]` and `[4, 5, 6]` into a matrix
+ref: np.column_stack(([1, 2, 3], [4, 5, 6]))
+Output: matrix([1, 2, 3], [4, 5, 6])
+bleu_metric: 74.2596099787883
+----------
+NL: get the type of `i`
+ref: type(i)
+Output: int(i)
+bleu_metric: 75.98356856515926
+----------
+NL: determine the type of variable `v`
+ref: type(v)
+Output: (v, (i, j) for i, j in zip(var1, var2))
+bleu_metric: 9.165852474742525
+----------
+NL: determine the type of variable `v`
+ref: type(v)
+Output: (v, (i, j) for i, j in zip(var1, var2))
+bleu_metric: 9.165852474742525
+----------
+NL: determine the type of variable `v`
+ref: type(v)
+Output: (v, (i, j) for i, j in zip(var1, var2))
+bleu_metric: 9.165852474742525
+----------
+NL: determine the type of variable `v`
+ref: type(v)
+Output: (v, (i, j) for i, j in zip(var1, var2))
+bleu_metric: 9.165852474742525
+----------
+NL: get the type of variable `variable_name`
+ref: print(type(variable_name))
+Output: variable_name = type(directory)
+bleu_metric: 27.89001430384383
+----------
+NL: get the 5th item of a generator
+ref: next(itertools.islice(range(10), 5, 5 + 1))
+Output: next(iter(itertools.product(*args)))
+bleu_metric: 19.508557237968464
+----------
+NL: print a string `word` with string format
+ref: print('"{}"'.format(word))
+Output: print(word.strftime('%s %s' % word))
+bleu_metric: 28.162897000452098
+----------
+NL: join a list of strings `list` using a space ' '
+ref: """ """.join(list)
+Output: list.join((' '.join(map(str, list))))
+bleu_metric: 26.934666326316563
+----------
+NL: create list `y` containing two empty lists
+ref: y = [[] for n in range(2)]
+Output: y = [] * len(y)
+bleu_metric: 20.09767899728994
+----------
+NL: read a file 'c:/name/mydocuments/numbers' into a list `data`
+ref: data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]
+Output: data = [line.split('c:/name/myDocuments/numbers') for line in open('C:/name/myDocuments/numbers')]
+bleu_metric: 52.95502850116197
+----------
+NL: delete all occurrences of character 'i' in string 'it is icy'
+ref: """""".join([char for char in 'it is icy' if char != 'i'])
+Output: 'It is ic2'.replace('i', 'is ic2')
+bleu_metric: 10.927414503512372
+----------
+NL: delete all instances of a character 'i' in a string 'it is icy'
+ref: re.sub('i', '', 'it is icy')
+Output: 'It is ic2'.replace('It is ic3', 'i')
+bleu_metric: 23.632009599741206
+----------
+NL: delete all characters "i" in string "it is icy"
+ref: """it is icy""".replace('i', '')
+Output: """It is icY""".replace('i', 'it is icj')
+bleu_metric: 61.97147746170927
+----------
+NL: how to delete all instances of a character in a string in python?
+ref: """""".join([char for char in 'it is icy' if char != 'i'])
+Output: a.replace(';', ':')
+bleu_metric: 4.474383895897329
+----------
+NL: drop rows of pandas dataframe `df` having nan in column at index "1"
+ref: df.dropna(subset=[1])
+Output: df.drop_duplicates(index='1', na_values=['num'])
+bleu_metric: 17.124730448946572
+----------
+NL: get elements from list `mylist`, that have a field `n` value 30
+ref: [x for x in myList if x.n == 30]
+Output: [c for c in myList if c not in n]
+bleu_metric: 27.00518819360817
+----------
+NL: converting list of strings `intstringlist` to list of integer `nums`
+ref: nums = [int(x) for x in intstringlist]
+Output: [intstringlist[0] for i in stringlist]
+bleu_metric: 15.549322861581405
+----------
+NL: convert list of string numbers into list of integers
+ref: map(int, eval(input('Enter the unfriendly numbers: ')))
+Output: [int(x) for x in list_of_nums]
+bleu_metric: 7.290792403968443
+----------
+NL: print "." without newline
+ref: sys.stdout.write('.')
+Output: print('\n'.format('\n'))
+bleu_metric: 15.733304984782073
+----------
+NL: round off the float that is the product of `2.52 * 100` and convert it to an int
+ref: int(round(2.51 * 100))
+Output: int(round(2.52 * 100))
+bleu_metric: 76.11606003349893
+----------
+NL: find all files in directory "/mydir" with extension ".txt"
+ref: os.chdir('/mydir')
+for file in glob.glob('*.txt'):
+    pass
+Output: results = [x for x in os.listdir('/mydir') if x.txt]
+bleu_metric: 28.720008585316776
+----------
+NL: find all files in directory "/mydir" with extension ".txt"
+ref: for file in os.listdir('/mydir'):
+    if file.endswith('.txt'):
+        pass
+Output: results = [x for x in os.listdir('/mydir') if x.txt]
+bleu_metric: 42.426009370302225
+----------
+NL: find all files in directory "/mydir" with extension ".txt"
+ref: for (root, dirs, files) in os.walk('/mydir'):
+    for file in files:
+        if file.endswith('.txt'):
+            pass
+Output: results = [x for x in os.listdir('/mydir') if x.txt]
+bleu_metric: 18.277899251175477
+----------
+NL: plot dataframe `df` without a legend
+ref: df.plot(legend=False)
+Output: df.plot(x='legend')
+bleu_metric: 38.82726777522233
+----------
+NL: loop through the ip address range "192.168.x.x"
+ref: for i in range(256):
+    for j in range(256):
+        ip = ('192.168.%d.%d' % (i, j))
+        print(ip)
+Output: list(range('192.168.x.x'))
+bleu_metric: 9.02452915675299
+----------
+NL: loop through the ip address range "192.168.x.x"
+ref: for (i, j) in product(list(range(256)), list(range(256))):
+    pass
+Output: list(range('192.168.x.x'))
+bleu_metric: 12.381701155580153
+----------
+NL: loop through the ip address range "192.168.x.x"
+ref: generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)
+Output: list(range('192.168.x.x'))
+bleu_metric: 17.9812079647222
+----------
+NL: sum the corresponding decimal values for binary values of each boolean element in list `x`
+ref: sum(1 << i for i, b in enumerate(x) if b)
+Output: sum([int(i) for i in x])
+bleu_metric: 13.688919323665596
+----------
+NL: write multiple strings `line1`, `line2` and `line3` in one line in a file `target`
+ref: target.write('%r\n%r\n%r\n' % (line1, line2, line3))
+Output: f.write(str(x) for x in line2.split())
+bleu_metric: 11.19850317412686
+----------
+NL: convert list of lists `data` into a flat list
+ref: [y for x in data for y in (x if isinstance(x, list) else [x])]
+Output: print([item for sublist in data for item in sublist])
+bleu_metric: 10.175772539145328
+----------
+NL: print new line character as `\n` in a string `foo\nbar`
+ref: print('foo\nbar'.encode('string_escape'))
+Output: """foo\nbar""".encode('utf-8')
+bleu_metric: 43.204817137257464
+----------
+NL: remove last comma character ',' in string `s`
+ref: """""".join(s.rsplit(',', 1))
+Output: s = re.sub(',', '', s)
+bleu_metric: 25.049995525110475
+----------
+NL: calculate the mean of each element in array `x` with the element previous to it
+ref: (x[1:] + x[:-1]) / 2
+Output: np.mean(axis=1)
+bleu_metric: 7.296176435240816
+----------
+NL: get an array of the mean of each two consecutive values in numpy array `x`
+ref: x[:-1] + (x[1:] - x[:-1]) / 2
+Output: np.mean(axis=1, axis=1)
+bleu_metric: 5.565555179417232
+----------
+NL: load data containing `utf-8` from file `new.txt` into numpy array `arr`
+ref: arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')
+Output: arr = numpy.loadtxt(open('new.txt', 'r-8'))
+bleu_metric: 36.450300557666246
+----------
+NL: reverse sort list of dicts `l` by value for key `time`
+ref: l = sorted(l, key=itemgetter('time'), reverse=True)
+Output: sorted(l, key=lambda x: (x[1] for x in list(x.items())))
+bleu_metric: 22.798532589809888
+----------
+NL: sort a list of dictionary `l` based on key `time` in descending order
+ref: l = sorted(l, key=lambda a: a['time'], reverse=True)
+Output: sorted(L, key=lambda t: (t[0], t[0]))
+bleu_metric: 21.513325618069214
+----------
+NL: get rows of dataframe `df` that match regex '(hel|just)'
+ref: df.loc[df[0].str.contains('(Hel|Just)')]
+Output: df[df.groupby('(heljust)').apply(pd.Series).astype(int)]
+bleu_metric: 19.427446513842177
+----------
+NL: find the string in `your_string` between two special characters "[" and "]"
+ref: re.search('\\[(.*)\\]', your_string).group(1)
+Output: print(your_string.intersection(['[', ']', 'your_string']))
+bleu_metric: 12.977361667716222
+----------
+NL: how to create a list of date string in 'yyyymmdd' format with python pandas?
+ref: [d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]
+Output: df['%Y-%m-%d'] = df['%Y-%m-%d']
+bleu_metric: 13.291141581155063
+----------
+NL: count number of times string 'brown' occurred in string 'the big brown fox is brown'
+ref: """The big brown fox is brown""".count('brown')
+Output: 'D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\.D:\\D:\\D:\.D:\\D:\\D:\.D:\\D:\.D:\.D:\\D:\.D:\.D:\.D:\\D:\\D:\.D:\.D:\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\.D:\\s',\\\s+D:\\s+D:\\.D:\.D:\\s+D:\\s+\\\s+D:\\t',\\\t',\t?\t?\t?and:\t;\t;',\t:\t;',\t:\t;',\t:\t:\t:\n:\n:\t?D:\n:\n:\n',\n:\t?\t?\t?\t?\t?\t?andd:\n',\t:\t?\t?\t?\t?\t?andd:\t?andd:\n',\n',\n',\t?((((((((((((((((((D:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\t?D:\n:\t;D:\D:\n:\n:\t?D:\n:\n:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\
+bleu_metric: 0.44407203981924276
+----------
+NL: decode json string `request.body` to python dict
+ref: json.loads(request.body)
+Output: data = json.loads(request.body)
+bleu_metric: 80.70557274927982
+----------
+NL: download the file from url `url` and save it under file `file_name`
+ref: urllib.request.urlretrieve(url, file_name)
+Output: urllib.request.urlretrieve('file_name', 'w')
+bleu_metric: 43.33207865423752
+----------
+NL: split string `text` by space
+ref: text.split()
+Output: re.split('\\s+', text)
+bleu_metric: 20.333448190047886
+----------
+NL: split string `text` by ","
+ref: text.split(',')
+Output: re.split('(\\d+)', text)
+bleu_metric: 28.175950490399515
+----------
+NL: split string `line` into a list by whitespace
+ref: line.split()
+Output: [line.split() for line in line.split()]
+bleu_metric: 27.499775953224148
+----------
+NL: replace dot characters  '.' associated with ascii letters in list `s` with space ' '
+ref: [re.sub('(?<!\\d)\\.(?!\\d)', ' ', i) for i in s]
+Output: re.sub('\\s{2,}','', s)
+bleu_metric: 18.066046508379785
+----------
+NL: sort list `list_of_strings` based on second index of each string `s`
+ref: sorted(list_of_strings, key=lambda s: s.split(',')[1])
+Output: list_of_strings.sort(key=lambda x: x[1])
+bleu_metric: 26.36584819254219
+----------
+NL: call multiple bash function 'vasp' and 'tee tee_output' using '|'
+ref: subprocess.check_call('vasp | tee tee_output', shell=True)
+Output: subprocess.call(['vaasp', 'tee_output'], shell=True)
+bleu_metric: 37.66410991613996
+----------
+NL: eliminate all strings from list `lst`
+ref: [element for element in lst if isinstance(element, int)]
+Output: [x for x in lst if 'abc' not in x]
+bleu_metric: 19.923405658137924
+----------
+NL: get all the elements except strings from the list 'lst'.
+ref: [element for element in lst if not isinstance(element, str)]
+Output: [s for s in lst if s.isdigit()]
+bleu_metric: 22.708565945257046
+----------
+NL: sort a list of dictionaries `list_to_be_sorted` by the value of the dictionary key `name`
+ref: newlist = sorted(list_to_be_sorted, key=lambda k: k['name'])
+Output: sorted(list_to_be_sorted, key=lambda x: x['name'])
+bleu_metric: 64.69161553933024
+----------
+NL: sort a list of dictionaries `l` by values in key `name` in descending order
+ref: newlist = sorted(l, key=itemgetter('name'), reverse=True)
+Output: sorted(L, key=itemgetter(1), reverse=True)
+bleu_metric: 51.98554405837438
+----------
+NL: how do i sort a list of dictionaries by values of the dictionary in python?
+ref: list_of_dicts.sort(key=operator.itemgetter('name'))
+Output: sorted(list_of_dicts, key=lambda d: d['rank']['rank'], reverse=True)
+bleu_metric: 8.947853200770762
+----------
+NL: how do i sort a list of dictionaries by values of the dictionary in python?
+ref: list_of_dicts.sort(key=operator.itemgetter('age'))
+Output: sorted(list_of_dicts, key=lambda d: d['rank']['rank'], reverse=True)
+bleu_metric: 8.947853200770762
+----------
+NL: how to sort a dataframe by the ocurrences in a column in python (pandas)
+ref: df.groupby('prots').sum().sort('scores', ascending=False)
+Output: df1.sort(['user', 'user'], ascending=[True, False], inplace=True)
+bleu_metric: 15.639686545296048
+----------
+NL: join together with "," elements inside a list indexed with 'category' within a dictionary `trans`
+ref: """,""".join(trans['category'])
+Output: {'C': '0', 'C': '0', 'C': '0', 'C': '0', 'C': '0'}
+bleu_metric: 6.856374867510525
+----------
+NL: concatenate array of strings `['a', 'b', 'c', 'd']` into a string
+ref: """""".join(['A', 'B', 'C', 'D'])
+Output: """""".join(['a', 'b', 'c', 'd'])
+bleu_metric: 61.82527625446008
+----------
+NL: get json data from restful service 'url'
+ref: json.load(urllib.request.urlopen('url'))
+Output: print(json.dumps(data))
+bleu_metric: 16.45458786057073
+----------
+NL: remove all strings from a list a strings `sents` where the values starts with `@$\t` or `#`
+ref: [x for x in sents if not x.startswith('@$\t') and not x.startswith('#')]
+Output: [x for x in list(sents.items()) if x.startswith('@$\t')]
+bleu_metric: 55.18278411706289
+----------
+NL: django filter by hour
+ref: Entry.objects.filter(pub_date__contains='08:00')
+Output: User.objects.filter(date__json='hour')
+bleu_metric: 41.51142263667998
+----------
+NL: sort a list of dictionary `list` first by key `points` and then by `time`
+ref: list.sort(key=lambda item: (item['points'], item['time']))
+Output: list.sort(key=lambda x: (x[1], x[1]))
+bleu_metric: 39.184216040282244
+----------
+NL: convert datetime object `(1970, 1, 1)` to seconds
+ref: (t - datetime.datetime(1970, 1, 1)).total_seconds()
+Output: datetime.datetime.strptime(1970, 1, 1)
+bleu_metric: 38.5026520407636
+----------
+NL: insert `_suff` before the file extension in `long.file.name.jpg` or replace `_a` with `suff` if it precedes the extension.
+ref: re.sub('(\\_a)?\\.([^\\.]*)$', '_suff.\\2', 'long.file.name.jpg')
+Output: print(length.ext(lon.file.name.jpg))
+bleu_metric: 6.8970289488614815
+----------
+NL: reload a module `module`
+ref: import imp
+imp.reload(module)
+Output: module = request.module('mymodule')
+bleu_metric: 17.827531042796256
+----------
+NL: convert integer `number` into an unassigned integer
+ref: struct.unpack('H', struct.pack('h', number))
+Output: next((int(x) for x in str(num)))
+bleu_metric: 12.472463895783982
+----------
+NL: convert int values in list `numlist` to float
+ref: numlist = [float(x) for x in numlist]
+Output: np.float(a)
+bleu_metric: 11.787460936700446
+----------
+NL: write dataframe `df`, excluding index, to a csv file
+ref: df.to_csv(filename, index=False)
+Output: df.to_csv('test.csv', index=False, index=False)
+bleu_metric: 41.54794556635241
+----------
+NL: convert a urllib unquoted string `unescaped` to a json data `json_data`
+ref: json_data = json.loads(unescaped)
+Output: json_data = json.dumps(url)
+bleu_metric: 46.71379777282001
+----------
+NL: create a list containing all ascii characters as its elements
+ref: [chr(i) for i in range(127)]
+Output: list(''.join(chr(ord(c)) for c in str(a)))
+bleu_metric: 9.71103454938194
+----------
+NL: write `newfilebytes` to a binary file `newfile`
+ref: newFile.write(struct.pack('5B', *newFileBytes))
+Output: newfile.write('newfilebytes')
+bleu_metric: 10.455877726641399
+----------
+NL: python regex - check for a capital letter with a following lowercase in string `string`
+ref: re.sub('^[A-Z0-9]*(?![a-z])', '', string)
+Output: re.findall('[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z]')
+bleu_metric: 4.5371124101874845
+----------
+NL: get the last key of dictionary `dict`
+ref: list(dict.keys())[-1]
+Output: list(dict.items())
+bleu_metric: 34.69313394445662
+----------
+NL: write line "hi there" to file `f`
+ref: print('hi there', file=f)
+Output: f.write('hi there')
+bleu_metric: 43.78784374856904
+----------
+NL: write line "hi there" to file `myfile`
+ref: f = open('myfile', 'w')
+f.write('hi there\n')
+f.close()
+Output: myfile.write('hi there')
+bleu_metric: 10.269217587811276
+----------
+NL: write line "hello" to file `somefile.txt`
+ref: with open('somefile.txt', 'a') as the_file:
+    the_file.write('Hello\n')
+Output: somefile.txt('hello','somefile.txt')
+bleu_metric: 21.61711442546985
+----------
+NL: convert unicode string `s` to ascii
+ref: s.encode('iso-8859-15')
+Output: unicodedata.normalize(s, 'NFKD').encode('ascii', 'ignore')
+bleu_metric: 21.233470585998816
+----------
+NL: django get maximum value associated with field 'added' in model `authorizedemail`
+ref: AuthorizedEmail.objects.filter(group=group).order_by('-added')[0]
+Output: super(MyModel, self).__init__(*args, **kwargs)
+bleu_metric: 8.389689737624991
+----------
+NL: find all numbers and dots from a string `text` using regex
+ref: re.findall('Test([0-9.]*[0-9]+)', text)
+Output: re.findall('\\d+', text)
+bleu_metric: 24.73344228394784
+----------
+NL: python regex  to find all numbers and dots from 'text'
+ref: re.findall('Test([\\d.]*\\d+)', text)
+Output: re.findall('\\d+', s)
+bleu_metric: 27.703746325324747
+----------
+NL: execute script 'script.ps1' using 'powershell.exe' shell
+ref: os.system('powershell.exe', 'script.ps1')
+Output: subprocess.call(['script.ps1', 'powershell.exe'])
+bleu_metric: 50.69487414732324
+----------
+NL: sort a list of tuples `b` by third item in the tuple
+ref: b.sort(key=lambda x: x[1][2])
+Output: sorted(b, key=operator.itemgetter(1), reverse=True)
+bleu_metric: 13.052454516645346
+----------
+NL: get a list of all keys in cassandra database `cf` with pycassa
+ref: list(cf.get_range().get_keys())
+Output: cf = [i for i in cessandradata.values() if i == 1]
+bleu_metric: 10.079037376973918
+----------
+NL: create a datetime with the current date & time
+ref: datetime.datetime.now()
+Output: datetime.datetime.now().date()
+bleu_metric: 61.90429960963545
+----------
+NL: get the index of an integer `1` from a list `lst` if the list also contains boolean items
+ref: next(i for i, x in enumerate(lst) if not isinstance(x, bool) and x == 1)
+Output: [i for i in lst if i in i]
+bleu_metric: 7.201902371426507
+----------
+NL: subtract 13 from every number in a list `a`
+ref: a[:] = [(x - 13) for x in a]
+Output: [(i - j) for i, j in zip(a, -13)]
+bleu_metric: 16.559113761114784
+----------
+NL: choose a random file from the directory contents of the c drive, `c:\\`
+ref: random.choice(os.listdir('C:\\'))
+Output: random.choice(os.path.dirname(__file__))
+bleu_metric: 40.67002149402057
+----------
+NL: get the highest element in absolute value in a numpy matrix `x`
+ref: max(x.min(), x.max(), key=abs)
+Output: max(x, key=operator.itemgetter(1))[0]
+bleu_metric: 19.78069245787843
+----------
+NL: get all urls within text `s`
+ref: re.findall('"(http.*?)"', s, re.MULTILINE | re.DOTALL)
+Output: urlpatterns = requests.get('http://www.google.com/', s)
+bleu_metric: 12.85235540731811
+----------
+NL: match urls whose domain doesn't start with `t` from string `document` using regex
+ref: re.findall('http://[^t][^s"]+\\.html', document)
+Output: re.search('^([^.]*?)(?=.)', '\\1', document)
+bleu_metric: 22.52497515880266
+----------
+NL: split a string `mystring` considering the spaces ' '
+ref: mystring.replace(' ', '! !').split('!')
+Output: re.split('[^\\s]*', mystring)
+bleu_metric: 22.179525738326504
+----------
+NL: open file `path` with mode 'r'
+ref: open(path, 'r')
+Output: os.path.open('r')
+bleu_metric: 48.326978309062206
+----------
+NL: sum elements at the same index in list `data`
+ref: [[sum(item) for item in zip(*items)] for items in zip(*data)]
+Output: sum(j ** i for i, j in enumerate(data))
+bleu_metric: 8.76338415642329
+----------
+NL: add a new axis to array `a`
+ref: a[:, (np.newaxis)]
+Output: a.update(axis=1)
+bleu_metric: 14.873743701255318
+----------

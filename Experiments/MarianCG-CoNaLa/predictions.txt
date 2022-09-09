@@ -1,0 +1,500 @@
+sys.exit(app.exec_())
+hex(int('4a4b4c', 16))
+all(isinstance(x, int) for x in myList)
+"""{0:.2f}""".format(20)
+cp-12 51.decode('utf8')
+d = {k: d.get('value') for k, v in list(kwargs.values())}
+d = {k: d.get('value') for k, v in list(kwargs.values())}
+os.system('ps -ef  grep something  wc -l')
+"""""".join(['a', 'b', 'c'])
+((x1, s2) & (x2, s2)).intersection(x1, s2)
+client.writeheader()
+datetime.datetime.now().strftime('%Y-%m-%d')
+print(inputstring.split(','))
+re.split('\n', '\n')
+((':' * i) for i, j in zip(b, b))
+Entry.objects.all().order_by('-id')[0]
+sum(np.sum(axis=1))
+warnings.warn('always')
+print(' '.join(str(x) for x in L))
+subprocess.call(['hello.py', 'htmlfilename.htm', shell=True)
+datetime.strptime('%Y-%m-%d %H:%M', '%m-%d %H:%M')
+float(my_string)
+print('{0:,}'.format(123,0456.908))
+os.system('script.py')
+re.split('(\\w+)', 'Words, words, words.')
+with open(output.txt, 'rb') as f: f = open('output.txt', 'rb')
+urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3','mp3.mp3')
+urllib.request.urlretrieve('http://stackoverflow.com', file_name)
+urllib.request.urlretrieve('http://www.example.com/', 'http://www.example.com/')
+urllib.request.urlretrieve('http://www.google.com/', filename)
+urllib.request.urlretrieve('http://www.example.com/', '10mb')
+parser.add_argument('-deversion', '%(prog)s2.0', type=parser)
+dict((k, v) for k, v in d.items() if v!= 'C')
+df.groupby(['key','split_df'], as_index=True)['left'].rename(columns={'key':'split_df'}, df.columns=['foo', 'foo'])
+s.split(4)
+time.sleep(1)
+app.run(debug=True)
+file.write('save.txt')
+np.dot(tuple(p, t))
+np.zeros((3, 3, 3))
+"""{:.2f}""".format(content.split('/'))
+x = np.zeros((10, 10)).ravel()
+sum(i for i in l)
+float('470fc614'.decode('hex'))
+{k: (v * 2) for k, v in my_dict.items()}
+os.system('sleep.sh')
+print(','.join([(i * j) for i, j in zip(L, L)]))
+mylist = map(int, mylist.split(','))
+reversed([1, 10])
+re.sub('([a-zA-Z][a-zA-Z])', 'baz,', 'abcd')
+re.sub('\\b(.+)', '\\1', s)
+print('%Y-%m-%d %H:%M:%S.%f')
+datetime.datetime.strptime('1236472051807', '%Y-%m-%d %H:%M:%S')
+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+[sum(x) for x in data]
+df.sum(axis=1)
+base64.b64encode('your string')
+dict((k, v) for d, v in list(dicts.items()) if k in d)
+dict((k, v) for k, v in list(dicts.items()))
+request.GET.get('http://stackoverflow.com', {'param1': 'http://stackoverflow.com'})
+set(myList).cumsum()
+sys.path.insert('apps', '__file__')
+subdir.set_trace()
+cursor.execute('SELECT * FROM table WHERE id = 'None')
+[item for item in list_of_menuitems for item in list_of_menuitems]
+[(a + b) for a, b in zip(b, a[1:])]
+[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+df.to_csv('np.txt', index=False)
+df.to_csv('c:\\data\\pandas.txt', index=False)
+x.split('-')
+"""""".rsplit('..', 1)[-1]
+ftp.quit()
+driver.execute_script('http://stackoverflow.com')
+np.maximum([2, 3, 4], [1, 5, 2])
+print(l[:3] + l[1:])
+list(glob.glob('.'))
+list(os.path.join(source))
+[random.choice(list(range(0, 10)), 10) for _ in range(10)]
+[i for i in current_seconds if i.startswith('%f')]
+os.environ['SELECT * FROM table WHERE Station = $1', 'foo.key()']
+df[(df['f'] == 'f') & (df['f'] == 'f')]
+print(tab.table(['this is a player', 'this is a player', 'this is player']))
+df.drop([df.columns.isin(['one', 'two'])], axis=1)
+"""""".join(['self.goals','self.penalties'])
+""({} goals, ${})""".format('{} goals,${}', 'penalties')
+'({0.goals} goals, ${0.penalties})'.format('{0.goals}')
+[map(int, l) for l in l]
+int(str(x) for x in L)
+[map(int, x) for x in L]
+myfile.write('\n')
+[x for x in l if x['n'] in v]
+re.sub('(?<=[a-z])(?=[a-zA-Z])(?=[a-zA-Z][a-zA-Z][a-zA-Z]))', '\\1', text)
+df[~df.applymap(lambda x: sum(x) > 0).any(axis=1)]
+re.search('(?<!distillr)\\\acrotray\\.exe', 'c:\\somedir\\acrotray.exe')
+['QH qd jc kd js', 'two', 'greats', 'two', 'greats']
+print(re.search('>.*<', line).text)
+open('filename', 'w').close()
+datetime.strptime('%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%d %H:%M:%S.%f')
+[item for item in thelist if item[0] == '332']
+re.sub('[^0-9a-zA-Z]+', '', text)
+re.sub('[^0-9a-zA-Z]+', '', text)
+plt.show()
+plt.show()
+[len(myList) for subList, len(myList) == 3]
+[x for x in lst for x in range(100)]
+lst = [(x * 100) for x in lst]
+print(soup.find('someclass', 'href'))
+df1.merge(df2, how='Date_time', on=['Date_time'])
+print(str1.lower())
+re.split('\\s*\\s*\\s*\\s*\\s*', a)
+os.path.exists(directory)
+os.path.exists(path)
+os.path.exists(path)
+os.path.exists(path)
+re.sub('(?<=\\h3\\h1\\w)', 'H3', text)
+"""""".join('aas30dsa20')
+"""""".join([i for i in aas30dsa20 if i.isdigit()])
+soup.findAll('name', attrs={'name': 'Soup'})
+cursor.find_element_by_css_selector(['records']).dict()
+numpy.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+np.concat([a, b])
+len(filepath)
+Counter({'a': 1, 'b': 2, 'c': 3, 'd': 1})
+sum(1 for i in l)
+sum(1 for i in l)
+sum(1 for i in l)
+Counter({'b': [1, 2, 3], 'b': [1, 2, 3]})
+copyfile(srcfile, dstdir)
+max(x, key=n)[x] == np.nan[x]
+max(x, key=lambda x: x[1])
+max(x, key=np.arange(3))
+time.sleep(1)
+df['C'].fillna(df['B'], inplace=True)
+d = dict((k, v) for k, v in d.items() if v!= 'ele')
+time.strftime('%Y-%m-%d %H:%M:%S')
+list(itertools.chain(['it', ['was', '], ['annoying']]))
+sum(x + 1) + sum(x)
+df.sort_index()
+list(t)
+tuple(map(t))
+list(level1)
+print(pprint(dataobject, logfile.read()))
+df.index = df.index
+df.to_numeric(index=df.columns, index=df.index)
+[i for i, j in enumerate(['boolcol', 'true', 'boolcol']) if j == 1]
+df.index = df.loc[(df.columns['boolcol'] == True)]
+os.chdir('owd')
+cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (testfield,))
+"""\\x89\\n""".decode('ascii', 'ignore')
+"""a string""".decode('raw_string')
+"""""".join(map(str, raw_byte_string))
+re.findall('\\[([a-z]+)\\]+', s)
+plt.show()
+plt.show()
+soup.select('div[id$=']')
+[(d['ids'], df['ball']) for df in df['ids']]
+df['level1'] = df['level1'].index.tolist()
+df[index1].append(index1)
+df = pd.DataFrame(df.index.values, columns=['value', 'value'], columns=['value', 'value'])
+[x[i:i + 3] for i in range(0, len(x), 2)]
+a[(np.arange(a[i, j]))]
+zip(a, b, zip(a, b))
+""",""".join('[:, (2)]'.format(i) for i in list_of_ints)
+response = requests.post('data', 'username', 'password')
+"""abcd}def}"".rsplit('\\', 1)
+[(1, 2, 3]) for i in range(3)]
+results = [item['x'] for item in d]
+os.path.splitext('Hemanth.txt')
+dict(zip(x[1::2], x[1::2]))
+[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]
+df.loc[df['class_rice'] == 99, 'class_rice']
+df['cumsum'] = df['cumsum'].str.replace('\n', '<br>')
+df.replace('<br>', '').replace('\n', '')
+[''.join(word[i:i + 2] for i in range(len(word) - len(word))) for word in re.findall('\\2', word)]
+[x[i] for x in words if i[i] == 2]
+urllib.replace('', '')
+urllib.replace('', '')
+""" """.join(re.sub('[^\\w\\s]+', '', mystring))
+datetime.datetime.now().strftime('2013-01-01')
+matrix = [[[[1, 2], [3, 4], [3, 4]], [[4, 6], [7, 8], [7, 9]]]]
+"""""".join(c for c in range(10) if c.isdigit())
+os.path.abspath('mydir/myfile.txt')
+re.split('\\s+', my_string)
+os.path.splitext(os.path.ext(filename))
+[sum(i) for i in l]
+re.split('(\\d+)', '/', docs/src/scripts/temp)
+r = np.random.random((1, 3))
+df['d'].copy(['b', 'd'], inplace=True)
+data['data']['data']['b'] = 'data'
+"""""".join(re.search('[\\s]+', string))
+dt.loc[i for i in files if i.startswith('.txt')]
+cursor.execute('SELECT * FROM table WHERE equals WHERE email LIKE'sql')
+list(map(int, user_input))
+[int(x) for x in user.split(',')]
+sorted(a, key=lambda x: x[1])
+sorted(unsorted_list, key=lambda x: f(x)[1], reverse=True)
+[x[::-1] for x in range(10)]
+sorted(unsorted, key=lambda x: x.count(x.index))
+driver.find_element_by_href('end').click()
+driver.find_element_by_href('send inmail').click()
+driver.find_element_by_href('send inmail').click()
+"""""".join(map(str, i))
+data.sort(key=lambda x: x.index.get(x.values), reverse=True)
+'#test firstline\n'.format('infile', 'outfile')
+sorted(l, key=lambda t: (-len(t)), reverse=True)
+s.split('D')
+re.findall('\\b\\b', 'ba[azd]')
+list(set(t))
+print(sorted(itertools.chain.from_iterable(source_list)))
+list(itertools.chain.from_iterable(itertools.chain.from_iterable(a)))
+list(map(int, a.split(',')))
+list(map(int, a.split(',')))
+print(soup.find('td', {'foo': 'foo'}))
+"""""".join(l)
+"""""".join(l)
+driver.get('http://stackoverflow.com')
+re.search('\\d+[xx]', teststr)
+df['A'].loc[:, (['B'] == 50)]
+sorted(list(o.items()), key=operator.itemgetter(1), reverse=True)
+sorted(d, key=d.get)
+sorted(list(a.items()), key=lambda key_value: key_value['name'], reverse=True)
+int('1', 16)
+map(int, [(int, x) for x in s.split()])
+int(t1)
+subprocess.call(['./test.sh', '/path/to/script.sh'])
+subprocess.call('notepad', shell=True)
+zip(*l1, l2)
+'data to be urllib.parse.quote('[A-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Za-zA-Z]')')
+data.encode('ascii', 'ignore')
+list(open('text.txt', 'r').read())
+getattr(my_str, my_object)
+{k: v for k, v in list(ld.items()) for k, v in list(d.items())}
+sum(x[0] for x in G)
+dict((k, v) for k, v in list('{'code1':1,'code2':1}'.items()))
+[word for word in mystring if word[0] == '$']
+re.sub('(?<=[a-zA-Z])(?=[A-Z])', '', text)
+np.nonzero(np.any(a!= [1, 3, 4], axis=1))
+np.mean(a, axis=0)
+subprocess.call(['/pathto/myscript.r', '/pathto/myscript.r'])
+os.system('/usr/bin/rscript --vanille /pathto/mystring.r')
+writer.writeheader()
+df.replace(np.isnan(a), axis=1)
+datetime.strptime('1347517370', '%Y-%m-%d %H:%M:%S')
+super(Doseries, self).__init__(*args, **kwargs)
+a[np.in1d(a[:, (1)], a[:, (1)])]
+list(re.findall('\\s+', s))
+words[:len(word) - len(words)]
+result[x.encode('from_user')]
+[line.strip('file.txt') for line in open('file.txt')]
+dict((k, v) for k, v in a.items())
+f = open(path/to/file_name.ext, 'w')
+df.stack().sum()
+any(key for key in dict1.startswith('emp$$'))
+[v for k, v in list(dict1.items()) if v.startswith('emp$$')]
+df[['email', 'list']] = pd.to_pickle(df['email'])
+print('\t'.join(str(i) for i in list))
+print('\xd0\xbf\xd1\x80\xd0\xb8'.encode('UTF8'))
+"""""".join([str(ord(c)) for c in sopet\xc3\xb3n])
+image.image.set_major_formatter(x, y)
+re.findall('\\d+', 'n', s)
+"""{0:.2f}""".format(1/3*100)
+mylist.sort(key=operator.itemgetter('title'))
+sorted(L, key=operator.itemgetter('title'))
+sorted(data, key=lambda x: x['title', 'title', 'Title_Url'], reverse=True)
+max(tuple(i) for i, tuple(i) in zip(*l1, l2))
+soup.findAll('span', class_='stargryb')
+df.to_csv('test', df.to_datetime('a_schema'))
+re.findall('\\[(\\[]+)\\]+', s)
+[item for sublist in l for item in sublist]
+file = open(file, 'r').readlines()
+print([i for i in testlist if i.isdigit()])
+print([i for i in testlist if i.isdigit()])
+print([i for i in testlist if i.isdigit()])
+print([i for i in testlist if i.isdigit()])
+print([i for i in testlist if i.isdigit()])
+[item for item in testlist if item[0] == 1]
+[item for item in testlist if item[0] == 1]
+max(alist, key=lambda x: x[1][2])
+max(x, key=lambda x: x[0])[0]
+time.sleep(1)
+"""""".join(map(str, L))
+super(B, self).save(*args, **kwargs)
+sorted(list5), key=lambda x: int(x[1])
+table.sort(key=lambda t: t.minute)
+next((i for i in range(10)) for i in range(10))
+[x for x in oldlist if not isinstance('removelist')]
+f = open('yourfile.txt', 'w')
+getattr(obj, 'attr')
+tuple(map(tuple, ['aa',), ('bb',), ('cc',)))
+list((('aa',), ('bb',), ('cc',)))
+df = pd.DataFrame.replace('a', 'b')
+zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+zip([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+Original = [x for x in zip(*Original)]
+original = [(x + y) for x in zip(* Original)]
+zip([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])
+json.dumps(default('3.8'))
+d = {'mynewkey':'mynewvalue'}
+{k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+{k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+{k: [(v) for k, v in data.items() if v) for k, v in list(data.items()}
+np.maximum.accumulate((np.tile(matrix)))
+round(answer, 2)
+re.findall('\\d+\\.\\d+\\.\\d+\\.\\.\\d+$', s)
+df[(df['a'] > 1)]
+[['myfile','myfile'], ['myfile','myfile']]
+[int(x) for x in os.listdir(filename.txt)]
+plt.show()
+df.groupby('text').agg(lambda x: x.lower().strftime('%s'))
+re.split('(\\d+)', s)
+from functools import reduce reduce(lambda x, y: x * y, [1, 2, 3))
+today = datetime.utcnow().date()
+list2 = [x for x in list1 if x is not None]
+list2 = [i for i in list1 if i!= 0]
+return HttpResponse(data)
+re.findall('\\[(\\w+)\\]', example_str)
+re.findall('\\[(\\w+)\\]', s)
+re.search('(zyx)bc', '', re.UNICODE)
+re.match('\\((.*?)\\)(\\w)', '(zyx)bc')
+re.findall('\\d,\\d,\\d,\\d,\\d,\\d', '(zyx)bc')
+re.sub('\\b\\b', '%{0}%', a)
+subprocess.call(['background-process', 'arguments'])
+[d for d in myDict if'mykeys' in d]
+dict(zip(*[('name', 'joe'), ('Age', 22)]))
+data[:, ([0, 1, 2])].mean(axis=1)
+print(s.replace('\\', ''))
+[word for word in words if word[:-1] == 'This is a string']
+df.plot(kind='bar')
+dict((v, k) for k, v in myDict.items())
+[i for i, j in enumerate(myList) if j == 'how'!= 'whatever']
+if (obj in ('abj')): pass
+if (o.isdigit()): pass
+if (o.isdigit()): pass
+if (o.isdigit()): pass
+if (obj_to_test): pass
+list2 = [[] for i in list1]
+list1.append(myLog)
+a.extend((0, [1, 2, 3]), (C))
+myLog.append(['list1'])
+b = [(a[0], [0], [2]) for a, b in zip(a, [0], [0]])]
+app.config['your_secret_string'] ='secret_key'
+pd.concat([df1, df2], axis=1, keys=['out-1', 'out-2'], axis=1)
+[x for x in stocks_list if x[1] =='msft']
+ax.set_xticklabels(ax.xtick_labels(45))
+re.sub('[^\\s]+', '', s)
+os.path.dirname(os.path.realpath(__file__))
+re.findall('\\b0+(?!\\b)\\b', str)
+re.split('[ ](?=[a-z]+\\b)', input)
+input = re.compile('\\w+(\\w+)').split('\\1')
+urllib.request.urlretrieve(url, header='header', data=data)
+f = open('filename', 'rb')
+[x for x in lst if x not in d]
+[(x['name']) for x in list(sorted(x.items()))]
+return '{0:.2f}'.format('23328437452', 3)
+sorted(li, key=operator.itemgetter(1), reverse=True)
+ax.set_visible((5))
+print(os.path.abspath(__file__))
+len(yourdict)
+sum(1 for x in list(yourdictfile.keys()))
+df['id'] = df['id'].apply(lambda x: x.strftime('%s'))
+df['c'] = df['b'].str.split(',')
+['src="js/([^"]*\\bjquery\\b[^"]*)', '', data)]
+sum(map(int, [', '3.4', '', '', '1.0']))
+subprocess.call(['c:\\program_files\\vmware\\vmware', '/vmware-cmd.bat'])
+cursor.execute('INSERT INTO table VALUES (%s, %s, %s)', (var1, var2, var3))
+plt.show()
+re.findall('([a-fa-f\\d]{32})', data)
+len(my_list)
+len(a)
+len(s)
+len(my_tuple)
+len(my_string)
+"""\\a""".replace('\\a', '')
+"""""".join(re.sub('[a-zA-Z]', 'b'))
+result = os.path.join(os.path.dirname('/folder_name'), '/folder_name').remove('/folder_name')
+data['weekday'] = df['my_dt'].apply(lambda x: x.astype(int))
+sorted(x, key=operator.itemgetter(1), reverse=True)
+sorted(x, key=operator.itemgetter(1), reverse=True)
+numpy.append(a, b)
+np.concatenate((a, b, axis=0))
+np.concatenate((a, b), axis=0)
+np.concatenate((a, b, axis=0))
+np.concatenate((a, b, axis=0))
+platform.bind(('google.com', 80))
+df['day'] ='sat'
+MyModel.objects.filter(author__id='title').filter(author__id='title')
+app.run(os.path.abspath('wherever'))
+session.commit()
+sorted(a, key=lambda x: x[1])
+sorted(a, key=lambda x: x[1])
+sorted(a, key=lambda x: x[1])
+plt.show()
+df['Date'] = df['Date'].dt.strftime('%d%m%Y')
+driver.find_element_by_xpath('element').get_text()
+df.loc[df['Bob'].str.split(',')[1]]
+subprocess.call('gnome', shell=True)
+my_dict.update({'first_key': 1})
+intarray = []
+my_list.insert(12)
+list([('wuggah', myList[1:]) for myList in myList])
+ast.decode('hex')
+df.iloc[:, (~df.columns.index.values)]
+df[df['letters'] == 'C']
+matrix([1, 2, 3], [4, 5, 6])
+int(i)
+(v, (i, j) for i, j in zip(var1, var2))
+(v, (i, j) for i, j in zip(var1, var2))
+(v, (i, j) for i, j in zip(var1, var2))
+(v, (i, j) for i, j in zip(var1, var2))
+variable_name = type(directory)
+next(iter(itertools.product(*args)))
+print(word.strftime('%s %s' % word))
+list.join((' '.join(map(str, list))))
+y = [] * len(y)
+data = [line.split('c:/name/myDocuments/numbers') for line in open('C:/name/myDocuments/numbers')]
+'It is ic2'.replace('i', 'is ic2')
+'It is ic2'.replace('It is ic3', 'i')
+"""It is icY""".replace('i', 'it is icj')
+a.replace(';', ':')
+df.drop_duplicates(index='1', na_values=['num'])
+[c for c in myList if c not in n]
+[intstringlist[0] for i in stringlist]
+[int(x) for x in list_of_nums]
+print('\n'.format('\n'))
+int(round(2.52 * 100))
+results = [x for x in os.listdir('/mydir') if x.txt]
+results = [x for x in os.listdir('/mydir') if x.txt]
+results = [x for x in os.listdir('/mydir') if x.txt]
+df.plot(x='legend')
+list(range('192.168.x.x'))
+list(range('192.168.x.x'))
+list(range('192.168.x.x'))
+sum([int(i) for i in x])
+f.write(str(x) for x in line2.split())
+print([item for sublist in data for item in sublist])
+"""foo\nbar""".encode('utf-8')
+s = re.sub(',', '', s)
+np.mean(axis=1)
+np.mean(axis=1, axis=1)
+arr = numpy.loadtxt(open('new.txt', 'r-8'))
+sorted(l, key=lambda x: (x[1] for x in list(x.items())))
+sorted(L, key=lambda t: (t[0], t[0]))
+df[df.groupby('(heljust)').apply(pd.Series).astype(int)]
+print(your_string.intersection(['[', ']', 'your_string']))
+df['%Y-%m-%d'] = df['%Y-%m-%d']
+'D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\\D:\.D:\\D:\\D:\.D:\\D:\\D:\.D:\\D:\.D:\.D:\\D:\.D:\.D:\.D:\\D:\\D:\.D:\.D:\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\\.D:\.D:\\s',\\\s+D:\\s+D:\\.D:\.D:\\s+D:\\s+\\\s+D:\\t',\\\t',\t?\t?\t?and:\t;\t;',\t:\t;',\t:\t;',\t:\t:\t:\n:\n:\t?D:\n:\n:\n',\n:\t?\t?\t?\t?\t?\t?andd:\n',\t:\t?\t?\t?\t?\t?andd:\t?andd:\n',\n',\n',\t?((((((((((((((((((D:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\n:\t?D:\n:\t;D:\D:\n:\n:\t?D:\n:\n:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\D:\
+data = json.loads(request.body)
+urllib.request.urlretrieve('file_name', 'w')
+re.split('\\s+', text)
+re.split('(\\d+)', text)
+[line.split() for line in line.split()]
+re.sub('\\s{2,}','', s)
+list_of_strings.sort(key=lambda x: x[1])
+subprocess.call(['vaasp', 'tee_output'], shell=True)
+[x for x in lst if 'abc' not in x]
+[s for s in lst if s.isdigit()]
+sorted(list_to_be_sorted, key=lambda x: x['name'])
+sorted(L, key=itemgetter(1), reverse=True)
+sorted(list_of_dicts, key=lambda d: d['rank']['rank'], reverse=True)
+sorted(list_of_dicts, key=lambda d: d['rank']['rank'], reverse=True)
+df1.sort(['user', 'user'], ascending=[True, False], inplace=True)
+{'C': '0', 'C': '0', 'C': '0', 'C': '0', 'C': '0'}
+"""""".join(['a', 'b', 'c', 'd'])
+print(json.dumps(data))
+[x for x in list(sents.items()) if x.startswith('@$\t')]
+User.objects.filter(date__json='hour')
+list.sort(key=lambda x: (x[1], x[1]))
+datetime.datetime.strptime(1970, 1, 1)
+print(length.ext(lon.file.name.jpg))
+module = request.module('mymodule')
+next((int(x) for x in str(num)))
+np.float(a)
+df.to_csv('test.csv', index=False, index=False)
+json_data = json.dumps(url)
+list(''.join(chr(ord(c)) for c in str(a)))
+newfile.write('newfilebytes')
+re.findall('[a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z][a-zA-Z]')
+list(dict.items())
+f.write('hi there')
+myfile.write('hi there')
+somefile.txt('hello','somefile.txt')
+unicodedata.normalize(s, 'NFKD').encode('ascii', 'ignore')
+super(MyModel, self).__init__(*args, **kwargs)
+re.findall('\\d+', text)
+re.findall('\\d+', s)
+subprocess.call(['script.ps1', 'powershell.exe'])
+sorted(b, key=operator.itemgetter(1), reverse=True)
+cf = [i for i in cessandradata.values() if i == 1]
+datetime.datetime.now().date()
+[i for i in lst if i in i]
+[(i - j) for i, j in zip(a, -13)]
+random.choice(os.path.dirname(__file__))
+max(x, key=operator.itemgetter(1))[0]
+urlpatterns = requests.get('http://www.google.com/', s)
+re.search('^([^.]*?)(?=.)', '\\1', document)
+re.split('[^\\s]*', mystring)
+os.path.open('r')
+sum(j ** i for i, j in enumerate(data))
+a.update(axis=1)
