@@ -25,3 +25,19 @@ NL_input = "create array containing the maximum value of respective elements of 
 output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=True, max_length=512, return_tensors="pt"))
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 ```
+
+#Citation
+We now have a paper for this work and you can cite:
+```
+@article{Soliman2022,
+   author = {Ahmed S. Soliman and Mayada M. Hadhoud and Samir I. Shaheen},
+   doi = {10.1186/s44147-022-00159-4},
+   issn = {1110-1903},
+   issue = {1},
+   journal = {Journal of Engineering and Applied Science},
+   title = {MarianCG: a code generation transformer model inspired by machine translation},
+   volume = {69},
+   url = {https://jeas.springeropen.com/articles/10.1186/s44147-022-00159-4},
+   year = {2022},
+}
+```
