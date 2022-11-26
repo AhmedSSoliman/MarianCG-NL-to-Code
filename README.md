@@ -31,16 +31,15 @@ output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 We now have a paper for this work and you can cite:
 
 ```
-@article{Soliman2022,
-   author = {Ahmed S. Soliman and Mayada M. Hadhoud and Samir I. Shaheen},
-   doi = {10.1186/s44147-022-00159-4},
-   issn = {1110-1903},
-   issue = {1},
-   journal = {Journal of Engineering and Applied Science},
-   title = {MarianCG: a code generation transformer model inspired by machine translation},
-   volume = {69},
-   url = {https://jeas.springeropen.com/articles/10.1186/s44147-022-00159-4},
-   year = {2022},
+@article{soliman2022mariancg,
+  title={MarianCG: a code generation transformer model inspired by machine translation},
+  author={Soliman, Ahmed S and Hadhoud, Mayada M and Shaheen, Samir I},
+  journal={Journal of Engineering and Applied Science},
+  volume={69},
+  number={1},
+  pages={1--23},
+  year={2022},
+  publisher={SpringerOpen}
 }
 
 ```
