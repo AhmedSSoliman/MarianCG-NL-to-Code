@@ -24,6 +24,12 @@ tokenizer = AutoTokenizer.from_pretrained("AhmedSSoliman/MarianCG-CoNaLa")
 NL_input = "create array containing the maximum value of respective elements of array `[2, 3, 4]` and array `[1, 5, 2]"
 output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=True, max_length=512, return_tensors="pt"))
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
+
+
+```
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mariancg-a-code-generation-transformer-model/code-generation-on-conala)](https://paperswithcode.com/sota/code-generation-on-conala?p=mariancg-a-code-generation-transformer-model)
+```
+
 ```
 
 # Citation
