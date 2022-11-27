@@ -1,8 +1,5 @@
 # MarianCG: A Code Generation Transformer Model Inspired by Machine Translation
 
-```
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mariancg-a-code-generation-transformer-model/code-generation-on-conala)](https://paperswithcode.com/sota/code-generation-on-conala?p=mariancg-a-code-generation-transformer-model)
-```
 
 
 In this work we worked to improve the solving of the code generation problem and implement a transformer model that can work with high accurate results. We implemented MarianCG transformer model which is a code generation model that can be able to generate code from natural language. This work declares the impact of using Marian machine translation model for solving the problem of code generation. In our implementation we prove that a machine translation model can be operated and working as a code generation model.Finally, we set the new contributors and state-of-the-art on CoNaLa reaching a BLEU score of 34.43 in the code generation problem with CoNaLa dataset.
@@ -31,9 +28,15 @@ output = model.generate(**tokenizer(NL_input, padding="max_length", truncation=T
 output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 
 
-
 ```
 
+```
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mariancg-a-code-generation-transformer-model/code-generation-on-conala)](https://paperswithcode.com/sota/code-generation-on-conala?p=mariancg-a-code-generation-transformer-model)
+```
+
+```
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/mariancg-a-code-generation-transformer-model/code-generation-on-django)](https://paperswithcode.com/sota/code-generation-on-django?p=mariancg-a-code-generation-transformer-model)
+```
 # Citation
 
 We now have a paper for this work and you can cite:
