@@ -70,7 +70,7 @@ output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 
 # Citation
 
-We now have a paper for this work and you can cite:
+We now have a paper ```url for this work and you can cite:
 
 ```
 @article{soliman2022mariancg,
