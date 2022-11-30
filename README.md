@@ -70,7 +70,7 @@ output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 
 # Citation
 
-We now have a paper for this work and you can cite:
+We now have a paper ["https://doi.org/10.1186/s44147-022-00159-4"] for this work and you can cite:
 
 ```
 @article{soliman2022mariancg,
@@ -82,6 +82,7 @@ We now have a paper for this work and you can cite:
   pages={1--23},
   year={2022},
   publisher={SpringerOpen}
+  ur={https://doi.org/10.1186/s44147-022-00159-4}
 }
 
 ```
