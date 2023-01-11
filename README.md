@@ -17,7 +17,7 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-CoNaLa-Large
 
 Implementation of the model is done this notebook at Google Colab Pro
-## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://colab.research.google.com/drive/1HtGfWOwBx0deii0WPQD3o_NfGRYBEs1w?usp=sharing)
+## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://github.com/PradyumnaKrishna/Colab-Hacks/issues/labels/Colab%20RDP)
 
 Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
 
@@ -53,7 +53,7 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-DJANGO
 
 Implementation of the model is done this notebook at Google Colab Pro
-## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://colab.research.google.com/drive/1Hcj3akrYFe3bKHNCj-g1qrRHSbLdkk9s?usp=sharing)
+## [Code Server](Code%20Server/Code%20Server.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][Code Notebook] [![Code Issues][Code Issues]](https://github.com/PradyumnaKrishna/Colab-Hacks/issues/labels/Code%Server)
 
 Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
 
@@ -101,3 +101,16 @@ We now have a [paper](https://doi.org/10.1186/s44147-022-00159-4) for this work 
 }
 
 ```
+
+
+### Support
+1.  **Star this repository**
+2.  **Promote this repository**
+3.  **Contribute to this repository**
+
+[Colab Badge]:          https://colab.research.google.com/assets/colab-badge.svg
+[License-Badge]:        https://img.shields.io/badge/License-MIT-blue.svg
+[RDP Issues]:           https://img.shields.io/github/issues/PradyumnaKrishna/Colab-Hacks/Colab%20RDP?label=Issues
+[RDP Notebook]:         https://colab.research.google.com/drive/1HtGfWOwBx0deii0WPQD3o_NfGRYBEs1w?usp=sharing
+[Code Issues]:          https://img.shields.io/github/issues/PradyumnaKrishna/Colab-Hacks/Code%20Server?label=Issues
+[Code Notebook]:        https://colab.research.google.com/drive/1Hcj3akrYFe3bKHNCj-g1qrRHSbLdkk9s?usp=sharing
