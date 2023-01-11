@@ -1,6 +1,6 @@
 
 
-# MarianCG: A Code Generation Transformer Model Inspired by Machine Translation [![License: MIT][License-Badge]](LICENSE.md)
+# MarianCG: A Code Generation Transformer Model Inspired by Machine Translation [![License: MIT][License-Badge]](LICENSE)
 
 ```
 ```
