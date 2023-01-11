@@ -16,6 +16,9 @@ In this work we worked to improve the solving of the code generation problem and
 This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-CoNaLa-Large
 
+Implementation of the model is done this notebook at Google Colab Pro
+https://colab.research.google.com/drive/1HtGfWOwBx0deii0WPQD3o_NfGRYBEs1w?usp=sharing
+
 
 CoNaLa Dataset for Code Generation is available at
 https://huggingface.co/datasets/AhmedSSoliman/CoNaLa-Large
@@ -44,8 +47,10 @@ output_code = tokenizer.decode(output[0], skip_special_tokens=True)
 This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-DJANGO
 
+Implementation of the model is done this notebook at Google Colab Pro
+https://colab.research.google.com/drive/1Hcj3akrYFe3bKHNCj-g1qrRHSbLdkk9s?usp=sharing
 
-CoNaLa Dataset for Code Generation is available at
+DJANGO Dataset for Code Generation is available at
 https://huggingface.co/datasets/AhmedSSoliman/DJANGO
 
 
