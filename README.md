@@ -8,7 +8,7 @@
 ```
 # MarianCG: A Code Generation Transformer Model Inspired by Machine Translation
 
-
+# Colab Hacks [![License: MIT][License-Badge]](LICENSE.md)
 
 In this work we worked to improve the solving of the code generation problem and implement a transformer model that can work with high accurate results. We implemented MarianCG transformer model which is a code generation model that can be able to generate code from natural language. This work declares the impact of using Marian machine translation model for solving the problem of code generation. In our implementation we prove that a machine translation model can be operated and working as a code generation model.Finally, we set the new contributors and state-of-the-art on CoNaLa reaching a BLEU score of 34.43 in the code generation problem with CoNaLa dataset. Also, we have great results on the DJANGO dataset reaching reaching exact_match_accuracy with 81.83.
 
@@ -17,7 +17,12 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-CoNaLa-Large
 
 Implementation of the model is done this notebook at Google Colab Pro
-https://colab.research.google.com/drive/1HtGfWOwBx0deii0WPQD3o_NfGRYBEs1w?usp=sharing
+## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://colab.research.google.com/drive/1HtGfWOwBx0deii0WPQD3o_NfGRYBEs1w?usp=sharing)
+
+Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
+
+<br />
+
 
 
 CoNaLa Dataset for Code Generation is available at
@@ -48,7 +53,12 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-DJANGO
 
 Implementation of the model is done this notebook at Google Colab Pro
-https://colab.research.google.com/drive/1Hcj3akrYFe3bKHNCj-g1qrRHSbLdkk9s?usp=sharing
+## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://colab.research.google.com/drive/1Hcj3akrYFe3bKHNCj-g1qrRHSbLdkk9s?usp=sharing)
+
+Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
+
+<br />
+
 
 DJANGO Dataset for Code Generation is available at
 https://huggingface.co/datasets/AhmedSSoliman/DJANGO
