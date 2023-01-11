@@ -53,7 +53,7 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-DJANGO
 
 Implementation of the model is done this notebook at Google Colab Pro
-## [Implementation code](https://github.com/AhmedSSoliman/MarianCG-NL-to-Code/blob/master/Experiments/MarianCG-CoNaLa-Large/MarianCG_DJANGO.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][Code Notebook] 
+## [Implementation code](https://github.com/AhmedSSoliman/MarianCG-NL-to-Code/blob/master/Experiments/MarianCG-DJANGO/MarianCG_DJANGO.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][Code Notebook] 
 
 Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
 
