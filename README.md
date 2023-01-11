@@ -17,7 +17,7 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-CoNaLa-Large
 
 Implementation of the model is done this notebook at Google Colab Pro
-## [Colab RDP](Colab%20RDP/Colab%20RDP.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook] [![RDP Issues][RDP Issues]](https://github.com/PradyumnaKrishna/Colab-Hacks/issues/labels/Colab%20RDP)
+## [Implementation code](https://github.com/AhmedSSoliman/MarianCG-NL-to-Code/blob/master/Experiments/MarianCG-CoNaLa-Large/MarianCG_CoNaLa_Large.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][RDP Notebook]
 
 Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
 
@@ -53,7 +53,7 @@ This model is available on the huggingface hub
 https://huggingface.co/AhmedSSoliman/MarianCG-DJANGO
 
 Implementation of the model is done this notebook at Google Colab Pro
-## [Code Server](https://github.com/AhmedSSoliman/MarianCG-NL-to-Code/blob/master/Experiments/MarianCG-CoNaLa-Large/MarianCG_CoNaLa_Large.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][Code Notebook] 
+## [Implementation code](https://github.com/AhmedSSoliman/MarianCG-NL-to-Code/blob/master/Experiments/MarianCG-CoNaLa-Large/MarianCG_DJANGO.ipynb) &nbsp;&nbsp; [![Open in Colab][Colab Badge]][Code Notebook] 
 
 Colab RDP is used to get **Remote Connection** to Google Colaboratory with graphic user interface. It can be used to boost your productivity and you can perform heavy task without any worries.
 
